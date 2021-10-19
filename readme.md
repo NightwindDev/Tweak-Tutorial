@@ -16,3 +16,5 @@ Starting out can certainly be a challenge, but if you put your mind to it, you'l
       - Furthermore, the terminal will ask you `[iphone/tweak] MobileSubstrate Bundle filter [com.apple.springboard]:`. This essentially means "what do you want your tweak to hook?" (Ex. Twitter tweak: `com.atebits.Tweetie2`, Settings tweak: `com.apple.Preferences`, SpringBoard: `com.apple.springboard`).
       - Then, it will ask `[iphone/tweak] List of applications to terminate upon installation (space-separated, '-' for none) [SpringBoard]:`, just press enter for now on this one.
       - After this, Theos will create a folder with the tweak files inside of it.
+
+<a href="">Next Page</a>
