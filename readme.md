@@ -1,5 +1,9 @@
 # How Do You Create a Tweak?
 
+Starting out can certainly be a challenge, but if you put your mind to it, you'll be able to grasp the concept.
+
+## Setting Up The Tweak
+
 1. Assure that you have <a href="https://github.com/theos/theos">**Theos**</a> set up. The instructions to set up Theos can be found <a href="https://github.com/theos/theos/wiki/Installation">here</a>. Please choose the appropriate operating system in the wiki and install it.
 
 2. Assure you have some kind of text editor, some good ones being <a href="https://code.visualstudio.com">Visual Studio Code</a>, <a href="https://www.sublimetext.com">Sublime Text</a>, <a href="https://atom.io">Atom</a>, and more! Feel free to use your preferred text editor, however note that **Visual Studio Code** has an **extension** for **Logos**, which can be found <a href="https://marketplace.visualstudio.com/items?itemName=tale.logos-vscode">here</a>.
