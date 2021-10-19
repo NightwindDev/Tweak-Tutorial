@@ -15,7 +15,7 @@ Starting out can certainly be a challenge, but if you put your mind to it, you'l
       - After that, the terminal will prompt you with `Project Name (required):`, meaning "what is going to be the name of your tweak?" Please type the name that you want to call the tweak in this space.
       - After *that*, the terminal will prompt you with `Package Name [com.yourcompany.testtweak]:`, meaning "what is going to be the <a href="https://developer.apple.com/documentation/appstoreconnectapi/bundle_ids">Bundle ID</a> of your tweak? Most likely it will be `com.yourname.yourtweakname`.
       - Next, it will ask you `Author/Maintainer Name [yourname]:`. Please put whatever you want your "developer name" to be if/when you publish the tweak.
-      - Furthermore, the terminal will ask you `[iphone/tweak] MobileSubstrate Bundle filter [com.apple.springboard]:`. This essentially means "what do you want your tweak to hook?" (Ex. Twitter tweak: `com.atebits.Tweetie2`, Settings tweak: `com.apple.Preferences`, SpringBoard: `com.apple.springboard`).
+      - Furthermore, the terminal will ask you `[iphone/tweak] MobileSubstrate Bundle filter [com.apple.springboard]:`. This essentially means "what do you want your tweak to hook?" (Ex. Twitter tweak: `com.atebits.Tweetie2`, Settings tweak: `com.apple.Preferences`, SpringBoard: `com.apple.springboard`). We will hook SpringBoard for our example tweak, so use `com.apple.springboard`.
       - Then, it will ask `[iphone/tweak] List of applications to terminate upon installation (space-separated, '-' for none) [SpringBoard]:`, just press enter for now on this one.
       - After this, Theos will create a folder with the tweak files inside of it.
 
