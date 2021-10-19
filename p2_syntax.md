@@ -6,6 +6,8 @@ Great question! Let's begin writing some code! As said previously, we will be wr
 
 Let's go step by step.
 
+We will make a tweak to hide the status bar!
+
 First, go to your `tweak.x` file. There will be a huge block of comments made there when the tweak was made by Theos. Feel free to read this, it is actually **_reccomended_** to get a first glance on what the syntax is like.
 
 Will first import UIKit. UIKit is used for the UI in iOS. This can be done like so:
@@ -17,5 +19,8 @@ or like so:
 @import UIKit;
 ```
 This is needed for pretty much all tweaks.
+
+Then we will use the FLEX tweak to find the correct class. How do we do this? Well let's see!
+
 
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p1_explore_files.md">Previous Page (Exploring The Tweak Files)</a>
