@@ -7,3 +7,4 @@
 3. To begin creating a tweak, run the command `$THEOS/bin/nic.pl`. If this does not work, you have probably set up Theos incorrectly. Please go back to step 1 and fix your installation.
       - This should show different options, one of them being `iphone/tweak`. This option will have a number next to it, which you type in to select that option.
       - After that, the terminal will prompt you with `Project Name (required):`, meaning "what is going to be the name of your tweak?" Please type the name that you want to call the tweak in this space.
+      - After *that*, the terminal will promt you with `Package Name [com.yourcompany.testtweak]:`, meaning "what is going to be the <a href="https://developer.apple.com/documentation/appstoreconnectapi/bundle_ids">bundle ID</a> of your tweak?
