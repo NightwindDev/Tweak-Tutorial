@@ -21,7 +21,9 @@ or like so:
 This is needed for pretty much all tweaks.
 
 Then we will use the FLEX tweak to find the correct view to hook. How do we get it? Well let's see! ***Make sure you're doing this on the HomeScreen as we are hooking the SpringBoard.***
+
      - Trigger the FLEX menu (the instructions to this are likely in the tweak description.)
+
      - Press the `select` button on the FLEX menu.
      - Then press the status bar.
      - After that, press the `views` button. FLEX will automatically scroll down to the selected view.
