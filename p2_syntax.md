@@ -21,15 +21,13 @@ or like so:
 This is needed for pretty much all tweaks.
 
 Then we will use the FLEX tweak to find the correct view to hook. How do we get it? Well let's see! ***Make sure you're doing this on the HomeScreen as we are hooking the SpringBoard.***
-
-     - Trigger the FLEX menu (the instructions to this are likely in the tweak description.)
-
-     - Press the `select` button on the FLEX menu.
-     - Then press the status bar.
-     - After that, press the `views` button. FLEX will automatically scroll down to the selected view.
-     - Press the (i) button next to the view.
-     - This is where we will find all the properties, ivars, methods, etc. pertaining to the view. In this case, we want to modify the `hidden` property of the view.
-     - Find where it says `@property BOOL hidden`, press the (i) button next to it, and then flip the switch. Press done and you should see (or rather not see!) the hidden status bar!
+1. Trigger the FLEX menu (the instructions to this are likely in the tweak description.)
+2. Press the `select` button on the FLEX menu.
+3. Then press the status bar.
+4. After that, press the `views` button. FLEX will automatically scroll down to the selected view.
+5. Press the (i) button next to the view.
+6. This is where we will find all the properties, ivars, methods, etc. pertaining to the view. In this case, we want to modify the `hidden` property of the view.
+7. Find where it says `@property BOOL hidden`, press the (i) button next to it, and then flip the switch. Press done and you should see (or rather not see!) the hidden status bar!
 
 Great! Now how do we write this in code?
 
