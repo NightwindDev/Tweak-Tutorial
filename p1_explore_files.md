@@ -27,3 +27,4 @@ This file contains the information about your tweak that will be displayed to th
 This file contains what the tweak will be hooking/injecting into. This won't be touched much, compared to the other files, but it does exist and is also important.
 
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/readme.md">Previous Page (Setting Up The Tweak)</a>
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p2_syntax.md">Next Page (Exploring The Tweak Files)</a>
