@@ -17,4 +17,4 @@ Starting out can certainly be a challenge, but if you put your mind to it, you'l
       - Then, it will ask `[iphone/tweak] List of applications to terminate upon installation (space-separated, '-' for none) [SpringBoard]:`, just press enter for now on this one.
       - After this, Theos will create a folder with the tweak files inside of it.
 
-<a href="">Next Page</a>
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/page_one.md">Next Page</a>
