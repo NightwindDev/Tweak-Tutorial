@@ -1,3 +1,3 @@
  # How Do You Create a Tweak?
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/page_one.md">Previous Page (Setting Up)</a>
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/readme.md">Previous Page (Setting Up The Tweak)</a>
