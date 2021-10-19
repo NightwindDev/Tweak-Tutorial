@@ -17,3 +17,5 @@ or like so:
 @import UIKit;
 ```
 This is needed for pretty much all tweaks.
+
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p1_explore_files.md">Previous Page (Exploring The Tweak Files)</a>
