@@ -31,7 +31,14 @@ Then we will use the FLEX tweak to find the correct view to hook. How do we get 
 
 Great! Now how do we write this in code?
 
-[TO DO]
+First, we will find the view we are hooking. In our case, it is called `_UIStatusBarForegroundView`. This view *inherits* from UIView. You can check what a view *inherits* its properties from in FLEX by clicking on the (i) button next to the view and then looking at the top bar, where it should say `_UIStatusBarForegroundView`, then `UIView`, then `UIResponder`, and then finally `NSObject`. This means that `_UIStatusBarForegroundView` is inheriting its properties from `UIView` which is inheriting them from `UIResponder`, and so forth.
+
+UIKit only recognizes simple view "types" such as UIView, UIViewController, etc. so we will have to "interface" the view that we are hooking. This can be done like so:
+
+```objc
+@interface _UIStatusBarForegroundView : UIView
+@end
+``` 
 
 
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p1_explore_files.md">Previous Page (Exploring The Tweak Files)</a>
