@@ -15,7 +15,7 @@ Starting out can certainly be a challenge, but if you put your mind to it, you'l
 
       - After that, the terminal will prompt you with `Project Name (required):`, meaning "what is going to be the name of your tweak?" Please type the name that you want to call the tweak in this space.
 
-      - After *that*, the terminal will prompt you with `Package Name [com.yourcompany.testtweak]:`, meaning "what is going to be the <a href="https://developer.apple.com/documentation/appstoreconnectapi/bundle_ids">Bundle ID</a> of your tweak? Most likely it will be `com.yourname.yourtweakname`.
+      - After *that*, the terminal will prompt you with `Package Name [com.yourcompany.testtweak]:`, meaning "what is going to be the <a href="https://developer.apple.com/documentation/appstoreconnectapi/bundle_ids">Bundle ID</a> of your tweak?" Most likely it will be `com.yourname.yourtweakname`.
 
       - Next, it will ask you `Author/Maintainer Name [yourname]:`. Please put whatever you want your "developer name" to be if/when you publish the tweak.
 
