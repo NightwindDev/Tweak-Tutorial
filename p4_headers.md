@@ -49,4 +49,4 @@ Of course, not all headers are dumped, sometimes you will need to dump them your
 
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p3_syntax.md">Previous Page (Delving Into Views)</a>
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p5_example.md">Next Page (Trying Another Example Tweak)</a>
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p5_prefbundle.md">Next Page (Preference Bundles)</a>
