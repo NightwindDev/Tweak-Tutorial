@@ -1,6 +1,6 @@
 # How Do You Create a Tweak?
 
-Starting out can certainly be a challenge, but if you put your mind to it, you'll be able to grasp the concept.
+Starting out can certainly be a challenge, but if you put your mind to it, you'll be able to grasp the concepts.
 
 ## Setting Up The Tweak
 
