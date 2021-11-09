@@ -101,4 +101,4 @@ Okay, but how do we hide it? Well, we know that `hidden` is a property of UIView
 
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p1_explore_files.md">Previous Page (Exploring The Tweak Files)</a>
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p3_logos.md">Next Page (Delving Into Logos)</a>
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p3_views.md">Next Page (Delving Into Views)</a>
