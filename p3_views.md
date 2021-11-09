@@ -14,7 +14,7 @@ UIViewControllers, on the other hand, "control" the views. They utilize data and
 
 ## Applying the Knowledge
 
-So, from what we learned, we will now try to create our own tweak to put a rectangle on our homescreen. Let's first find the class that we will hook to "inject" our custom code to. We will do this with FLEX. As stated previously, the way we will need to find the view would be like so:
+So, from what we learned, we will now try to create our own tweak to put a rectangle on our homescreen. We will replace the code in our first tweak, but if you want to make a new project for this, feel free to do so. Let's first find the class that we will hook to "inject" our custom code to. We will do this with FLEX. As stated previously, the way we will need to find the view would be like so:
 
 1. Trigger the FLEX menu (the instructions to this are likely in the tweak description.)
 2. Press the select button on the FLEX menu.
