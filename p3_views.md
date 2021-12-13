@@ -73,12 +73,12 @@ ourView.frame = CGRectMake(
                            30); // Height
 
 
-// constraints ↓ FIX
+// constraints ↓
 
-// [ourView.leadingAnchor constraintEqualToAnchor: ]].active = YES;
-// [[target constraint] constraintEqualToAnchor: [targetTwo constraint]].active = YES;
-// [[target constraint] constraintEqualToAnchor: [targetTwo constraint]].active = YES;
-// [[target constraint] constraintEqualToAnchor: [targetTwo constraint]].active = YES;
+// [ourView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor]].active = YES;
+// [ourView.topAnchor constraintEqualToAnchor: self.view.topAnchor].active = YES;
+// [ourView.widthAnchor constraintEqualToConstant: 40].active = YES;
+// [ourView.heightAnchor constraintEqualToConstant: 30].active = YES;
 ```
 
 Note that this is vetical just for the purpose of showing what number is what, this could easily be written as:
