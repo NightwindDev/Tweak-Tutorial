@@ -151,4 +151,4 @@ More information about it can be found here: https://iphonedev.wiki/index.php/Cy
 
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p6_prefbundlept2.md">Previous Page (Preference Bundles cont.)</a>
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p8_challenge1.md">Next Page (Challenge 1)</a>
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p8_challenges.md">Next Page (Challenges)</a>
