@@ -38,3 +38,10 @@ This also allows the developer to make cells manually, it is not that difficult,
    - Further information about this can be found near the bottom of https://iphonedev.wiki/index.php/Preferences_specifier_plist.
 
 Linking the preference bundle to the tweak can also be found in my preference bundle examples page: https://github.com/NightwindDev/Preference-Bundle-Example.
+
+
+
+
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p5_prefbundle.md">Previous Page (Preference Bundles)</a>
+
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p7_substratetweaks.md">Next Page (Building Tweaks Without Logos)</a>
