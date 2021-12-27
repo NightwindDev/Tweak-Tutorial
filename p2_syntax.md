@@ -97,7 +97,12 @@ Okay, but how do we hide it? Well, we know that `hidden` is a property of UIView
 
 ```
 
+## Compiling the tweak
 
+```
+make do
+```
+This is the simplest way to compile your tweak, there are many flags to get different results, however this is the simplest way.
 
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p1_explore_files.md">Previous Page (Exploring The Tweak Files)</a>
 
