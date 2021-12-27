@@ -136,11 +136,11 @@ Normal method arguments are passed after this, so for example:
 ```objc
 // let's say we're hooking _UIBarBackground (just a random class)
 
--(void)setBackgroundAlpha:(CGFloat *)alpha;
+-(void)setBackgroundAlpha:(CGFloat)alpha;
 
 // would become
 
-void setBackgroundColor(_UIBarBackground *self, SEL _cmd, CGFloat *alpha);
+void setBackgroundColor(_UIBarBackground *self, SEL _cmd, CGFloat alpha);
 ```
 
 This is definitely not an all-inclusive overview of Substrate-hooking, but it is a great starting place.
