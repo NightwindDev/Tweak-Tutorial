@@ -10,7 +10,7 @@ Convert this piece of Substrate code to Logos.
 
 void orig_SBIconImageView_didMoveToWindow(SBIconImageView *self, SEL _cmd);
 
-void new_didMoveToWindow(SBIconImageView *self, SEL _cmd) {
+void new_SBIconImageView_didMoveToWindow(SBIconImageView *self, SEL _cmd) {
   self.alpha = 0.5;
   orig_didMoveToWindow(self, _cmd);
 }
@@ -23,7 +23,7 @@ void new_SBHomeScreenBackdropView_didMoveToSuperview(SBHomeScreenBackdropView *s
 }
 
 __attribute__((constructor)) static void initialize () {
-  MSHookMessageEx(NSClassFromString(@"SBIconImageView"), @selector(didMoveToWindow), (IMP) &new_didMoveToWindow, (IMP *) &orig_didMoveToWindow);
+  MSHookMessageEx(NSClassFromString(@"SBIconImageView"), @selector(didMoveToWindow), (IMP) &new_SBIconImageView_didMoveToWindow, (IMP *) &orig_SBIconImageView_didMoveToWindow);
   MSHookMessageEx(NSClassFromString(@"SBHomeScreenBackdropView"), @selector(didMoveToSuperview), (IMP) &new_SBHomeScreenBackdropView_didMoveToSuperview, (IMP *) &orig_SBHomeScreenBackdropView_didMoveToSuperview);
 }
 ```
