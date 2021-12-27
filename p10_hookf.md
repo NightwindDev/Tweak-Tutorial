@@ -21,8 +21,20 @@ While `%hook` is used to hook Objective-C classes, `%hookf` is used to hook C fu
 Let's say we want to hook <a href="https://developer.apple.com/documentation/coregraphics/1396330-cgfontcreatewithfontname?language=objc">`CGFontRef CGFontCreateWithFontName(CFStringRef name);`</a>. This would be done like so:
 
 ```objc
-%hookf(CGFontRef, CGFontCreateWithFontname, CFStringRef name) {
+%hookf(CGFontRef, CGFontCreateWithFontName, CFStringRef name) {
   // code
   return %orig;
 }
+```
+
+Below is the Substrate version of the above code, if needed.
+```objc
+CGFontRef (*orig_CGFontCreateWithFontName)(CFStringRef);
+CGFontRef new_CGFontCreateWithFontName(CFStringRef name) {
+  return orig_CGFontCreateWithFontName(name);
+}
+
+__attribute__((constructor)) static void initialize() {
+  MSHookFunction(((void *)MSFindSymbol(NULL, "CGFontCreateWithFontName")), (void *)new_CGFontCreateWithFontName, (void **)&orig_CGFontCreateWithFontName);
+} 
 ```
