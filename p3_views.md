@@ -81,7 +81,7 @@ ourView.frame = CGRectMake(
 // [ourView.heightAnchor constraintEqualToConstant: 30].active = YES;
 ```
 
-Note that this is vetical just for the purpose of showing what number is what, this could easily be written as:
+Note that this is vertical just for the purpose of showing what number is what, this could easily be written as:
 
 ```objc
 UIView *ourView = [[UIView alloc] init];
