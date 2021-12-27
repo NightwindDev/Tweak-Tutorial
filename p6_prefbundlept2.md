@@ -32,7 +32,7 @@ Let's go through it one by one.
    - `_specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];` 
         - This line sets `_specifiers` to the specifiers which are in the `Root.plist`.
    - `return _specifiers;` 
-        - This returns the specifiers because that is need as the method is not of the type `void` (which does not need to return anything).
+        - This returns the specifiers because that is needed as the method is not of the type `void` (which does not need to return anything).
 
 This also allows the developer to make cells manually, it is not that difficult, you just need to add the specifier manually through `PSSpecifier` and then add it to the `_specifiers` array.
    - Further information about this can be found near the bottom of https://iphonedev.wiki/index.php/Preferences_specifier_plist.
