@@ -1,6 +1,13 @@
 #import <UIKit/UIKit.h>
 
 
+@interface SBIconImageView : UIView
+@end
+
+@interface SBHomeScreenBackdropView : UIView
+@end
+
+
 %hook SBIconImageView
 
 -(void)didMoveToWindow {
