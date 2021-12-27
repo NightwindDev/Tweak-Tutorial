@@ -17,6 +17,8 @@ This is what your file structure in the folder should look like. The `.plist` fi
 ## `Makefile`
 This file essentially has some information about the tweak — `TARGET`, for example, contains the target operating system that you can choose. Another example would be `ARCHS` which have a dozen or so values you can choose from, but you will most likely use `arm64`, (every iPhone before the Xs series and after iOS 6) and `arm64e`, (every iPhone after and including the Xs series). 
 
+`ARCHS` would be written like this: `ARCHS = arm64 arm64e`
+
 ## `Tweak.x`
 This file is the most "important" out of these four. This is where you write all your code. This code will be written in the language called <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Objective-C</a>, however you could use <a href="https://orion.theos.dev">Orion</a> to utilize <a href="https://developer.apple.com/swift/">Swift</a> instead.
 
