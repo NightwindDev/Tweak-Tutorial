@@ -23,7 +23,7 @@ This is needed for pretty much all tweaks.
 Then we will use the FLEX tweak to find the correct view to hook. How do we get it? Well let's see! ***Make sure you're doing this on the HomeScreen as we are hooking the SpringBoard.***
 1. Trigger the FLEX menu (the instructions to this are likely in the tweak description.)
 2. Press the `select` button on the FLEX menu.
-3. Then press the status bar.
+3. Then press the status bar somewhere that there is no text.
 4. After that, press the `views` button. FLEX will automatically scroll down to the selected view.
 5. Press the (i) button next to the view.
 6. This is where we will find all the properties, ivars, methods, etc. pertaining to the view. In this case, we want to modify the `hidden` property of the view.
@@ -33,7 +33,7 @@ Great! Now how do we write this in code?
 
 First, we will find the view we are hooking. In our case, it is called `_UIStatusBarForegroundView`. This view *inherits* from UIView. You can check what a view *inherits* its properties from in FLEX by clicking on the (i) button next to the view and then looking at the top bar, where it should say `_UIStatusBarForegroundView`, then `UIView`, then `UIResponder`, and then finally `NSObject`. This means that `_UIStatusBarForegroundView` is inheriting its properties from `UIView` which is inheriting them from `UIResponder`, and so forth. So say UIView has a "hidden" property... `_UIStatusBarForegroundView` would also have a "hidden" property because it inherits from UIView.
 
-UIKit only recognizes simple view "types" such as UIView, UIViewController, etc. so we will have to "interface" the view that we are hooking. This can be done like so:
+UIKit only recognizes simple classes such as UIView, UIViewController, etc. so we will have to "interface" the view that we are hooking. This can be done like so:
 
 ```objc
 @interface _UIStatusBarForegroundView : UIView // _UIStatusBarForegroundView inherits from UIView
@@ -59,7 +59,7 @@ How do we override it though? Well, it is easy to do. On the its documentation p
 -(void)didMoveToWindow;
 ```
 
-We need to change its function though, and it can be done by changing the semi-colon (;) to brackets, and then adding your new code there. Let's just say we want to NSLog "Hello world!" That can be done like so:
+We need to change its function though, and it can be done by changing the semi-colon (;) to brackets, and then adding your new code there. Let's just say we want to print "Hello world!" to the console, for this we would use a function called `NSLog`. This can be done like so:
 
 ```objc
 -(void)didMoveToWindow {
