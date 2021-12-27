@@ -10,7 +10,7 @@ We will make a tweak to hide the status bar!
 
 First, go to your `Tweak.x` file. There will be a huge block of comments made there when the tweak was made by Theos. Feel free to read this, it is actually **_reccomended_** to get a first glance on what the syntax is like.
 
-Will first import UIKit. UIKit is used for the UI in iOS. This can be done like so:
+We will first import UIKit. UIKit is a framework containing all the basic UI elements you see in an iOS app, such as buttons, switches, sliders, etc. This can be done like so:
 ```objc
 #import <UIKit/UIKit.h>
 ```
