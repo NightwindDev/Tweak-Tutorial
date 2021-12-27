@@ -145,7 +145,7 @@ void setBackgroundColor(_UIBarBackground *self, SEL _cmd, CGFloat *alpha);
 
 This is definitely not an all-inclusive overview of Substrate-hooking, but it is a great starting place.
 
-More information about it can be found here: https://iphonedev.wiki/index.php/Cydia_Substrate.
+More information about it can be found <a href="https://iphonedev.wiki/index.php/Cydia_Substrate">here</a> and <a href="http://www.cydiasubstrate.com/api/c/MSHookMessageEx/">here</a>.
 
 
 
