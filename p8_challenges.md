@@ -8,6 +8,12 @@ Convert this piece of Substrate code to Logos.
 #import <UIKit/UIKit.h>
 #import <substrate.h>
 
+@interface SBIconImageView : UIView
+@end
+
+@interface SBHomeScreenBackdropView : UIView
+@end
+
 void orig_SBIconImageView_didMoveToWindow(SBIconImageView *self, SEL _cmd);
 
 void new_SBIconImageView_didMoveToWindow(SBIconImageView *self, SEL _cmd) {
@@ -31,6 +37,7 @@ __attribute__((constructor)) static void initialize () {
 ## // TODO: Challenge 2
 
 
+#### Solutions to the challenges can be found <a href="https://github.com/NightwindDev/Tweak-Tutorial/tree/main/Solutions">here</a>.
 
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p7_substratetweaks.md">Previous Page (Building Tweaks Without Logos)</a>
 
