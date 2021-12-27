@@ -29,3 +29,10 @@ __attribute__((constructor)) static void initialize () {
 ```
 
 ## // TODO: Challenge 2
+
+
+
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p7_substratetweaks.md">Previous Page (Building Tweaks Without Logos)</a>
+
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p9_mshookivar.md">Next Page (MSHookIvar)</a>
+
