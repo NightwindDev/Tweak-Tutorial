@@ -10,7 +10,7 @@
 @interface AViewController : UIViewController
 
 @property (nonatomic, strong) NSString *someStringProperty;
-@property (nonatomic, strong) BOOL *someBooleanProperty;
+@property (nonatomic, assign) BOOL someBooleanProperty;
 @property (nonatomic, strong) NSArray *someArrayProperty;
 
 -(void)someVoidMethod;
