@@ -4,7 +4,7 @@ Starting out can certainly be a challenge, but if you put your mind to it, you'l
 
 ## Setting Up The Tweak
 
-1. Assure that you have <a href="https://github.com/theos/theos">**Theos**</a> set up. The instructions to set up Theos can be found <a href="https://github.com/theos/theos/wiki/Installation">here</a>. Please choose the appropriate operating system in the wiki and install it.
+1. Assure that you have <a href="https://theos.dev">**Theos**</a> set up. The instructions to set up Theos can be found <a href="https://github.com/theos/theos/wiki/Installation">here</a>. Please choose the appropriate operating system in the wiki and install it.
 
 2. Assure you have some kind of text editor, some good ones being <a href="https://code.visualstudio.com">Visual Studio Code</a>, <a href="https://www.sublimetext.com">Sublime Text</a>, <a href="https://atom.io">Atom</a>, and more! Feel free to use your preferred text editor, however note that **Visual Studio Code** has an **extension** for **Logos**, which can be found <a href="https://marketplace.visualstudio.com/items?itemName=tale.logos-vscode">here</a>.
 
@@ -15,7 +15,7 @@ Starting out can certainly be a challenge, but if you put your mind to it, you'l
 
       - After that, the terminal will prompt you with `Project Name (required):`, meaning "what is going to be the name of your tweak?" Please type the name that you want to call the tweak in this space.
 
-      - After *that*, the terminal will prompt you with `Package Name [com.yourcompany.testtweak]:`, meaning "what is going to be the <a href="https://developer.apple.com/documentation/appstoreconnectapi/bundle_ids">Bundle ID</a> of your tweak?" Most likely it will be `com.yourname.yourtweakname`.
+      - After *that*, the terminal will prompt you with `Package Name [com.yourcompany.testtweak]:`, meaning "what is going to be the <a href="https://developer.apple.com/documentation/appstoreconnectapi/bundle_ids">Bundle ID</a> of your tweak?" Most likely it will be `com.yourname.yourtweakname`. Note that it cannot contain any uppercase letters.
 
       - Next, it will ask you `Author/Maintainer Name [yourname]:`. Please put whatever you want your "developer name" to be if/when you publish the tweak.
 
