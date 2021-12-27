@@ -5,7 +5,7 @@ For the `Root.plist` file, you can find out what cells are available to use by d
 ## `EXMRootListController.m`
 
 ```objc
-#include "EXMRootListController.h"
+#include "EXMRootListController.h" // better to change to #import
 
 @implementation EXMRootListController
 
@@ -28,7 +28,7 @@ Let's go through it one by one.
    - `@implementation` 
         - This implements the view controller, basically allowing the developer to add methods and write the code in the view controller.
    - `- (NSArray *)specifiers {` 
-        - This is the method holding all of the **specifiers**, i.e. the cells in the view controller (which is also a UITableViewController).
+        - This is the method holding all of the **specifiers**, i.e. the cells in the view controller.
    - `_specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];` 
         - This line sets `_specifiers` to the specifiers which are in the `Root.plist`.
    - `return _specifiers;` 
