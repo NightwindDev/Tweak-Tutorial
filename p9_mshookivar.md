@@ -33,7 +33,7 @@ MSHookIvar<type>(object, name_of_ivar);
 
 ## Alternative to `MSHookIvar`
 
-`valueForKey` is an alternative to `MSHookIvar` when it cannot be used. Its syntax looks like this:
+`-valueForKey:` is an alternative to `MSHookIvar` when it cannot be used. Its syntax looks like this:
 
 ```objc
 [object valueForKey:name_of_ivar];
