@@ -9,9 +9,9 @@
 
 @interface AViewController : UIViewController
 
-@property (nonatomic, retain) NSString *someStringProperty;
-@property (nonatomic, retain) BOOL *someBooleanProperty;
-@property (nonatomic, retain) NSArray *someArrayProperty;
+@property (nonatomic, strong) NSString *someStringProperty;
+@property (nonatomic, strong) BOOL *someBooleanProperty;
+@property (nonatomic, strong) NSArray *someArrayProperty;
 
 -(void)someVoidMethod;
 -(BOOL)someBooleanMethod;
