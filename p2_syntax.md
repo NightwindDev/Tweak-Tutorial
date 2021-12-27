@@ -51,7 +51,7 @@ Basically, this is what we do.
 ```
 `%end` is used to *end* the hook, so you could add a new one.
 
-Now we need to override a method which is *called* by the view. Basically, a method is a "function" which gets initiated when a certain condition is met. So let's take as an example `didMoveToWindow`. As seen on its <a href="https://developer.apple.com/documentation/uikit/uiview/1622527-didmovetowindow?language=objc">documentation page</a>, the view is called when its "window object" changes.
+Now we need to override a method which is *called* by the view. Basically, a method is a "function" which gets called when a certain condition is met. So let's take as an example `didMoveToWindow`. As seen on its <a href="https://developer.apple.com/documentation/uikit/uiview/1622527-didmovetowindow?language=objc">documentation page</a>, the view is called when its "window object" changes.
 
 How do we override it though? Well, it is easy to do. On the its documentation page, you can copy the code seen. It is the code for the method.
 
