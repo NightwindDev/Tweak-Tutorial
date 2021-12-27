@@ -38,3 +38,9 @@ __attribute__((constructor)) static void initialize() {
   MSHookFunction(((void *)MSFindSymbol(NULL, "CGFontCreateWithFontName")), (void *)new_CGFontCreateWithFontName, (void **)&orig_CGFontCreateWithFontName);
 } 
 ```
+
+For further information about `%hookf`, please go <a href="https://iphonedev.wiki/index.php/Logos">here</a>.
+
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p9_mshookivar.md">Previous Page (MSHookIvar)</a>
+
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p10_hookf.md">Next Page (🤔)</a>
