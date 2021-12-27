@@ -46,11 +46,13 @@ People have dumped headers for views and view controllers for versions and poste
 
 Of course, not all headers are dumped, sometimes you will need to dump them yourself. One of the <a href="https://www.youtube.com/watch?v=M8HzCj0aKpw">videos by Zane Helton</a> explains how to do this perfectly.
 
-## A brief explanation of `@property` and it's arguments
+## A brief explanation of `@property` and it's attributes
 
-`@property` obviously adds properties to the object that is being interfaced so that dot notation could be used.
+`@property` obviously adds properties, which are values of classes, to the object that is being interfaced so that dot notation could be used.
 
-`@synthesize` automatically generates a getter and a setter for an underlying ivar.
+The table below shows the attributes which describe the property's behavior to `@property`, which can be seen in the parentheses in between `@property` and the actual property type and name, so:
+
+`@property (/* here */) int someName;`
 
 | Name | Description |
 | ---- | ----------- |
