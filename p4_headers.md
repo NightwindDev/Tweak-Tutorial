@@ -47,6 +47,6 @@ People have dumped headers for views and view controllers for versions and poste
 Of course, not all headers are dumped, sometimes you will need to dump them yourself. One of the <a href="https://www.youtube.com/watch?v=M8HzCj0aKpw">videos by Zane Helton</a> explains how to do this perfectly.
 
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p3_syntax.md">Previous Page (Delving Into Views)</a>
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p3_views.md">Previous Page (Delving Into Views)</a>
 
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p5_prefbundle.md">Next Page (Preference Bundles)</a>
