@@ -4,6 +4,10 @@
 
 Logos is great to use, however sometimes there are scenarios when using no Logos (or just Substrate-hooking) is better to use.
 
+## Preparation
+
+Since we will not be using Logos, it would be best to change the `Tweak.xm` file to `Tweak.m`. The `Tweak.xm` in the Makefile also needs to be converted to `Tweak.m` so the file is linked properly.
+
 ## Difference between Logos and Substrate
 
 * `%hook` - This specific syntax does not exist without Logos, although there is an equivalent: `MSHookMessageEx`.
@@ -103,7 +107,7 @@ __attribute__((constructor)) static void initialize() {
 }
 ```
 
-Then finally, we would have to convert the function to the "Substrate-way" of Functions.
+Then finally, we would have to convert the function to the C function that every Objective-C method gets translated to.
 
 ```objc
 #import <UIKit/UIKit.h>
