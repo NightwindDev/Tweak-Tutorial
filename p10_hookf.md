@@ -19,3 +19,10 @@ While `%hook` is used to hook Objective-C classes, `%hookf` is used to hook C fu
 ## Example
 
 Let's say we want to hook <a href="https://developer.apple.com/documentation/coregraphics/1396330-cgfontcreatewithfontname?language=objc">`CGFontRef CGFontCreateWithFontName(CFStringRef name);`</a>. This would be done like so:
+
+```objc
+%hookf(CGFontRef, CGFontCreateWithFontname, CFStringRef name) {
+  // code
+  return %orig;
+}
+```
