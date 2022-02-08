@@ -9,10 +9,10 @@ While `%hook` is used to hook Objective-C classes, `%hookf` is used to hook C fu
 ## Syntax
 
 ```objc
-%hookf(thing_hooked, symbol_name, arguments...) {...}
+%hookf(return_type, symbol_name, arguments...) {...}
 ```
 
-* `thing_hooked` - This is what you're hooking.
+* `return_type` - The return type of the function.
 * `symbol_name` - This is the name of the function being hooked.
 * `arguments` - These are the arguments that are passed into the function.
 
