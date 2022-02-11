@@ -72,13 +72,6 @@ ourView.frame = CGRectMake(
                            40, // Width
                            30); // Height
 
-
-// constraints ↓
-
-// [ourView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor]].active = YES;
-// [ourView.topAnchor constraintEqualToAnchor: self.view.topAnchor].active = YES;
-// [ourView.widthAnchor constraintEqualToConstant: 40].active = YES;
-// [ourView.heightAnchor constraintEqualToConstant: 30].active = YES;
 ```
 
 Note that this is vertical just for the purpose of showing what number is what, this could easily be written as:
@@ -125,10 +118,46 @@ To compile all this together, our final code should look like so:
                              30); // Height
   ourView.backgroundColor = [UIColor blueColor]; // setting our background color to blue
   [self.view addSubview:ourView]; // adding our view as a subview
+
+  // constraints approach ↓
+
+  /*---
+
+  ourView.translatesAutoresizingMaskIntoConstraints = NO;
+
+  [self.view addSubview:ourView];
+
+  // this will create a rectangle of 40 points width and 30 height,
+  // and will pin it to the top left corner edges of the current view,
+  // with the only different being that this will have support for all screen
+  // sizes since it uses an anchor coordinate system, rather than fixed values.
+
+  [ourView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor].active = YES;
+  [ourView.topAnchor constraintEqualToAnchor: self.view.topAnchor].active = YES;
+  [ourView.widthAnchor constraintEqualToConstant: 40].active = YES;
+  [ourView.heightAnchor constraintEqualToConstant: 30].active = YES;
+
+  *---/
+
+  /*--- if you're creating a view with constraints, there are
+  two key steps to follow here. First, you need to set the
+  translatesAutoresizingMaskIntoConstraints property to false
+  on the view you want to create constraints for, otherwise
+  UIKit will automatically create autoresizing mask constraints
+  for you, which in this case we don't want since we will be
+  doing them manually. Second, the view needs to be added as a subview
+  BEFORE creating the constraints, otherwise the parent view will try
+  to create constraints for a subview that doesn't exist yet. Not following
+  these steps correctly may throw you daunting runtime exceptions, which
+  can look cryptic at first, but once you handle AutoLayout correctly,
+  you'll see how powerful it can be. ---*/
+
 }
 
 %end
 ```
+
+Bear in mind that if you choose to use AutoLayout you'll need to remove the frame property line as well as the addSubview one and just remove the first multi-line comment.
 
 <img width="102" alt="IMG_18CFD7742F33-1" src="https://user-images.githubusercontent.com/81449663/140844150-c6246369-a493-47a5-a012-cf9acf4e5cdc.png">
 
