@@ -148,7 +148,7 @@ To compile all this together, our final code should look like so:
   doing them manually. Second, the view needs to be added as a subview
   BEFORE creating the constraints, otherwise the parent view will try
   to create constraints for a subview that doesn't exist yet. Not following
-  this steps correctly may throw you daunting runtime exceptions, which
+  these steps correctly may throw you daunting runtime exceptions, which
   can look cryptic at first, but once you handle AutoLayout correctly,
   you'll see how powerful it can be. ---*/
 
