@@ -129,11 +129,10 @@ Then we would convert the `%hook` wrapper to `MSHookMessageEx`.
 %end
 
 __attribute__((constructor)) static void initialize() {
-    MSHookMessageEx(
-      NSClassFromString(@"SomeView"),
-                        @selector(didMoveToSuperview),
-                        (IMP) &override_didMoveToSuperview,
-                        (IMP *) &orig_didMoveToSuperview
+  MSHookMessageEx(
+      NSClassFromString(@"SomeView"),@selector(didMoveToSuperview),
+      (IMP) &override_didMoveToSuperview,
+      (IMP *) &orig_didMoveToSuperview
     );
 }
 ```
