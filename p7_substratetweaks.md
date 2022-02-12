@@ -180,9 +180,10 @@ void MSHookMessageEx(Class _class, SEL message, IMP hook, IMP *old);
 
 - A `SEL` variable which will point to an Objective-C selector with the message that'll be passed.
 
-- An `IMP` variable with a compatible replacement for the implementation of the message being passed to.
+- An `IMP` is a typedef for a C function pointer. In other words, the address of a compatible replacement for the implementation of the message being passed.
 
-- An `IMP` variable which is a function to a function pointer that will be filled in with a stub which may be used to call the original implementation. This can be `NULL` if there are no intentions of calling it. PLEASE notice, you're NOT calling `%orig;` here, this is just a variable which may be used if you wish to, but if you don't, it's better to pass `NULL` to avoid redundancies.
+- An `IMP *` is a pointer to a function pointer that will be filled in with a stub which may be used to call the original implementation. The function pointer itself is originally a `nullptr`, so by passing a pointer to it, `MSHookMessageEx` will have the ability to set an address for the function pointer so that it points to the original function rather than `nullptr`. <br>
+This can be `NULL` if there are no intentions of calling it. PLEASE notice, you're NOT calling `%orig;` here, this is just a variable which may be used if you wish to, but if you don't, it's better to pass `NULL` to avoid redundancies.
 
 ```objc
 // let's say we're hooking SBDockView's method:
