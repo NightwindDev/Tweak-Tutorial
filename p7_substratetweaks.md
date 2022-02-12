@@ -58,7 +58,7 @@ Let's say we have some easy tweak to set a view's opacity to 50%, written in Log
 
 %hook SomeView
 
--(void)didMoveToSuperview {
+- (void)didMoveToSuperview {
   self.alpha = 0.5;
   %orig;
 }
@@ -77,7 +77,7 @@ First we need to import the Substrate framework.
 
 %hook SomeView
 
--(void)didMoveToSuperview {
+- (void)didMoveToSuperview {
   self.alpha = 0.5;
   %orig;
 }
