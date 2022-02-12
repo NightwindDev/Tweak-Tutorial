@@ -182,7 +182,7 @@ void MSHookMessageEx(Class _class, SEL message, IMP hook, IMP *old);
 
 - An `IMP` variable with a compatible replacement for the implementation of the message being passed to.
 
-- An `IMP` variable which is a function to a function pointer that will be filled in with a stub which may be used to call the original implementation. This can be `NULL` if there are no intentions of calling it. PLEASE notice, you're NOT calling %orig; here, this is just a variable which may be used if you wish to, but if you don't, it's better to pass `NULL` to avoid redundancies.
+- An `IMP` variable which is a function to a function pointer that will be filled in with a stub which may be used to call the original implementation. This can be `NULL` if there are no intentions of calling it. PLEASE notice, you're NOT calling `%orig;` here, this is just a variable which may be used if you wish to, but if you don't, it's better to pass `NULL` to avoid redundancies.
 
 ```objc
 // let's say we're hooking SBDockView's method:
@@ -202,8 +202,9 @@ More information about it can be found <a href="https://iphonedev.wiki/index.php
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p8_challenges.md">Next Page (Challenges)</a>
 
 
-// TODO: explain the %subclass wrapper <br>
+// TODO: <br>
+// Explain the %subclass wrapper <br>
 // Maybe something else I'm forgetting, idk <br>
 // This comments should be removed before this repo being public <br>
 
-* Co-authored with [Luki120](https://github.com/Luki120)
+* File co-authored with [Luki120](https://github.com/Luki120)
