@@ -39,7 +39,7 @@ Cheers to Kabir for making this (Theos maintainer and creator of [Orion](https:/
 * `%ctor` - wrapper for `__attribute__((constructor))`.
 * `%dtor` - wrapper for `__attribute__((destructor))`.
 * `%init` - It's equivalent in Substrate is a group of `MSHook` calls.
-* `%c` - very useful wrapper for `objc_getClass()`, however there's also `NSClassFromString()`. They are basically the same, but the latter one is more "Objective-C friendly". If you use it.. just make sure to spell the class name correctly heh.
+* `%c` - very useful wrapper for `objc_getClass()`, however there's also `NSClassFromString()`. They are basically the same, but the latter one is more "Objective-C friendly". If you use it.. just make sure to spell the class name correctly.
 * `%orig` - This does not have an exact equivalent in Substrate. To achieve the effect of `%orig` a little bit of Objective-C runtime magic is needed, with the help of the MobileSubstrate API. It'll be explained in the examples below.
 
 * If you want to know more about the constructor and destructor attributes, read through [here](https://stackoverflow.com/questions/2053029/how-exactly-does-attribute-constructor-work) and [here](https://www.tutorialspoint.com/attribute-constructor-and-attribute-destructor-syntaxes-in-c-in-tutorials-point)
@@ -195,7 +195,7 @@ void setBackgroundColor(SBDockView *self, SEL _cmd, CGFloat alpha);
 ```
 This is definitely not an all-inclusive overview of Substrate-hooking, but it is a great starting place.
 
-More information about it can be found <a href="https://iphonedev.wiki/index.php/Cydia_Substrate">here</a> and <a href="http://www.cydiasubstrate.com/api/c/MSHookMessageEx/">here</a>, as well as [here for method swizzling](https://nshipster.com/method-swizzling/)
+More information about it can be found <a href="https://iphonedev.wiki/index.php/Cydia_Substrate">here</a> and <a href="http://www.cydiasubstrate.com/api/c/MSHookMessageEx/">here</a>, as well as [here for method swizzling](https://nshipster.com/method-swizzling/) if you're curious.
 
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p6_prefbundlept2.md">Previous Page (Preference Bundles cont.)</a>
 
