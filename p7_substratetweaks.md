@@ -20,7 +20,8 @@ The Theos team made quite an impressive job so that you don't have to write usua
 * By default, all Logos hooks are initialized in a constructor which you can either create or not, you may be familiarized with this if you ever wrote a `%ctor {}` block. However, with MobileSubstrate, you can *control* where and when your hooks are initialized. Useful e.g if you need to load your tweak before another tweak and/or process is loaded.
 
 * You can have almost a native xcode like autocompletion if you wanted to. "Really?" Yes, really. Theos has a "secret" command named `make commands` that will automatically generate a `compile_commands.json` file which will do all the magic as long as you have `clangd` with LSP (Language Server Protocol) installed, which is what enables autocompletion for a specific language. There's support for C, C++, Objective-C and Swift files.
-For instructions on how to install this for your editor please go [here](https://github.com/apple/sourcekit-lsp). Cheers to Kabir for making this (Theos maintainer and creator of [Orion](https://github.com/theos/orion)). At the time of writing this (Feb. 11 2022), it still doesn't work for Logos files, hence why this is a major advantage if not the "best", of writing Substrate tweaks.
+For instructions on how to install this for your editor please go [here](https://github.com/apple/sourcekit-lsp). <br>
+Cheers to Kabir for making this (Theos maintainer and creator of [Orion](https://github.com/theos/orion)). At the time of writing this (Feb. 11 2022), it still doesn't work for Logos files, hence why this is a major advantage if not the "best", of writing Substrate tweaks.
 
 
 ## Preparation
@@ -35,8 +36,8 @@ For instructions on how to install this for your editor please go [here](https:/
 * `%new` - Wrapper for `class_addMethod`.
 * `%property`- Wrapper for [a powerful Objective-C 2.0 runtime feature: associated objects](https://nshipster.com/associated-objects/).
 * `%hookf` - a wrapper for `MSHookFunction`. (Used to hook C functions).
-* `%ctor` - wrapper for `__attribute__ ((constructor))`.
-* `%dtor` - wrapper for `__attribute__ ((destructor))`.
+* `%ctor` - wrapper for `__attribute__((constructor))`.
+* `%dtor` - wrapper for `__attribute__((destructor))`.
 * `%init` - It's equivalent in Substrate is a group of `MSHook` calls.
 * `%c` - very useful wrapper for `objc_getClass()`, however there's also `NSClassFromString()`. They are basically the same, but the latter one is more "Objective-C friendly". If you use it.. just make sure to spell the class name correctly heh.
 * `%orig` - This does not have an exact equivalent in Substrate. To achieve the effect of `%orig` a little bit of Objective-C runtime magic is needed, with the help of the MobileSubstrate API. It'll be explained in the examples below.
@@ -47,7 +48,7 @@ For instructions on how to install this for your editor please go [here](https:/
 
 ## Converting from Logos to Substrate
 
-* Let's say we have some easy tweak to set a view's opacity to 50%, written in Logos.
+Let's say we have some easy tweak to set a view's opacity to 50%, written in Logos.
 
 ```objc
 @import UIKit;
@@ -65,7 +66,7 @@ For instructions on how to install this for your editor please go [here](https:/
 %end
 ```
 
-* First we need to import the Substrate framework.
+First we need to import the Substrate framework.
 
 ```objc
 @import UIKit;
@@ -181,7 +182,7 @@ void MSHookMessageEx(Class _class, SEL message, IMP hook, IMP *old);
 
 - An `IMP` variable with a compatible replacement for the implementation of the message being passed to.
 
-- An `IMP` variable which is a function to a function pointer that will be filled in with a stub which may be used to call the original implemenetation. This can be `NULL` if there are no intentions of calling the original implementation. PLEASE notice, you're NOT calling %orig; here, this is just a variable which may be used if you wish to, but if you don't, it's better to pass `NULL` to avoid redundancies.
+- An `IMP` variable which is a function to a function pointer that will be filled in with a stub which may be used to call the original implementation. This can be `NULL` if there are no intentions of calling it. PLEASE notice, you're NOT calling %orig; here, this is just a variable which may be used if you wish to, but if you don't, it's better to pass `NULL` to avoid redundancies.
 
 ```objc
 // let's say we're hooking SBDockView's method:
@@ -204,3 +205,5 @@ More information about it can be found <a href="https://iphonedev.wiki/index.php
 // TODO: explain the %subclass wrapper <br>
 // Maybe something else I'm forgetting, idk <br>
 // This comments should be removed before this repo being public <br>
+
+* Co-authored with [Luki120](https://github.com/Luki120)
