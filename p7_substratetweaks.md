@@ -119,7 +119,7 @@ Then we would convert the `%hook` wrapper to `MSHookMessageEx`.
 @interface SomeView : UIView
 @end
 
-%hook SBDockView
+%hook SomeView
 
 - (void)didMoveToSuperview {
   self.alpha = 0.5;
