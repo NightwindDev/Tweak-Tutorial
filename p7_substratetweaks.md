@@ -191,7 +191,7 @@ void MSHookMessageEx(Class _class, SEL message, IMP hook, IMP *old);
 
 // it would "become"
 
-void setBackgroundColor(SBDockView *self, SEL _cmd, CGFloat alpha);
+void setBackgroundAlpha(SBDockView *self, SEL _cmd, CGFloat alpha);
 ```
 This is definitely not an all-inclusive overview of Substrate-hooking, but it is a great starting place.
 
