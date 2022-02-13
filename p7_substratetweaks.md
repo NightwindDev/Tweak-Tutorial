@@ -196,7 +196,7 @@ void setBackgroundAlpha(SBDockView *self, SEL _cmd, CGFloat alpha);
 ```
 This is definitely not an all-inclusive overview of Substrate-hooking, but it is a great starting place.
 
-If you're wondering what or why are we using the `static` keyword before the function name, it allows for additional [encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)), restricting the functions to this file only, which is good programming practice. Note that it can also mean something [else for variables](https://stackoverflow.com/questions/4965048/static-variables-in-objective-c-what-do-they-do) and it's not necessarily the same as [the static keyword in Swift](https://medium.com/nerd-for-tech/understanding-the-static-keyword-in-swift-ad503f19082d)
+If you're wondering what or why are we using the `static` keyword before the function name, it allows for additional [encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)), restricting the functions to this file only, which is good programming practice. Note that it can also mean something else [for variables](https://stackoverflow.com/questions/4965048/static-variables-in-objective-c-what-do-they-do) and it's not necessarily the same as [the static keyword in Swift](https://medium.com/nerd-for-tech/understanding-the-static-keyword-in-swift-ad503f19082d)
 
 More information about it can be found <a href="https://iphonedev.wiki/index.php/Cydia_Substrate">here</a> and <a href="http://www.cydiasubstrate.com/api/c/MSHookMessageEx/">here</a>, as well as [here for method swizzling](https://nshipster.com/method-swizzling/) if you're curious.
 
