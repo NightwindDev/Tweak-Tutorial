@@ -182,7 +182,7 @@ void MSHookMessageEx(Class _class, SEL message, IMP hook, IMP *old);
 
 - An `IMP` is a typedef for a C function pointer. In other words, the address of a compatible replacement for the implementation of the message being passed.
 
-- An `IMP *` is a pointer to a function pointer that will be filled in with a stub which may be used to call the original implementation. The function pointer itself is originally a `nullptr`, so by passing a pointer to it, `MSHookMessageEx` will have the ability to set an address for the function pointer so that it points to the original function rather than `nullptr`. <br>
+- An `IMP *` is a pointer to a function pointer that will be filled in with a stub which may be used to call the original implementation. By passing a pointer to it, `MSHookMessageEx` will have the ability to set an address for the function pointer so that it points to the original function rather than `nullptr`. <br>
 This can be `NULL` if there are no intentions of calling it. PLEASE notice, you're NOT calling `%orig;` here, this is just a variable which may be used if you wish to, but if you don't, it's better to pass `NULL` to avoid redundancies.
 
 ```objc
@@ -195,6 +195,8 @@ This can be `NULL` if there are no intentions of calling it. PLEASE notice, you'
 void setBackgroundAlpha(SBDockView *self, SEL _cmd, CGFloat alpha);
 ```
 This is definitely not an all-inclusive overview of Substrate-hooking, but it is a great starting place.
+
+If you're wondering what or why are we using the `static` keyword before the function name, it allows for additional [encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming), restricting the functions to this file only, which is good programming practice. Note that it can also mean something [else for variables](https://stackoverflow.com/questions/4965048/static-variables-in-objective-c-what-do-they-do) and it's not necessarily the same as [the static keyword in Swift](https://medium.com/nerd-for-tech/understanding-the-static-keyword-in-swift-ad503f19082d)
 
 More information about it can be found <a href="https://iphonedev.wiki/index.php/Cydia_Substrate">here</a> and <a href="http://www.cydiasubstrate.com/api/c/MSHookMessageEx/">here</a>, as well as [here for method swizzling](https://nshipster.com/method-swizzling/) if you're curious.
 
