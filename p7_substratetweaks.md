@@ -39,6 +39,7 @@ Cheers to Kabir for making this (Theos maintainer and creator of [Orion](https:/
 * `%ctor` - wrapper for `__attribute__((constructor))`.
 * `%dtor` - wrapper for `__attribute__((destructor))`.
 * `%init` - It's equivalent in Substrate is a group of `MSHook` calls.
+* `%subclass` - Uses `objc_allocateClassPair` and `objc_registerClassPair` to create a subclass of a class at runtime.
 * `%c` - very useful wrapper for `objc_getClass()`, however there's also `NSClassFromString()`. They are basically the same, but the latter one is more "Objective-C friendly". If you use it.. just make sure to spell the class name correctly.
 * `%orig` - This does not have an exact equivalent in Substrate. To achieve the effect of `%orig` a little bit of Objective-C runtime magic is needed, with the help of the MobileSubstrate API. It'll be explained in the examples below.
 
