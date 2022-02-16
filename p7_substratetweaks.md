@@ -207,7 +207,6 @@ More information about it can be found <a href="https://iphonedev.wiki/index.php
 
 
 // TODO: <br>
-// Explain the %subclass wrapper <br>
 // Maybe something else I'm forgetting, idk <br>
 // This comments should be removed before this repo being public <br>
 
