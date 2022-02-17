@@ -6,7 +6,7 @@
 
 ## A bit of history
 
-* Did you know that after all you're writing "Substrate" tweaks all the time? "But how? I literally use Logos syntax". That's true, but Theos does not. If you have stared at the theos compilation process before for whatever reason while waiting for it to compile, you may have noticed that it starts with `==> Preprocessing Tweak.x…`, this is because Logos is exactly that. A preprocessor written in Perl to make Objective-C hooking feel easier and snappier. *But what is Logos actually doing?* Well, if you dig into the folder theos generates after the preprocessing is done (.theos/), you'll see that's it's just a wrapper for the MobileSubstrate API, the one Saurik (the creator of Cydia) made a looong time ago to make it possible to create tweaks in a safer way than the original, unsafe one, back then (called swizzling). It's very interesting actually, since you're swapping methods' implementations at runtime, basically hijacking the original one and replacing it with your own. More information about this will be linked at the end. <br>
+* Did you know that after all you're writing "Substrate" tweaks all the time? "But how? I literally use Logos syntax". That's true, but Theos does not. If you have stared at the theos compilation process before for whatever reason while waiting for it to compile, you may have noticed that it starts with `==> Preprocessing Tweak.x…`, this is because Logos is exactly that. A preprocessor written in Perl to make Objective-C hooking feel easier and snappier. *But what is Logos actually doing?* Well, if you dig into the folder theos generates after the preprocessing is done (.theos/), you'll see that's it's just a wrapper for the MobileSubstrate API, the one Saurik (the creator of Cydia) made a looong time ago to make it possible to create tweaks in a safer way than the original used back then in the days of yore, (called swizzling). It's very interesting actually, since you're swapping methods' implementations at runtime, basically hijacking the original one and replacing it with your own. More information about this will be linked at the end. <br>
 The Theos team made quite an impressive job so that you don't have to write usually "verbose" code and the burden is taken out of you. "But is writing tweaks with the MobileSubstrate API that hard?" No actually, not at all. However, there are some concepts you need to understand first, and as mentioned above, benefits will arise by writing tweaks this way.
 
 # Benefits
@@ -22,7 +22,6 @@ The Theos team made quite an impressive job so that you don't have to write usua
 * You can have almost a native xcode like autocompletion if you wanted to. "Really?" Yes, really. Theos has a "secret" command named `make commands` that will automatically generate a `compile_commands.json` file which will do all the magic as long as you have `clangd` with LSP (Language Server Protocol) installed, which is what enables autocompletion for a specific language. There's support for C, C++, Objective-C and Swift files.
 For instructions on how to install this for your editor please go [here](https://github.com/apple/sourcekit-lsp). <br>
 Cheers to Kabir for making this (Theos maintainer and creator of [Orion](https://github.com/theos/orion)). At the time of writing this (Feb. 11 2022), it still doesn't work for Logos files, hence why this is a major advantage if not the "best", of writing Substrate tweaks.
-
 
 ## Preparation
 
@@ -205,9 +204,10 @@ More information about it can be found <a href="https://iphonedev.wiki/index.php
 
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p8_challenges.md">Next Page (Challenges)</a>
 
-
+```
 // TODO: <br>
 // Maybe something else I'm forgetting, idk <br>
-// This comments should be removed before this repo being public <br>
+// This comments should be removed before this repo being public
+```
 
 * File co-authored with [Luki120](https://github.com/Luki120)
