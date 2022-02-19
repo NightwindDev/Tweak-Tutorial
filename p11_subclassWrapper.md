@@ -2,9 +2,9 @@
 
 ## Demystifying the %subclass wrapper from Logos
 
-* Logos has an underrated wrapper known as `%subclass`, which is if you know to use, it can be quite useful.
+* Logos has an underrated wrapper known as `%subclass`, which if you know to use, it can be quite useful.
 
-* In a nutshell, what it does is it creates and registers a custom class at runtime, to which you can add properties and methods (ivars are not yet supported).
+* In a nutshell, what it does is it creates and registers a custom class at runtime, to which you can add methods and properties (ivars are not yet supported).
 
 ## How is this useful?
 
@@ -14,7 +14,7 @@
 
 * Alright, so start by creating a new project in theos, select the tweak option, and after finishing the setup configuration, create a new `Tweak.h` file, in which we'll be placing interfaces and relevant imports to keep the main file even cleaner.
 
-Roughly, it'll look like this:
+It'll look like this:
 
 
 ```objc
@@ -45,11 +45,11 @@ Roughly, it'll look like this:
 
 ## What's going on here?
 
-* First we import the UIKit framework, because we'll be using UIKit components, such as `UIView`.
+* First we need to import the UIKit framework, because we'll be using UIKit components, such as `UIView`.
 
 * In order to create a subclass *and* keep the compiler happy, we'll make an interface for our class. The tweak itself will be a nice semi gaussian blur covering the HomeScreen, behind the icons, so we want to inherit from `UIView`.
 
-* We declare the interface for the main SpringBoard's view controller class in the HomeScreen (`SBHomeScreenViewController`) so we can hook it and we still keep the compiler happy.
+* We declare the interface for the main SpringBoard's view controller class in the HomeScreen (`SBHomeScreenViewController`) so we can hook it and still keep the compiler happy.
 
 * Finally, we add the two interfaces needed for the type of blur we'll be using. Sadly, Apple decided to keep this blur, called `_UIBackdropView` private, which means we need to make the interfaces visible again so the compiler can see them and stay happy. The `_` character indicates that the class is private. It's common practice in Objective-C to prefix your classes, ivars, methods, etc with a hyphen if you want to indicate that they should be private.
 
@@ -57,7 +57,6 @@ Then, in the main `Tweak.x` file, add this:
 
 ```objc
 #import "Tweak.h"
-
 
 %subclass CustomBlurView : UIView
 
@@ -87,7 +86,6 @@ Then, in the main `Tweak.x` file, add this:
 
 %end
 
-
 %hook SBHomeScreenViewController
 
 - (void)viewDidLoad {
@@ -111,11 +109,11 @@ Then, in the main `Tweak.x` file, add this:
 
 * Haha don't worry, things will always be explained the best we can in this tutorial.
 
-1. We begin importing the `Tweak.h` file were we placed all the necessary interfaces so we can hook properly and be friends with the compiler.
+1. We begin importing the `Tweak.h` file where we placed all the necessary interfaces so we can hook properly and be friends with the compiler.
 
-2. We override the `- (id)init;` method, this method is an already *exiting* method in `UIView` classes, so it'll be called automatically by UIKit once our class gets instantiated.
+2. We override the `- (id)init;` method, which is an already *existing* method in `UIView` classes, so it'll be called automatically by UIKit once our class gets instantiated.
 
-3. Remember how I mentioned earlier how we shouldn't pollute UIKit classes' existing methods? We'll put that into practice right away. We create a new method of type `void` which returns nothing, we just need to implement our view there. Notice how we specify the `%new` directive before implementing it, we *have* to let Logos know this will be a new method we want to add to the class, (in a nutshell, it'll also add it at runtime). Otherwise your code there will never work, and if you try to call it, your tweak will crash.
+3. Remember how I mentioned earlier how we shouldn't pollute UIKit classes' existing methods? We'll put that into practice right away. We create a new method of type `void` which returns nothing called `setupViews`, we just need to implement our view there. Notice how we specify the `%new` directive before implementing it, we *have* to let Logos know this will be a new method we want to add to the class, (in a nutshell, it'll also be added at runtime). Otherwise your code there will never work, and if you try to call it, your tweak will crash.
 
 4. It makes sense that we would want our blur view to cover the whole screen. An easy & effective way of doing this is with AutoLayout. So we tell UIKit we don't want the view to create an autoresizing mask automatically, we'll implement the constraints ourselves for better control, so we have to override the `translatesAutoresizingMaskIntoConstraints` property to false, aka `NO` in a more friendly Objective-C way.
 
