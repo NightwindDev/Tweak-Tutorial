@@ -8,7 +8,11 @@
 
 ## How is this useful?
 
-* `%subclass` is useful because it allows you to create view code and move it out of the main `Tweak.x` file to avoid clutter and as such having a 'fat' file, allowing you to write your view code somewhere else while keeping the main file clean only with hooks. It's also good practive not to pollute UIKit classes' methods, such as `- (id)init;` or `- (void)viewDidLoad;`, so this is a good way to achieve that. Custom subclasses also allow for more control over the views you want to create, so this approach will also be useful for that.
+* It allows you to create view code and move it out of the main `Tweak.x` file to avoid clutter and as such having a 'fat' file or avoid the 'fat view controllers' issue, allowing you to write your view code somewhere else while keeping the main file clean only with hooks.
+
+* It's good practice not to pollute UIKit classes' methods, such as `- (id)init;` or `- (void)viewDidLoad;`, so this is a good way to achieve that.
+
+* Custom subclasses also allow for more control over the views you want to create, so this approach will also help with that.
 
 ## How do we use it?
 
@@ -106,8 +110,6 @@ Then, in the main `Tweak.x` file, add this:
 
 ```
 ## Wait hold on, not so fast!
-
-* Haha don't worry, things will always be explained the best we can in this tutorial.
 
 1. We begin importing the `Tweak.h` file where we placed all the necessary interfaces so we can hook properly and be friends with the compiler.
 
