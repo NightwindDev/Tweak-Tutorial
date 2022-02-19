@@ -1,0 +1,122 @@
+# How Do You Create a Tweak?
+
+## Demystifying the %subclass wrapper from Logos
+
+* Logos has an underrated wrapper known as `%subclass`, which is if you know to use, it can be quite useful.
+
+* In a nutshell, what it does is it creates and registers a custom class at runtime, to which you can add properties and methods (ivars are not yet supported).
+
+## How is this useful?
+
+* `%subclass` is useful because it allows you to create view code and move it out of the main `Tweak.x` file to avoid clutter and as such having a 'fat' file, allowing you to write your view code somewhere else while keeping the main file clean only with hooks. It's also good practive not to pollute UIKit classes' methods, such as `- (id)init;` or `- (void)viewDidLoad;`, so this is a good way to achieve that. Custom subclasses also allow for more control over the views you want to create, so this approach will also be useful for that.
+
+## How do we use it?
+
+* Alright, so start by creating a new project in theos, select the tweak option, and after finishing the setup configuration, create a new `Tweak.h` file, in which we'll be placing interfaces and relevant imports to keep the main file even cleaner.
+
+Roughly, it'll look like this:
+
+
+```objc
+// Tweak.h
+
+@import UIKit;
+
+
+@interface CustomBlurView : UIView
+- (void)setupViews;
+@end
+
+@interface SBHomeScreenViewController : UIViewController
+@end
+
+@interface _UIBackdropViewSettings : NSObject
++ (id)settingsForStyle:(NSInteger)arg1;
+@end
+
+
+@interface _UIBackdropView : UIView
+@property (assign, nonatomic) BOOL blurRadiusSetOnce;
+@property (nonatomic, copy) NSString *_blurQuality;
+- (id)initWithSettings:(id)arg1;
+- (id)initWithFrame:(CGRect)arg1 autosizesToFitSuperview:(BOOL)arg2 settings:(id)arg3;
+@end
+```
+
+## What's going on here?
+
+* First we import the UIKit framework, because we'll be using UIKit components, such as `UIView`.
+
+* In order to create a subclass *and* keep the compiler happy, we'll make an interface for our class. The tweak itself will be a nice semi gaussian blur covering the HomeScreen, behind the icons, so we want to inherit from `UIView`.
+
+* We declare the interface for the main SpringBoard's view controller class in the HomeScreen (`SBHomeScreenViewController`) so we can hook it and we still keep the compiler happy.
+
+* Finally, we add the two interfaces needed for the type of blur we'll be using. Sadly, Apple decided to keep this blur, called `_UIBackdropView` private, which means we need to make the interfaces visible again so the compiler can see them and stay happy. The `_` character indicates that the class is private. It's common practice in Objective-C to prefix your classes, ivars, methods, etc with a hyphen if you want to indicate that they should be private.
+
+Then, in the main `Tweak.x` file, add this:
+
+```objc
+#import "Tweak.h"
+
+
+%subclass CustomBlurView : UIView
+
+- (id)init {
+
+	self = %orig;
+	[self setupViews];
+	return self;
+
+}
+
+%new
+
+- (void)setupViews {
+
+	self.translatesAutoresizingMaskIntoConstraints = NO;
+
+	_UIBackdropViewSettings *settings = [_UIBackdropViewSettings settingsForStyle:2];
+
+	_UIBackdropView *blurView = [[_UIBackdropView alloc] initWithFrame:CGRectZero autosizesToFitSuperview:YES settings:settings];
+	blurView.alpha = 0.85;
+	blurView._blurQuality = @"high";
+	blurView.blurRadiusSetOnce = NO;
+	[self addSubview: blurView];
+
+}
+
+%end
+
+
+%hook SBHomeScreenViewController
+
+- (void)viewDidLoad {
+
+	%orig;
+
+	CustomBlurView *customBlurView = [%c(CustomBlurView) new];
+	[self.viewIfLoaded insertSubview: customBlurView atIndex: 0];
+
+	[customBlurView.topAnchor constraintEqualToAnchor: self.viewIfLoaded.topAnchor].active = YES;
+	[customBlurView.bottomAnchor constraintEqualToAnchor: self.viewIfLoaded.bottomAnchor].active = YES;
+	[customBlurView.leadingAnchor constraintEqualToAnchor: self.viewIfLoaded.leadingAnchor].active = YES;
+	[customBlurView.trailingAnchor constraintEqualToAnchor: self.viewIfLoaded.trailingAnchor].active = YES;
+
+}
+
+%end
+
+```
+## Wait hold on, not so fast!
+
+* Haha don't worry, things will always be explained the best we can in this tutorial.
+
+1. We begin importing the `Tweak.h` file were we placed all the necessary interfaces so we can hook properly and be friends with the compiler.
+
+2. We override the `- (id)init;` method, this method is an already *exiting* method in `UIView` classes, so it'll be called automatically by UIKit once our class gets instantiated.
+
+3. Remember how I mentioned earlier how we shouldn't pollute UIKit classes' existing methods? We'll put that into practice right away. We create a new method of type `void` which returns nothing, we just need to implement our view there. Notice how we specify the `%new` directive before implementing it, we *have* to let Logos know this will be a new method we want to add to the class, (in a nutshell, it'll also add it at runtime). Otherwise your code there will never work, and if you try to call it, your tweak will crash.
+
+4. It makes sense that we would want our blur view to cover the whole screen. An easy & effective way of doing this is with AutoLayout. So we tell UIKit we don't want the view to create an autoresizing mask automatically, we'll implement the constraints ourselves for better control, so we have to override the `translatesAutoresizingMaskIntoConstraints` property to false, aka `NO` in a more friendly Objective-C way.
+
+5. I'm writing this at 6 am and I'm already tired af, I'll continue tomorrow. Hi Nightwindi btw :frCoal:
