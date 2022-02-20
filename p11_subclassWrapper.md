@@ -55,7 +55,7 @@ It'll look like this:
 
 * We declare the interface for the main SpringBoard's view controller class in the HomeScreen (`SBHomeScreenViewController`) so we can hook it and still keep the compiler happy.
 
-* Finally, we add the two interfaces needed for the type of blur we'll be using. Sadly, Apple decided to keep this blur, called `_UIBackdropView` private, which means we need to make the interfaces visible again so the compiler can see them and stay happy. The `_` character indicates that the class is private. It's common practice in Objective-C to prefix your classes, ivars, methods, etc with a hyphen if you want to indicate that they should be private.
+* Finally, we add the two interfaces needed for the type of blur we'll be using. Sadly, Apple decided to keep this blur, called `_UIBackdropView` private, which means we need to make the interfaces visible again so the compiler can see them and stay happy. The `_` character indicates that the class is private. It's common practice in Objective-C to prefix your classes, ivars, methods, etc with an underscore if you want to indicate that they should be private.
 
 Then, in the main `Tweak.x` file, add this:
 
