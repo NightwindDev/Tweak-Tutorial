@@ -10,11 +10,11 @@ For the `Root.plist` file, you can find out what cells are available to use by d
 @implementation EXMRootListController
 
 - (NSArray *)specifiers {
-	if (!_specifiers) {
+    if (!_specifiers) {
 		_specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
-	}
+    }
 
-	return _specifiers;
+    return _specifiers;
 }
 
 @end

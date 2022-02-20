@@ -59,8 +59,8 @@ Let's say we have some easy tweak to set a view's opacity to 50%, written in Log
 %hook SomeView
 
 - (void)didMoveToSuperview {
-  self.alpha = 0.5;
-  %orig;
+    self.alpha = 0.5;
+    %orig;
 }
 
 %end
@@ -78,8 +78,8 @@ First we need to import the Substrate framework.
 %hook SomeView
 
 - (void)didMoveToSuperview {
-  self.alpha = 0.5;
-  %orig;
+    self.alpha = 0.5;
+    %orig;
 }
 
 %end
@@ -99,8 +99,8 @@ You *have* to add that attribute before you create the initializing C function, 
 %hook SomeView
 
 - (void)didMoveToSuperview {
-  self.alpha = 0.5;
-  %orig;
+    self.alpha = 0.5;
+    %orig;
 }
 
 %end
@@ -122,19 +122,19 @@ Then we would convert the `%hook` wrapper to `MSHookMessageEx`.
 %hook SomeView
 
 - (void)didMoveToSuperview {
-  self.alpha = 0.5;
-  %orig;
+    self.alpha = 0.5;
+    %orig;
 }
 
 %end
 
 __attribute__((constructor)) static void initialize() {
-  MSHookMessageEx(
-    NSClassFromString(@"SomeView"),
-    @selector(didMoveToSuperview),
-    (IMP) &override_didMoveToSuperview,
-    (IMP *) &orig_didMoveToSuperview
-  );
+    MSHookMessageEx(
+        NSClassFromString(@"SomeView"),
+        @selector(didMoveToSuperview),
+        (IMP) &override_didMoveToSuperview,
+        (IMP *) &orig_didMoveToSuperview
+    );
 }
 ```
 
@@ -155,12 +155,12 @@ static void override_didMoveToSuperview(SomeView *self, SEL _cmd) {
 }
 
 __attribute__((constructor)) static void initialize() {
-  MSHookMessageEx(
-    NSClassFromString(@"SomeView"),
-    @selector(didMoveToSuperview),
-    (IMP) &override_didMoveToSuperview,
-    (IMP *) &orig_didMoveToSuperview
-  );
+    MSHookMessageEx(
+        NSClassFromString(@"SomeView"),
+        @selector(didMoveToSuperview),
+        (IMP) &override_didMoveToSuperview,
+        (IMP *) &orig_didMoveToSuperview
+    );
 }
 ```
 
