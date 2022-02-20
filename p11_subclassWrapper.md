@@ -131,4 +131,6 @@ Then, in the main `Tweak.x` file, add this:
 
 10. Finally, we set four constraints: top, bottom, leading & trailing. This will make sure our view stretches and gets pinned to all edges and fill the whole screen. If you've reached to this part, congratulations, you've just learned how to use the `%subclass` wrapper for Logos and how it can be useful. Do notice that this same thing can be done as well without Logos with a regular `@interface` + `@implementation` syntax type, but if this is your thing, then go for it.
 
-* File authored by the one and only (quoting Litten :trollLaugh:), Luki120. (Jk, you can remove this before it goes public).
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p10_hookf.md">Previous Page (%hookf)</a>
+
+<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p12_noLayoutSubviews.md">Next Page (Avoiding layoutSubviews)</a>
