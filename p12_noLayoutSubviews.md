@@ -34,6 +34,10 @@ Result of this:
 
 If possible, avoid it at all costs and use different methods instead.
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p11_subclassWrapper.md">Previous Page (%subclass Wrapper)</a>
+## Personal Experiences
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p12_noLayoutSubviews.md">Next Page (:thinking:)</a>
+> "I remember once I was writing April v1 and completely broke the lock screen and everything was slow and laggy. Learned it the hard way. Never again." \- **[cstanze](https://github.com/cstanze)**
+
+[Previous Page (`%subclass` Wrapper)](.p11_subclassWrapper.md)
+
+[Next Page (:thinking:)](./p12_noLayoutSubviews.md)

@@ -20,7 +20,6 @@
 
 It'll look like this:
 
-
 ```objc
 // Tweak.h
 
@@ -107,9 +106,9 @@ Then, in the main `Tweak.x` file, add this:
 }
 
 %end
-
 ```
-## Wait hold on, not so fast!
+
+## Wait hold on, not so fast
 
 1. We begin importing the `Tweak.h` file where we placed all the necessary interfaces so we can hook properly and be friends with the compiler.
 
@@ -131,6 +130,6 @@ Then, in the main `Tweak.x` file, add this:
 
 10. Finally, we set four constraints: top, bottom, leading & trailing. This will make sure our view stretches and gets pinned to all edges and fill the whole screen. If you've reached to this part, congratulations, you've just learned how to use the `%subclass` wrapper for Logos and how it can be useful. Do notice that this same thing can be done as well without Logos with a regular `@interface` + `@implementation` syntax type, but if this is your thing, then go for it.
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p10_hookf.md">Previous Page (%hookf)</a>
+[Previous Page (`%hookf`)](./p10_hookf.md)
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p12_noLayoutSubviews.md">Next Page (Avoiding layoutSubviews)</a>
+[Next Page (Avoiding `layoutSubviews`)](./p12_noLayoutSubviews.md)

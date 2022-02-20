@@ -24,7 +24,7 @@ MSHookIvar<type>(object, name_of_ivar);
 -(void)didMoveToWindow {
   UITableViewLabel *detail = MSHookIvar<UITableViewLabel *>(self, "_detailTextLabel");
   detail.textColor = UIColor.redColor;
-    
+
   %orig;
 }
 
@@ -42,7 +42,7 @@ MSHookIvar<type>(object, name_of_ivar);
 * `object` - This is where the ivar is located, so for example it could be `self` or an instance of a class.
 * `name_of_ivar` - This is obviously the name of the ivar. In `valueForKey` it can be written as a NSString though.
 
-## Example use-case
+## Another Example use-case
 
 ```objc
 #import <UIKit/UIKit.h>
@@ -52,16 +52,13 @@ MSHookIvar<type>(object, name_of_ivar);
 -(void)didMoveToWindow {
   UITableViewLabel *detail = [self valueForKey:@"_detailTextLabel"];
   detail.textColor = UIColor.redColor;
-    
+
   %orig;
 }
 
 %end
 ```
 
+[Previous Page (Challenges)](./p8_challenges.md)
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p8_challenges.md">Previous Page (Challenges)</a>
-
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p10_hookf.md">Next Page (%hookf)</a>
-
-
+[Next Page (`%hookf`)](./p10_hookf.md)

@@ -1,17 +1,19 @@
 # How Do You Create a Tweak?
 
-##### **Notice:** bear in mind that you don't really hook classes, you hook methods. But to keep consistency across this tutorial we'll refer to that by saying hook a class.
+##### **Notice:** bear in mind that you don't really hook classes, you hook methods. But to keep consistency across this tutorial we'll refer to that by saying hook a class
 
 ## How do we create our own shapes on top of the software?
 
-Let's say we theoretically wanted to make a shape on our screen. How would we accomplish that? Well, we would need to use <a href="https://developer.apple.com/documentation/uikit?language=objc">UIKit</a>.
+Let's say we theoretically wanted to make a shape on our screen. How would we accomplish that? Well, we would need to use [UIKit](https://developer.apple.com/documentation/uikit?language=objc).
 
 UIKit features UIViews and UIViewControllers. These are used to create "shapes" which we will now be referring to as "views" and "view controllers."
 
 ## UIView
+
 UIViews are basically the "shapes" that we are talking about. For example, `UIButton`s are UIViews, and so are `SBIconView`s which are the icons on our homescreen.
 
 ## UIViewController
+
 UIViewControllers, on the other hand, "control" the views. They utilize data and display it on a UIView. An example of this would be `UIAlertController`. `UIViewController`s do not actually display anything by themselves on the screen, they use their `.view` property, which is a `UIView`, to display whatever they need to display.
 
 ## Applying the Knowledge
@@ -181,6 +183,7 @@ Alright, so now we're ready to add the constraints. The constraints will look so
 ```
 
 We will then add the background color like we did with frames:
+
 ```objc
 ourView.backgroundColor = [UIColor blueColor];
 ```
@@ -213,11 +216,10 @@ To compile all this together, our final code should look like so:
 %end
 ```
 
-<img width="102" alt="IMG_18CFD7742F33-1" src="https://user-images.githubusercontent.com/81449663/140844150-c6246369-a493-47a5-a012-cf9acf4e5cdc.png">
+![Example of it Working](https://user-images.githubusercontent.com/81449663/140844150-c6246369-a493-47a5-a012-cf9acf4e5cdc.png)
 
 Looks like it's working!
 
+[Previous Page (Code for The Tweak)](./p2_syntax.md)
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p2_syntax.md">Previous Page (Code for The Tweak)</a>
-
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p4_headers.md">Next Page (Finding Headers)</a>
+[Next Page (Finding Headers)](./p4_headers.md)
