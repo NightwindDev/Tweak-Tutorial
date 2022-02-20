@@ -66,9 +66,9 @@ Then, in the main `Tweak.x` file, add this:
 
 - (id)init {
 
-	self = %orig;
-	[self setupViews];
-	return self;
+    self = %orig;
+    [self setupViews];
+    return self;
 
 }
 
@@ -76,15 +76,15 @@ Then, in the main `Tweak.x` file, add this:
 
 - (void)setupViews {
 
-	self.translatesAutoresizingMaskIntoConstraints = NO;
+    self.translatesAutoresizingMaskIntoConstraints = NO;
 
-	_UIBackdropViewSettings *settings = [_UIBackdropViewSettings settingsForStyle:2];
+    _UIBackdropViewSettings *settings = [_UIBackdropViewSettings settingsForStyle:2];
 
-	_UIBackdropView *blurView = [[_UIBackdropView alloc] initWithFrame:CGRectZero autosizesToFitSuperview:YES settings:settings];
-	blurView.alpha = 0.85;
-	blurView._blurQuality = @"high";
-	blurView.blurRadiusSetOnce = NO;
-	[self addSubview: blurView];
+    _UIBackdropView *blurView = [[_UIBackdropView alloc] initWithFrame:CGRectZero autosizesToFitSuperview:YES settings:settings];
+    blurView.alpha = 0.85;
+    blurView._blurQuality = @"high";
+    blurView.blurRadiusSetOnce = NO;
+    [self addSubview: blurView];
 
 }
 
@@ -94,15 +94,15 @@ Then, in the main `Tweak.x` file, add this:
 
 - (void)viewDidLoad {
 
-	%orig;
+    %orig;
 
-	CustomBlurView *customBlurView = [%c(CustomBlurView) new];
-	[self.viewIfLoaded insertSubview: customBlurView atIndex: 0];
+    CustomBlurView *customBlurView = [%c(CustomBlurView) new];
+    [self.viewIfLoaded insertSubview: customBlurView atIndex: 0];
 
-	[customBlurView.topAnchor constraintEqualToAnchor: self.viewIfLoaded.topAnchor].active = YES;
-	[customBlurView.bottomAnchor constraintEqualToAnchor: self.viewIfLoaded.bottomAnchor].active = YES;
-	[customBlurView.leadingAnchor constraintEqualToAnchor: self.viewIfLoaded.leadingAnchor].active = YES;
-	[customBlurView.trailingAnchor constraintEqualToAnchor: self.viewIfLoaded.trailingAnchor].active = YES;
+    [customBlurView.topAnchor constraintEqualToAnchor: self.viewIfLoaded.topAnchor].active = YES;
+    [customBlurView.bottomAnchor constraintEqualToAnchor: self.viewIfLoaded.bottomAnchor].active = YES;
+    [customBlurView.leadingAnchor constraintEqualToAnchor: self.viewIfLoaded.leadingAnchor].active = YES;
+    [customBlurView.trailingAnchor constraintEqualToAnchor: self.viewIfLoaded.trailingAnchor].active = YES;
 
 }
 
