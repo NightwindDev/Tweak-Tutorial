@@ -2,7 +2,7 @@
 
 ## How do we create our own shapes on top of the software?
 
-Let's say we theoretically wanted to make a shape on our screen. How would we accomplish that? Well, we would need to use <a href="https://developer.apple.com/documentation/uikit?language=objc">UIKit</a>. 
+Let's say we theoretically wanted to make a shape on our screen. How would we accomplish that? Well, we would need to use <a href="https://developer.apple.com/documentation/uikit?language=objc">UIKit</a>.
 
 UIKit features UIViews and UIViewControllers. These are used to create "shapes" which we will now be referring to as "views" and "view controllers."
 
@@ -10,7 +10,7 @@ UIKit features UIViews and UIViewControllers. These are used to create "shapes" 
 UIViews are basically the "shapes" that we are talking about. For example, `UIButton`s are UIViews, and so are `SBIconView`s which are the icons on our homescreen.
 
 ## UIViewController
-UIViewControllers, on the other hand, "control" the views. They utilize data and display it on a UIView. An example of this would be `UIAlertController`.  
+UIViewControllers, on the other hand, "control" the views. They utilize data and display it on a UIView. An example of this would be `UIAlertController`.
 
 ## Applying the Knowledge
 
@@ -21,7 +21,7 @@ So, from what we learned, we will now try to create our own tweak to put a recta
 3. Then press the HomeScreen.
 4. After that, press the views button. FLEX will automatically scroll down to the selected view.
 
-We will not be changing any `@property` on our view, so we don't need to look for that. The view you should have selected is `SBHomeScreenView`. If this was not the case, then scroll up in the FLEX menu and find it. Notice how it has parenthesis after it, saying `SBHomeScreenViewController`? Well, generally, it is better to hook the view controller instead of the view when adding your own view. So, we will be hooking that instead. 
+We will not be changing any `@property` on our view, so we don't need to look for that. The view you should have selected is `SBHomeScreenView`. If this was not the case, then scroll up in the FLEX menu and find it. Notice how it has parenthesis after it, saying `SBHomeScreenViewController`? Well, generally, it is better to hook the view controller instead of the view when adding your own view. So, we will be hooking that instead.
 Note: if you do not see `SBHomeScreenViewController`, try pressing the (i) button next to `SBHomeScreenView` and then pressing the "Nearest View Controller" tile.
 
 To transfer this to code, we will do the following.
@@ -58,16 +58,16 @@ We will make our own view now. To make our own view, we will allocate and inital
 UIView *ourView = [[UIView alloc] init];
 ```
 
-For now, we will give it a frame, although it is better to use `NSLayoutConstraint`s for layouts. Let's make the rectangle have a width of 40, a height of 30, and be located on the top left of the screen.
+There are two distinct ways to initialize a view's position on the screen. One is `.frame` and the other is `NSLayoutConstraints`.
 
-For this, we will use `CGRectMake`, but as stated previously, for more *"advanced"* layouts, ***please*** use `NSLayoutConstraint`s instead.
+## Frames
 
 The way to do this with frames is like so:
 
 ```objc
 UIView *ourView = [[UIView alloc] init];
 ourView.frame = CGRectMake(
-                           0, // X coordinate 
+                           0, // X coordinate
                            0, // Y coordinate
                            40, // Width
                            30); // Height
@@ -78,8 +78,36 @@ Note that this is vertical just for the purpose of showing what number is what, 
 
 ```objc
 UIView *ourView = [[UIView alloc] init];
-ourView.frame = CGRectMake(0, 0, 40, 30); 
+ourView.frame = CGRectMake(0, 0, 40, 30);
 ```
+
+## Constraints
+
+Constraints are good for making complex layouts and they work universally across devices as well as in some scenarios. For example, when the user rotates their device, the constraints could update to reflect the new screen whereas frames cannot.
+
+The basic syntax of constraints looks something like this:
+
+```objc
+// Setting constraint to other view's constraints with a constant
+[view.anchorType constraintEqualToAnchor:otherView.anchorType constant:x].active = true;
+
+// Setting constraint to other view's constraint without a constant
+[view.anchorType constraintEqualToAnchor:otherView.anchorType].active = true;
+
+// Setting constraint to constant
+[view.anchorType constraintEqualToConstant:x].active = true;
+```
+
+| Anchor Type | Description |
+| ---- | ----------- |
+| `leadingAnchor` | Left side of a view (with support for RTL languages).
+| `trailingAnchor` | Right side of a view (with support for RTL languages). |
+| `leftAnchor` | Left side of a view.
+| `rightAnchor` | Right side of a view.
+| `topAnchor` | Top of view. |
+| `bottomAnchor` | Bottom of view. |
+| `centerXAnchor` | Center of view on X-axis. |
+| `centerYAnchor` | Center of view on Y-axis. |
 
 Then, we will need to set a background color to this rectangle. Let's set it to... blue. How do we do this? It's actually really simple!
 
@@ -112,7 +140,7 @@ To compile all this together, our final code should look like so:
   %orig; // original code
   UIView *ourView = [[UIView alloc] init]; // allocating/initializing our view
   ourView.frame = CGRectMake(
-                             0, // X coordinate 
+                             0, // X coordinate
                              0, // Y coordinate
                              40, // Width
                              30); // Height

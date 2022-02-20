@@ -30,7 +30,7 @@ Result of this:
 
 ![Screenshot of Console Showing NSLog of layoutSubviews](https://i.imgur.com/MkSwLHO.png)
 
-**1,210 messages in 2 minutes!** If one were to use `addSubview` in `layoutSubviews`, the result will likely be a memory leak or worse because there would be too many views on the screen at once and that would overwhelm the memory of the device.
+**1,210 messages in 2 minutes!** If one were to use `addSubview` in `layoutSubviews`, the result will likely be a memory leak or worse because there would be too many views on the screen at once and that would cause freezes, crashes, etc.
 
 If possible, avoid it at all costs and use different methods instead.
 
