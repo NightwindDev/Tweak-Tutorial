@@ -1,5 +1,7 @@
 # How Do You Create a Tweak?
 
+##### **Notice:** bear in mind that you don't really hook classes, you hook methods. But to keep consistency across this tutorial we'll refer to that by saying hook a class.
+
 ## How do we create our own shapes on top of the software?
 
 Let's say we theoretically wanted to make a shape on our screen. How would we accomplish that? Well, we would need to use <a href="https://developer.apple.com/documentation/uikit?language=objc">UIKit</a>.
@@ -10,11 +12,11 @@ UIKit features UIViews and UIViewControllers. These are used to create "shapes" 
 UIViews are basically the "shapes" that we are talking about. For example, `UIButton`s are UIViews, and so are `SBIconView`s which are the icons on our homescreen.
 
 ## UIViewController
-UIViewControllers, on the other hand, "control" the views. They utilize data and display it on a UIView. An example of this would be `UIAlertController`.
+UIViewControllers, on the other hand, "control" the views. They utilize data and display it on a UIView. An example of this would be `UIAlertController`. `UIViewController`s do not actually display anything by themselves on the screen, they use their `.view` property, which is a `UIView`, to display whatever they need to display.
 
 ## Applying the Knowledge
 
-So, from what we learned, we will now try to create our own tweak to put a rectangle on our homescreen. We will replace the code in our first tweak, but if you want to make a new project for this, feel free to do so. Let's first find the class that we will hook to "inject" our custom code to. We will do this with FLEX. As stated previously, the way we will need to find the view would be like so:
+So, from what we learned, we will now try to create our own tweak to put a rectangle on our homescreen. We will replace the code in our first tweak, but if you want to make a new project for this, feel free to do so. Let's first find the class that we will hook the methods of to "inject" our custom code to. We will do this with FLEX. As stated previously, the way we will need to find the view would be like so:
 
 1. Trigger the FLEX menu (the instructions to this are likely in the tweak description.)
 2. Press the select button on the FLEX menu.
@@ -52,13 +54,13 @@ Now we will find the correct method to use to put our view in. Generally, `viewD
 
 Right now, this code just executes or "initializes" the original code. We need to add our own code there.
 
-We will make our own view now. To make our own view, we will allocate and initalize UIView.
+We will now make our own view. To make our own view, we will allocate and initalize a UIView.
 
 ```objc
 UIView *ourView = [[UIView alloc] init];
 ```
 
-There are two distinct ways to initialize a view's position on the screen. One is `.frame` and the other is `NSLayoutConstraints`.
+There are two distinct ways to lay out a view's position on the screen. One is with frames and the other is with constraints.
 
 ## Frames
 
@@ -81,6 +83,50 @@ UIView *ourView = [[UIView alloc] init];
 ourView.frame = CGRectMake(0, 0, 40, 30);
 ```
 
+Then, we will need to set a background color to this rectangle. Let's set it to... blue. How do we do this? It's actually really simple!
+
+```objc
+ourView.backgroundColor = [UIColor blueColor];
+```
+
+The available colors can be found [here](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/).
+
+Finally, we will need to add our rectangle as a subview of the view controller's view. This can be done like so:
+
+```objc
+[self.view addSubview:ourView];
+```
+
+`self.view` is needed because we are adding our subview to the view of the view controller, not the view controller itself.
+
+To compile all this together, our final code should look like something like this:
+
+```objc
+#import <UIKit/UIKit.h> // Importing UIKit
+
+@interface SBHomeScreenViewController : UIViewController /* Interfacing, SBHomeScreenViewController
+                                                            inherits from UIViewController */
+@end
+
+%hook SBHomeScreenViewController // Hooking SBHomeScreenViewController
+
+-(void)viewDidLoad { // method
+    %orig; // original code
+
+    UIView *ourView = [[UIView alloc] init]; // allocating & initializing our view
+    ourView.frame = CGRectMake(
+                                0, // X coordinate
+                                0, // Y coordinate
+                                40, // Width
+                                30); // Height
+    ourView.backgroundColor = [UIColor blueColor]; // setting our background color to blue
+    [self.view addSubview:ourView]; // adding our view as a subview
+
+}
+
+%end
+```
+
 ## Constraints
 
 Constraints are good for making complex layouts and they work universally across devices as well as in some scenarios. For example, when the user rotates their device, the constraints could update to reflect the new screen whereas frames cannot.
@@ -93,7 +139,11 @@ This is how that would be done:
 view.translatesAutoresizingMaskIntoConstraints = false;
 ```
 
-The view then needs to be added as a subview BEFORE creating the constraints. Otherwise, the parent view will try to create constraints for a subview that doesn't exist yet and will result in errors.
+The view then needs to be added as a subview BEFORE creating the constraints. Otherwise, the parent view will try to create constraints for a subview that doesn't exist yet and will result in runtime crashes. So now, we need to do:
+
+```objc
+[self.view addSubview:ourView];
+```
 
 The basic syntax of constraints looks something like this:
 
@@ -108,7 +158,7 @@ The basic syntax of constraints looks something like this:
 [view.anchorType constraintEqualToConstant:x].active = true;
 ```
 
-These are the `anchorType`s that can be used with constraints.
+These are the `anchorType`s that can be used with constraints:
 
 | Anchor Type | Description |
 | ---- | ----------- |
@@ -130,25 +180,10 @@ Alright, so now we're ready to add the constraints. The constraints will look so
 [ourView.heightAnchor constraintEqualToConstant: 30].active = true;
 ```
 
-## Finalizing View
-
-Then, we will need to set a background color to this rectangle. Let's set it to... blue. How do we do this? It's actually really simple!
-
+We will then add the background color like we did with frames:
 ```objc
 ourView.backgroundColor = [UIColor blueColor];
 ```
-
-The available colors can be found here: https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/
-
-Finally, we will need to add our rectangle as a subview to our hooked view controller. This can be done like so:
-
-```objc
-[self.view addSubview:ourView]; // *
-```
-
-\* Note that this should be done BEFORE adding the constraints if you're using the constraints approach.
-
-`self` refers to the hooked view controller and the `.view` is needed because we are adding our subview to the view of the view controller.
 
 To compile all this together, our final code should look like so:
 
@@ -162,37 +197,21 @@ To compile all this together, our final code should look like so:
 %hook SBHomeScreenViewController // Hooking SBHomeScreenViewController
 
 -(void)viewDidLoad { // method
-  %orig; // original code
+    %orig; // original code
 
-  // ======= FRAMES APPROACH =======
+    UIView *ourView = [[UIView alloc] init]; // allocating & initializing our view
+    ourView.backgroundColor = [UIColor blueColor]; // setting our background color to blue
+    ourView.translatesAutoresizingMaskIntoConstraints = false; // allowing constraints to be activated
+    [self.view addSubview:ourView]; // adding our view as a subview
 
-  UIView *ourView = [[UIView alloc] init]; // allocating & initializing our view
-  ourView.frame = CGRectMake(
-                             0, // X coordinate
-                             0, // Y coordinate
-                             40, // Width
-                             30); // Height
-  ourView.backgroundColor = [UIColor blueColor]; // setting our background color to blue
-  [self.view addSubview:ourView]; // adding our view as a subview
-
-  // ======= CONSTRAINTS APPROACH =======
-
-  UIView *ourView = [[UIView alloc] init]; // allocating & initializing our view
-  ourView.backgroundColor = [UIColor blueColor]; // setting our background color to blue
-  ourView.translatesAutoresizingMaskIntoConstraints = false; // allowing constraints to be activated
-  [self.view addSubview:ourView]; // adding our view as a subview
-
-  [ourView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor].active = true; // Left Constraint
-  [ourView.topAnchor constraintEqualToAnchor: self.view.topAnchor].active = true; // Top Constraint
-  [ourView.widthAnchor constraintEqualToConstant: 40].active = true; // Width Constraint
-  [ourView.heightAnchor constraintEqualToConstant: 30].active = true; // Height Constraint
-
+    [ourView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor].active = true; // Left Constraint
+    [ourView.topAnchor constraintEqualToAnchor: self.view.topAnchor].active = true; // Top Constraint
+    [ourView.widthAnchor constraintEqualToConstant: 40].active = true; // Width Constraint
+    [ourView.heightAnchor constraintEqualToConstant: 30].active = true; // Height Constraint
 }
 
 %end
 ```
-
-Bear in mind that if you choose to use AutoLayout you'll need to remove the frame property line as well as the addSubview one and just remove the first multi-line comment.
 
 <img width="102" alt="IMG_18CFD7742F33-1" src="https://user-images.githubusercontent.com/81449663/140844150-c6246369-a493-47a5-a012-cf9acf4e5cdc.png">
 
