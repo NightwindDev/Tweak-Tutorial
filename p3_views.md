@@ -62,7 +62,7 @@ There are two distinct ways to initialize a view's position on the screen. One i
 
 ## Frames
 
-The way to do this with frames is like so:
+The way to do this with frames like this:
 
 ```objc
 UIView *ourView = [[UIView alloc] init];
@@ -74,7 +74,7 @@ ourView.frame = CGRectMake(
 
 ```
 
-Note that this is vertical just for the purpose of showing what number is what, this could easily be written as:
+Note that this is vertical just for the purpose of showing which number represents what, this could easily be written as:
 
 ```objc
 UIView *ourView = [[UIView alloc] init];
@@ -84,6 +84,16 @@ ourView.frame = CGRectMake(0, 0, 40, 30);
 ## Constraints
 
 Constraints are good for making complex layouts and they work universally across devices as well as in some scenarios. For example, when the user rotates their device, the constraints could update to reflect the new screen whereas frames cannot.
+
+When using constraints, the view's `translatesAutoresizingMaskIntoConstraints` property needs to be set to false. If it is not set to false, then UIKit will automatically create autoresizing mask constraints for the view.
+
+This is how that would be done:
+
+```objc
+view.translatesAutoresizingMaskIntoConstraints = false;
+```
+
+The view then needs to be added as a subview BEFORE creating the constraints. Otherwise, the parent view will try to create constraints for a subview that doesn't exist yet and will result in errors.
 
 The basic syntax of constraints looks something like this:
 
@@ -98,6 +108,8 @@ The basic syntax of constraints looks something like this:
 [view.anchorType constraintEqualToConstant:x].active = true;
 ```
 
+These are the `anchorType`s that can be used with constraints.
+
 | Anchor Type | Description |
 | ---- | ----------- |
 | `leadingAnchor` | Left side of a view (with support for RTL languages).
@@ -108,6 +120,17 @@ The basic syntax of constraints looks something like this:
 | `bottomAnchor` | Bottom of view. |
 | `centerXAnchor` | Center of view on X-axis. |
 | `centerYAnchor` | Center of view on Y-axis. |
+
+Alright, so now we're ready to add the constraints. The constraints will look something like this:
+
+```objc
+[ourView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor].active = true;
+[ourView.topAnchor constraintEqualToAnchor: self.view.topAnchor].active = true;
+[ourView.widthAnchor constraintEqualToConstant: 40].active = true;
+[ourView.heightAnchor constraintEqualToConstant: 30].active = true;
+```
+
+## Finalizing View
 
 Then, we will need to set a background color to this rectangle. Let's set it to... blue. How do we do this? It's actually really simple!
 
@@ -120,8 +143,10 @@ The available colors can be found here: https://developer.apple.com/design/human
 Finally, we will need to add our rectangle as a subview to our hooked view controller. This can be done like so:
 
 ```objc
-[self.view addSubview:ourView];
+[self.view addSubview:ourView]; // *
 ```
+
+\* Note that this should be done BEFORE adding the constraints if you're using the constraints approach.
 
 `self` refers to the hooked view controller and the `.view` is needed because we are adding our subview to the view of the view controller.
 
@@ -138,7 +163,10 @@ To compile all this together, our final code should look like so:
 
 -(void)viewDidLoad { // method
   %orig; // original code
-  UIView *ourView = [[UIView alloc] init]; // allocating/initializing our view
+
+  // ======= FRAMES APPROACH =======
+
+  UIView *ourView = [[UIView alloc] init]; // allocating & initializing our view
   ourView.frame = CGRectMake(
                              0, // X coordinate
                              0, // Y coordinate
@@ -147,38 +175,17 @@ To compile all this together, our final code should look like so:
   ourView.backgroundColor = [UIColor blueColor]; // setting our background color to blue
   [self.view addSubview:ourView]; // adding our view as a subview
 
-  // constraints approach ↓
+  // ======= CONSTRAINTS APPROACH =======
 
-  /*---
+  UIView *ourView = [[UIView alloc] init]; // allocating & initializing our view
+  ourView.backgroundColor = [UIColor blueColor]; // setting our background color to blue
+  ourView.translatesAutoresizingMaskIntoConstraints = false; // allowing constraints to be activated
+  [self.view addSubview:ourView]; // adding our view as a subview
 
-  ourView.translatesAutoresizingMaskIntoConstraints = NO;
-
-  [self.view addSubview:ourView];
-
-  // this will create a rectangle of 40 points width and 30 height,
-  // and will pin it to the top left corner edges of the current view,
-  // with the only different being that this will have support for all screen
-  // sizes since it uses an anchor coordinate system, rather than fixed values.
-
-  [ourView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor].active = YES;
-  [ourView.topAnchor constraintEqualToAnchor: self.view.topAnchor].active = YES;
-  [ourView.widthAnchor constraintEqualToConstant: 40].active = YES;
-  [ourView.heightAnchor constraintEqualToConstant: 30].active = YES;
-
-  *---/
-
-  /*--- if you're creating a view with constraints, there are
-  two key steps to follow here. First, you need to set the
-  translatesAutoresizingMaskIntoConstraints property to false
-  on the view you want to create constraints for, otherwise
-  UIKit will automatically create autoresizing mask constraints
-  for you, which in this case we don't want since we will be
-  doing them manually. Second, the view needs to be added as a subview
-  BEFORE creating the constraints, otherwise the parent view will try
-  to create constraints for a subview that doesn't exist yet. Not following
-  these steps correctly may throw you daunting runtime exceptions, which
-  can look cryptic at first, but once you handle AutoLayout correctly,
-  you'll see how powerful it can be. ---*/
+  [ourView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor].active = true; // Left Constraint
+  [ourView.topAnchor constraintEqualToAnchor: self.view.topAnchor].active = true; // Top Constraint
+  [ourView.widthAnchor constraintEqualToConstant: 40].active = true; // Width Constraint
+  [ourView.heightAnchor constraintEqualToConstant: 30].active = true; // Height Constraint
 
 }
 
