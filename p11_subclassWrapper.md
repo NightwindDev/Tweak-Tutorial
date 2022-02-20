@@ -8,7 +8,7 @@
 
 ## How is this useful?
 
-* It allows you to create view code and move it out of the main `Tweak.x` file to avoid clutter and as such having a 'fat' file or avoid the 'fat view controllers' issue, allowing you to write your view code somewhere else while keeping the main file clean only with hooks. Bear in mind, splitting Logos files will not be covered in this part since the code is small, but it's totally possible, take a look [here](https://iphonedev.wiki/index.php?title=Logos&oldid=5734#.25group) under the section 'Splitting Logos Hooking Code Across Multiple Files'.
+* It allows you to create view code and move it out of the main `Tweak.x` file to avoid clutter and as such having a 'fat' file or avoid the 'fat view controllers' issue, allowing you to write your view code somewhere else while keeping the main file clean only with hooks. Bear in mind, splitting Logos files will not be covered in this part since the code is small, but it's totally possible, take a look [here](https://iphonedev.wiki/index.php?title=Logos&oldid=5734#Splitting_Logos_Hooking_Code_Across_Multiple_Files) under the section 'Splitting Logos Hooking Code Across Multiple Files'.
 
 * It's good practice not to pollute UIKit classes' methods, such as `- (id)init;` or `- (void)viewDidLoad;`, so this is a good way to achieve that.
 
