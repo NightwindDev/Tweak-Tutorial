@@ -37,7 +37,7 @@ To transfer this to code, we will do the following.
                                                             inherits from UIViewController */
 @end
 
-%hook SBHomeScreenViewController // Hooking SBHomeScreenViewController
+%hook SBHomeScreenViewController
 
 %end
 ```
@@ -45,9 +45,9 @@ To transfer this to code, we will do the following.
 Now we will find the correct method to use to put our view in. Generally, `viewDidLoad` is a "safe bet" because it is on all view controllers. You have to put your methods inside of the hook. So, adding on to the previous code snippet, we would put:
 
 ```objc
-%hook SBHomeScreenViewController // Hooking SBHomeScreenViewController
+%hook SBHomeScreenViewController
 
--(void)viewDidLoad { // method
+-(void)viewDidLoad { // overriding method
   %orig; // original code
 }
 
@@ -110,9 +110,9 @@ To compile all this together, our final code should look like something like thi
                                                             inherits from UIViewController */
 @end
 
-%hook SBHomeScreenViewController // Hooking SBHomeScreenViewController
+%hook SBHomeScreenViewController
 
--(void)viewDidLoad { // method
+-(void)viewDidLoad { // overriding method
     %orig; // original code
 
     UIView *ourView = [[UIView alloc] init]; // allocating & initializing our view
@@ -162,16 +162,16 @@ The basic syntax of constraints looks something like this:
 
 These are the `anchorType`s that can be used with constraints:
 
-| Anchor Type | Description |
-| ---- | ----------- |
-| `leadingAnchor` | Left side of a view (with support for RTL languages).
+| Anchor Type      | Description                                            |
+| ---------------- | ------------------------------------------------------ |
+| `leadingAnchor`  | Left side of a view (with support for RTL languages).  |
 | `trailingAnchor` | Right side of a view (with support for RTL languages). |
-| `leftAnchor` | Left side of a view.
-| `rightAnchor` | Right side of a view.
-| `topAnchor` | Top of view. |
-| `bottomAnchor` | Bottom of view. |
-| `centerXAnchor` | Center of view on X-axis. |
-| `centerYAnchor` | Center of view on Y-axis. |
+| `leftAnchor`     | Left side of a view.                                   |
+| `rightAnchor`    | Right side of a view.                                  |
+| `topAnchor`      | Top of view.                                           |
+| `bottomAnchor`   | Bottom of view.                                        |
+| `centerXAnchor`  | Center of view on X-axis.                              |
+| `centerYAnchor`  | Center of view on Y-axis.                              |
 
 Alright, so now we're ready to add the constraints. The constraints will look something like this:
 
@@ -197,14 +197,14 @@ To compile all this together, our final code should look like so:
                                                             inherits from UIViewController */
 @end
 
-%hook SBHomeScreenViewController // Hooking SBHomeScreenViewController
+%hook SBHomeScreenViewController
 
--(void)viewDidLoad { // method
+-(void)viewDidLoad { // overriding method
     %orig; // original code
 
     UIView *ourView = [[UIView alloc] init]; // allocating & initializing our view
     ourView.backgroundColor = [UIColor blueColor]; // setting our background color to blue
-    ourView.translatesAutoresizingMaskIntoConstraints = false; // allowing constraints to be activated
+    ourView.translatesAutoresizingMaskIntoConstraints = false; // allows for manual control of constraints
     [self.view addSubview:ourView]; // adding our view as a subview
 
     [ourView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor].active = true; // Left Constraint
