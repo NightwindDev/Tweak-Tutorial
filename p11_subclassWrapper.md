@@ -2,17 +2,17 @@
 
 ## Demystifying the %subclass wrapper from Logos
 
-* Logos has an underrated wrapper known as `%subclass`, which if you know to use, it can be quite useful.
+* Logos has an underrated wrapper known as `%subclass`, which if you know how to use, it can be quite useful.
 
 * In a nutshell, what it does is it creates and registers a custom class at runtime, to which you can add methods and properties (ivars are not yet supported).
 
 ## How is this useful?
 
-* It allows you to create view code and move it out of the main `Tweak.x` file to avoid clutter and as such having a 'fat' file or avoid the 'fat view controllers' issue, allowing you to write your view code somewhere else while keeping the main file clean only with hooks.
+* It allows you to create view code and move it out of the main `Tweak.x` file to avoid clutter and as such having a 'fat' file or avoid the 'fat view controllers' issue, allowing you to write your view code somewhere else while keeping the main file clean only with hooks. Bear in mind, splitting Logos files will not be covered in this part since the code is small, but it's totally possible, take a look [here](https://iphonedev.wiki/index.php?title=Logos&oldid=5734#.25group) under the section 'Splitting Logos Hooking Code Across Multiple Files'.
 
 * It's good practice not to pollute UIKit classes' methods, such as `- (id)init;` or `- (void)viewDidLoad;`, so this is a good way to achieve that.
 
-* Custom subclasses also allow for more control over the views you want to create, so this approach will also help with that.
+* Custom subclasses allow for more control over the views you want to create, so this approach will also help with that.
 
 ## How do we use it?
 
