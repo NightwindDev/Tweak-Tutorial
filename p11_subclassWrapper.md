@@ -134,6 +134,8 @@ Then, in the main `Tweak.x` file, add this:
 
 ![Result](https://raw.githubusercontent.com/Luki120/luki120.github.io/master/assets/Misc/Result.png)
 
+* This blur is available as one of the types to choose in the tweak [Amēlija](https://repo.twickd.com/get/me.luki.amelija) if you're interested.
+
 [Previous Page (`%hookf`)](./p10_hookf.md)
 
 [Next Page (Avoiding `layoutSubviews`)](./p12_noLayoutSubviews.md)
