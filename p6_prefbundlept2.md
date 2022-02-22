@@ -11,7 +11,7 @@ For the `Root.plist` file, you can find out what cells are available to use by d
 
 - (NSArray *)specifiers {
     if (!_specifiers) {
-		_specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
+        _specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
     }
 
     return _specifiers;
