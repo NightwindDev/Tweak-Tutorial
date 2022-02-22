@@ -204,10 +204,4 @@ More information about it can be found <a href="https://iphonedev.wiki/index.php
 
 <a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p8_challenges.md">Next Page (Challenges)</a>
 
-```
-// TODO:
-// Maybe something I'm forgetting idk
-// This comments should be removed before this repo being public
-```
-
 * File co-authored with [Luki120](https://github.com/Luki120)
