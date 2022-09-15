@@ -48,7 +48,7 @@ Now we will find the correct method to use to put our view in. Generally, `viewD
 %hook SBHomeScreenViewController
 
 -(void)viewDidLoad { // overriding method
-  %orig; // original code
+    %orig; // original code
 }
 
 %end

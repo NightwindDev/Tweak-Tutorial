@@ -130,6 +130,12 @@ Then, in the main `Tweak.x` file, add this:
 
 10. Finally, we set four constraints: top, bottom, leading & trailing. This will make sure our view stretches and gets pinned to all edges and fill the whole screen. If you've reached to this part, congratulations, you've just learned how to use the `%subclass` wrapper for Logos and how it can be useful. Do notice that this same thing can be done as well without Logos with a regular `@interface` + `@implementation` syntax type, but if this is your thing, then go for it.
 
+* Final result ↓, look how clean this blur looks:
+
+![Result](https://raw.githubusercontent.com/Luki120/luki120.github.io/master/assets/Misc/Result.png)
+
+* This blur is available as one of the types to choose in the tweak [Amēlija](https://repo.twickd.com/get/me.luki.amelija) if you're interested.
+
 [Previous Page (`%hookf`)](./p10_hookf.md)
 
 [Next Page (Avoiding `layoutSubviews`)](./p12_noLayoutSubviews.md)

@@ -69,7 +69,7 @@ We need to change its function though, and it can be done by changing the semi-c
 
 ```objc
 -(void)didMoveToWindow {
-  NSLog(@"Hello world!");
+    NSLog(@"Hello world!");
 }
 ```
 
@@ -77,8 +77,8 @@ If you need to initiate (call) the code that was written there originally, you c
 
 ```objc
 -(void)didMoveToWindow {
-  %orig;
-  NSLog(@"Hello world!");
+    %orig;
+    NSLog(@"Hello world!");
 }
 ```
 
@@ -95,8 +95,8 @@ Okay, but how do we hide it? Well, we know that `hidden` is a property of UIView
 %hook _UIStatusBarForegroundView
 
 -(void)didMoveToWindow {
-  %orig;
-  self.hidden = YES;
+    %orig;
+    self.hidden = YES;
 }
 
 %end
