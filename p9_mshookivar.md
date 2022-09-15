@@ -39,7 +39,7 @@ MSHookIvar<type>(object, name_of_ivar);
 ```
 
 * `object` - This is where the ivar is located, so for example it could be `self` or an instance of a class.
-* `name_of_ivar` - This is obviously the name of the ivar. In `valueForKey` it can be written as a NSString though. Bear in mind though that despite `MSHookIvar` "ugly" syntax, it tends to be more effective.
+* `name_of_ivar` - This is obviously the name of the ivar. In `valueForKey` it can be written as a NSString though. Bare in mind though that despite `MSHookIvar` "ugly" syntax, it tends to be more effective.
 
 ## Another Example use-case
 
