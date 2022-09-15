@@ -23,7 +23,7 @@ This tutorial tries to be as comprehensive as possible to explain how tweaks are
 - [[ 3 ] Views](./p3_views.md)
 - [[ 4 ] Headers](./p4_headers.md)
 - [[ 5 ] Preference Bundles](./p5_prefbundle.md)
-- [[ 6 ] Preference Bundles cont.](./p6_prefbundle2.md)
+- [[ 6 ] Preference Bundles cont.](./p6_prefbundlept2.md)
 - [[ 7 ] Substrate Tweaks](./p7_substratetweaks.md)
 - [[ 8 ] Challenges](./p8_challenges.md)
 - [[ 9 ] Using `MSHookIvar`](./p9_mshookivar.md)
