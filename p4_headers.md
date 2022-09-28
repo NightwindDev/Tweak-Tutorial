@@ -29,8 +29,8 @@ Most views and view controllers in the software have such headers, and those wou
 %hook AViewController
 
 -(void)someVoidMethod {
-  %orig;
-  // our code
+    %orig;
+    // our code
 }
 
 %end
