@@ -177,7 +177,7 @@ After that, there is a <b>tabview</b> where FLEX displays all the superclasses f
 <br/>
 In the next area, called the <b>DESCRIPTION</b> area, some basic information about the class is displayed. The information shown, which looks like:
 
-\<UIScrollView:0x108832a00; frame = (0 0; 390 375); clipsToBounds = YES; gestureRecognizers = <NSArray: 0x2830faeb0>; layer = <CALayer: 0x283efcbc0\>; contentOffset: {0, 0}; contentSize: {1813, 0}; adjustedContentInset: {0, 0, 0, 0}\>
+```\<UIScrollView:0x108832a00; frame = (0 0; 390 375); clipsToBounds = YES; gestureRecognizers = <NSArray: 0x2830faeb0>; layer = <CALayer: 0x283efcbc0\>; contentOffset: {0, 0}; contentSize: {1813, 0}; adjustedContentInset: {0, 0, 0, 0}\>```
 
 
 </blockquote>
