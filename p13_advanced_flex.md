@@ -174,7 +174,6 @@ The top title of the window is the name of the selected view. It can be hooked w
 Next, there is a <b>searchbar</b> where you can search for any information about the instance of the class that you need.
 <br/>
 After that, there is a <b>tabview</b> where FLEX displays all the superclasses for the current class. In the above screenshot, UIScrollView is a subclass of UIView which is a subclass of UIResponder, which in turn is a sublcass of NSObject.
-
 <br/>
 In the next area, called the <b>DESCRIPTION</b> area, some basic information about the class is displayed. The information shown, which looks like:
 ```
