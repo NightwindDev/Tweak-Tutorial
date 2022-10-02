@@ -30,6 +30,7 @@ This tutorial tries to be as comprehensive as possible to explain how tweaks are
 - [[ 10 ] `%hookf`](./p10_hookf.md)
 - [[ 11 ] `%subclass` Wrapper](./p11_subclassWrapper.md)
 - [[ 12 ] Avoiding `layoutSubviews`](./p12_noLayoutSubviews.md)
+- [[ 13 ] Utilizing `FLEX`](./p13_advanced_flex.md)
 
 For any developers that want to contribute to this tutorial, feel free to do so!
 

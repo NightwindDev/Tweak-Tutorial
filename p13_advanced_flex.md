@@ -77,11 +77,11 @@ Flex makes it **significantly** easier to debug your tweak, look through differe
     </details>
     <details>
     <summary>🔑 Key Window</summary>
-    <blockquote> Gets the current <a href="https://developer.apple.com/documentation/uikit/uiapplication/1622924-keywindow?language=objc">key window</a>.
+    <blockquote> Fetches the current <a href="https://developer.apple.com/documentation/uikit/uiapplication/1622924-keywindow?language=objc">key window</a>.
     </details>
     <details>
     <summary>🌴 Root View Controller</summary>
-    <blockquote> Gets the current <a href="https://developer.apple.com/documentation/uikit/uiwindow/1621581-rootviewcontroller?language=objc">root view controller</a>.
+    <blockquote> Fetches the current <a href="https://developer.apple.com/documentation/uikit/uiwindow/1621581-rootviewcontroller?language=objc">root view controller</a>.
     </details>
     <details>
     <summary>🍪 Cookies</summary>
@@ -95,7 +95,7 @@ Flex makes it **significantly** easier to debug your tweak, look through differe
     </details>
     <details>
     <summary>💻 UIScreen.mainScreen</summary>
-    <blockquote> Shows information about the primary screen of the device.
+    <blockquote> Shows information about the primary screen instance of UIScreen for the device.
     </details>
     <details>
     <summary>📱 UIDevice.currentDevice</summary>
@@ -103,48 +103,63 @@ Flex makes it **significantly** easier to debug your tweak, look through differe
     </details>
     <details>
     <summary>📡 NSURLSession.sharedSession</summary>
+    <blockquote> Shows information about the current instance of <a href="https://developer.apple.com/documentation/foundation/nsurlsession">__NSURLSessionLocal</a>.
     </details>
     <details>
     <summary>⏳ NSURLCache.sharedURLCache</summary>
+    <blockquote> Gets information about <a href="https://developer.apple.com/documentation/foundation/nsurlcache">NSURLCache</a>.
     </details>
     <details>
     <summary>🔔 NSNotificationCcenter.defaultCenter</summary>
+    <blockquote> Fetches the instance of <a href="https://developer.apple.com/documentation/foundation/nsnotificationcenter">NSNotificationCenter</a>.
     </details>
     <details>
     <summary>📎 UIMenuController.sharedMenuController</summary>
+    <blockquote> Fetches information about the current <a href="https://developer.apple.com/documentation/foundation/uimenucontroller">UIMenuController</a>.
     </details>
     <details>
     <summary>🗄️ NSFileManager.defaultManager</summary>
+    <blockquote> Gets the current NSFileManager.defaultManager instance.
     </details>
     <details>
     <summary>🌎 NSTimeZone.systemTimeZone</summary>
+    <blockquote> Gets the current timezone, stored in the NSTimeZone class
     </details>
     <details>
     <summary>🗣️ NSLocale.currentLocale</summary>
+    <blockquote> Gets the current instance of <a href="https://developer.apple.com/documentation/foundation/nslocale?language=objc">NSLocale</a>.
     </details>
     <details>
     <summary>📆 NSCalendar.currentCalendar</summary>
+    <blockquote> Gets the current instance of the calendar, stored in the NSCalendar class.
     </details>
     <details>
     <summary>🏃 NSRunLoop.mainRunLoop</summary>
+    <blockquote> Gets the current <a href="https://developer.apple.com/documentation/foundation/nsrunloop">NSRunLoop</a>.
     </details>
     <details>
     <summary>🧵 NSThread.mainThread</summary>
+    <blockquote> Gets the current thread in the <a href="https://developer.apple.com/documentation/foundation/nsthread">NSThread</a> class.
     </details>
     <details>
     <summary>📚 NSOperationQueue.mainQueue</summary>
+    <blockquote> Gets the current main queue for <a href="https://developer.apple.com/documentation/foundation/nsoperationqueue">NSOperationQueue</a>.
     </details>
 </blockquote>
 </details>
 
 <details>
 <summary>Views Tab</summary>
-This is how you dropdown.
+<blockquote>
+<br/>
+<img src="https://i.imgur.com/zgrHhRA.png" width="250"></img>
+<br/>
+When the view tab is pressed, this is what pops up. The popup conveys the view hierarchy of the current UIWindow. The more to the right the view is, the more views it is under.
 </details>
 
 <details>
 <summary>Select Button</summary>
-This is how you dropdown.
+<blockquote>Allows you to select a view on the screen and look at its values.</blockquote>
 </details>
 
 <details>
