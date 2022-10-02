@@ -148,14 +148,41 @@ Flex makes it **significantly** easier to debug your tweak, look through differe
 </blockquote>
 </details>
 
-<details>
+<!--<details>-->
 <summary>Views Tab</summary>
 <blockquote>
 <br/>
 <img src="https://i.imgur.com/zgrHhRA.png" width="250"></img>
 <br/>
-When the view tab is pressed, this is what pops up. The popup conveys the view hierarchy of the current UIWindow. The more to the right the view is, the more views it is under.
-</details>
+When the view tab is pressed, this is what pops up. The popup conveys the view hierarchy of the current UIWindow. The more to the right the view is, the more views it is under. Pressing the <b style="color:rgb(15, 105, 249);">ⓘ</b> button allows a look at the view's information, opening up the window that looks like this:
+<br/>
+<img src="https://i.imgur.com/jP1r49a.png" width="250"></img>
+<br/>
+Let's break it all down.
+<br/>
+========================
+<br/>
+The top title of the window is the name of the selected view. It can be hooked with proper interfacing. In this case, the hooking would look like:
+<br/>
+
+```objc
+%hook UIScrollView
+// the hooked methods
+%end
+```
+<br/>
+Next, there is a <b>searchbar</b> where you can search for any information about the instance of the class that you need.
+<br/>
+After that, there is a <b>tabview</b> where FLEX displays all the superclasses for the current class. In the above screenshot, UIScrollView is a subclass of UIView which is a subclass of UIResponder, which in turn is a sublcass of NSObject.
+<br/>
+In the next area, called the <b>DESCRIPTION</b> area, some basic information about the class is displayed. The information shown, which looks like:
+
+\<UIScrollView:0x108832a00; frame = (0 0; 390 375); clipsToBounds = YES; gestureRecognizers = <NSArray: 0x2830faeb0>; layer = <CALayer: 0x283efcbc0\>; contentOffset: {0, 0}; contentSize: {1813, 0}; adjustedContentInset: {0, 0, 0, 0}\>
+
+
+</blockquote>
+
+<!--</details>-->
 
 <details>
 <summary>Select Button</summary>
