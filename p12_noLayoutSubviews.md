@@ -40,4 +40,4 @@ If possible, avoid it at all costs and use different methods instead.
 
 [Previous Page (`%subclass` Wrapper)](.p11_subclassWrapper.md)
 
-[Advanced FLEX](./p13_advanced_flex.md)
+[Next Page (Advanced FLEX)](./p13_advanced_flex.md)
