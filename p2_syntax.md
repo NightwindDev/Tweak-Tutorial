@@ -106,7 +106,7 @@ Okay, but how do we hide it? Well, we know that `hidden` is a property of UIView
 ## Compiling the tweak
 
 ```
-make do
+make package -j
 ```
 
 This is the simplest way to compile your tweak, there are many flags to get different results, however this is the simplest way.
