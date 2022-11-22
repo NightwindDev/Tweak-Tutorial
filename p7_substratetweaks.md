@@ -19,7 +19,7 @@ The Theos team made quite an impressive job so that you don't have to write usua
 
 * By default, all Logos hooks are initialized in a constructor which you can either create or not, you may be familiarized with this if you ever wrote a `%ctor {}` block. However, with MobileSubstrate, you can *control* where and when your hooks are initialized. Useful e.g if you need to load your tweak before another tweak and/or process is loaded.
 
-* You can have almost a native xcode like autocompletion if you wanted to. "Really?" Yes, really. Theos has a "secret" command named `make commands` that will automatically generate a `compile_commands.json` file which will do all the magic as long as you have `clangd` with LSP (Language Server Protocol) installed, which is what enables autocompletion for a specific language. There's support for C, C++, Objective-C and Swift files.
+* You can have almost a native xcode like autocompletion if you wanted to. "Really?" Yes, really. Theos has a "secret" command named `make commands` (not yet in upstream) that will automatically generate a `compile_commands.json` file which will do all the magic as long as you have `clangd` with LSP (Language Server Protocol) installed, which is what enables autocompletion for a specific language. There's support for C, C++, Objective-C and Swift files.
 For instructions on how to install this for your editor please go [here](https://github.com/apple/sourcekit-lsp). <br>
 Cheers to Kabir for making this (Theos maintainer and creator of [Orion](https://github.com/theos/orion)). At the time of writing this (Feb. 11 2022), it still doesn't work for Logos files, hence why this is a major advantage if not the "best", of writing Substrate tweaks.
 
