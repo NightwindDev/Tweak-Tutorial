@@ -52,7 +52,7 @@ Of course, not all headers are dumped, sometimes you will need to dump them your
 
 The table below shows the attributes which describe the property's behavior to `@property`, which can be seen in the parentheses in between `@property` and the actual property type and name, so:
 
-`@property (/* here */) int someName;`
+`@property (/* here */) generic_type someName;`
 
 | Name          | Description                                                                                                                 |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------- |

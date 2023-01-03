@@ -16,7 +16,7 @@ This is what your file structure in the folder should look like. The `.plist` fi
 
 ## `Makefile`
 
-This file essentially has some information about the tweak — `TARGET`, for example, contains the target operating system that you can choose. Another example would be `ARCHS` which have a dozen or so values you can choose from, but you will most likely use `arm64`, (every iPhone before the Xs series and after iOS 6) and `arm64e`, (every iPhone after and including the Xs series).
+This file essentially has information about how to build or rebuild the protocol.  `TARGET`, for example, contains the target operating system that you can choose. Another example would be `ARCHS` which have a dozen or so values you can choose from, but you will most likely use `arm64`, (every iPhone before the Xs series and after iOS 6) and `arm64e`, (every iPhone after and including the Xs series).
 
 `ARCHS` would be written like this: `ARCHS = arm64 arm64e`
 
@@ -26,7 +26,7 @@ This file is the most "important" out of these four. This is where you write all
 
 ## `control`
 
-This file contains the information about your tweak that will be displayed to the end-user when they try to install your tweak. Things like the name of the developer, what iOS version it supprorts, etc.
+This file contains the information about your tweak. Things like the name of the developer, what iOS version it supprorts, etc. Some DPKG managers display bits and pieces of it when the user looks at the tweak depiction..
 
 ## `testtweak.plist`
 
