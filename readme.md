@@ -38,6 +38,11 @@ Just make a pull request with the changes that you want to add.
 
 ---
 
+### Credits:
+- [@Luki120](https://github.com/Luki120) for helping out with some of the issues regarding Substrate
+
+---
+
 ### Support:
 
 - [iOSJBN Discord Server](https://discord.gg/K3wGBBhPqp)
