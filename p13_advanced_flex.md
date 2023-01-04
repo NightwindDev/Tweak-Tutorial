@@ -148,7 +148,7 @@ Flex makes it **significantly** easier to debug your tweak, look through differe
 </blockquote>
 </details>
 
-<!--<details>-->
+<details>
 <summary>Views Tab</summary>
 <blockquote>
 <br/>
@@ -211,11 +211,11 @@ Finally, the very last section is the "OBJECT GRAPH" section. This section allow
 
 </blockquote>
 
-<!--</details>-->
+</details>
 
 <details>
 <summary>Select Button</summary>
-<blockquote>Allows you to select a view on the screen and look at its values.</blockquote>
+<blockquote>Allows you to select a view on the screen and look at its values. Usually, you will need to select something that will not be selected upon the first tap. In order to select the thing that you want to select, you will need to move the view that is covering your target view and keep repeating that until you get to the correct view.</blockquote>
 </details>
 
 <details>
