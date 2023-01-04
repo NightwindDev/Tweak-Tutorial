@@ -9,7 +9,7 @@ This tutorial tries to be as comprehensive as possible to explain how tweaks are
 
 ### Requirements:
 
-- A text editor of your choice
+- A text editor of your choice.
 - Either a [Theos](https://theos.dev) or [Dragon](https://dragon.krit.me/en/latest/) installation.
 - Either a jailbroken device or the Xcode Simulator on macOS paired with [Simject](https://github.com/akemin-dayo/simject).
 
@@ -39,7 +39,7 @@ Just make a pull request with the changes that you want to add.
 ---
 
 ### Credits:
-- [@Luki120](https://github.com/Luki120) for helping out with some of the issues regarding Substrate
+- [@Luki120](https://github.com/Luki120) for helping out with some of the issues regarding Substrate.
 
 ---
 
