@@ -39,7 +39,7 @@ Just make a pull request with the changes that you want to add.
 ---
 
 ### Credits:
-- [@Luki120](https://github.com/Luki120) for helping out with some of the issues regarding Substrate.
+- [@Luki120](https://github.com/Luki120) for helping out with some of the issues regarding Substrate + important & valuable contributions.
 
 ---
 
