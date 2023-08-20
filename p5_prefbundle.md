@@ -54,9 +54,6 @@ This is the file tree of the preference bundle, let's look at each file closely.
 - `ExampleTweakPrefs.plist`
     - This is also a file that holds "technical" stuff, you will likely not touch it either.
 
+[Previous Page (Finding Headers)](./p4_headers.md)
 
-
-
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p4_headers.md">Previous Page (Finding Headers)</a>
-
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p6_prefbundlept2.md">Next Page (Preference Bundles cont.)</a>
+[Next Page (Preference Bundles cont.)](./p6_prefbundlept2.md)

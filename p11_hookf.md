@@ -42,6 +42,6 @@ __attribute__((constructor)) static void initialize() {
 
 For further information about `%hookf`, please go [here](https://iphonedev.wiki/index.php/Logos).
 
-[Previous Page (`MSHookIvar`)](./p9_mshookivar.md)
+[Previous Page (Adapting for rootless)](./p10_rootless.md)
 
-[Next Page (`%subclass` Wrapper)](./p11_subclassWrapper.md)
+[Next Page (`%subclass` Wrapper)](./p12_subclassWrapper.md)

@@ -26,7 +26,7 @@ This file is the most "important" out of these four. This is where you write all
 
 ## `control`
 
-This file contains the information about your tweak. Things like the name of the developer, what iOS version it supprorts, etc. Some DPKG managers display bits and pieces of it when the user looks at the tweak depiction..
+This file contains the information about your tweak. Things like the name of the developer, what iOS version it supprorts, etc. Some DPKG managers display bits and pieces of it when the user looks at the tweak depiction.
 
 ## `testtweak.plist`
 

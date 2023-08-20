@@ -2,10 +2,10 @@
 
 # How Do You Create a Tweak?
 
-## Why Should We Know About Flex?
-Flex makes it **significantly** easier to debug your tweak, look through different classes and their properties without dumping their headers, and a whole lot more.
+## Why Should We Know About FLEX?
+FLEX makes it **significantly** easier to debug your tweak, look through different classes and their properties without dumping their headers, and a whole lot more.
 
-## Flex's Menu
+## FLEX's Menu
 
 <details>
 <summary>Menu Tab</summary>
@@ -225,4 +225,6 @@ Finally, the very last section is the "OBJECT GRAPH" section. This section allow
 
 ---
 
-[Previous Page (Avoiding `layoutSubviews`)](./p12_noLayoutSubviews.md)
+[Previous Page (Avoiding `layoutSubviews`)](./p8_noLayoutSubviews.md)
+
+[Next Page (Adapting for rootless)](./p10_rootless.md)

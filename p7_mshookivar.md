@@ -58,6 +58,6 @@ MSHookIvar<type>(object, name_of_ivar);
 %end
 ```
 
-[Previous Page (Challenges)](./p8_challenges.md)
+[Previous Page (Preference Bundles cont.)](./p6_prefbundlept2.md)
 
-[Next Page (`%hookf`)](./p10_hookf.md)
+[Next Page (Avoiding `layoutSubviews`)](./p8_noLayoutSubviews.md)

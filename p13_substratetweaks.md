@@ -200,8 +200,8 @@ If you're wondering what or why are we using the `static` keyword before the fun
 
 More information about it can be found <a href="https://iphonedev.wiki/index.php/Cydia_Substrate">here</a> and <a href="http://www.cydiasubstrate.com/api/c/MSHookMessageEx/">here</a>, as well as [here for method swizzling](https://nshipster.com/method-swizzling/) if you're curious.
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p6_prefbundlept2.md">Previous Page (Preference Bundles cont.)</a>
+[Previous Page (`%subclass` wrapper)](./p12_subclassWrapper.md)
 
-<a href="https://github.com/NightwindDev/Tweak-Tutorial/blob/main/p8_challenges.md">Next Page (Challenges)</a>
+[Next Page (Challenges)](./p14_challenges.md)
 
 * File co-authored with [Luki120](https://github.com/Luki120)

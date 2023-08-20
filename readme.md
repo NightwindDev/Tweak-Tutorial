@@ -9,8 +9,9 @@ This tutorial tries to be as comprehensive as possible to explain how tweaks are
 
 ### Requirements:
 
+- Basic [Object-Orientated Programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming) knowledge.
 - A text editor of your choice.
-- Either a [Theos](https://theos.dev) or [Dragon](https://dragon.krit.me/en/latest/) installation.
+- Either a [Theos](https://theos.dev) or [Dragon](https://dragon.cynder.me/en/latest/) installation.
 - Either a jailbroken device or the Xcode Simulator on macOS paired with [Simject](https://github.com/akemin-dayo/simject).
 
 ---
@@ -24,13 +25,14 @@ This tutorial tries to be as comprehensive as possible to explain how tweaks are
 - [[ 4 ] Headers](./p4_headers.md)
 - [[ 5 ] Preference Bundles](./p5_prefbundle.md)
 - [[ 6 ] Preference Bundles cont.](./p6_prefbundlept2.md)
-- [[ 7 ] Substrate Tweaks](./p7_substratetweaks.md)
-- [[ 8 ] Challenges](./p8_challenges.md)
-- [[ 9 ] Using `MSHookIvar`](./p9_mshookivar.md)
-- [[ 10 ] `%hookf`](./p10_hookf.md)
-- [[ 11 ] `%subclass` Wrapper](./p11_subclassWrapper.md)
-- [[ 12 ] Avoiding `layoutSubviews`](./p12_noLayoutSubviews.md)
-- [[ 13 ] Utilizing `FLEX`](./p13_advanced_flex.md)
+- [[ 7 ] Using `MSHookIvar`](./p7_mshookivar.md)
+- [[ 8 ] Avoiding `layoutSubviews`](./p8_noLayoutSubviews.md)
+- [[ 9 ] Utilizing `FLEX`](./p9_advanced_flex.md)
+- [[ 10 ] Rootless](./p10_rootless.md)
+- [[ 11 ] `%hookf`](./p11_hookf.md)
+- [[ 12 ] `%subclass` Wrapper](./p12_subclassWrapper.md)
+- [[ 13 ] Substrate Tweaks](./p13_substratetweaks.md)
+- [[ 14 ] Challenges](./p14_challenges.md)
 
 For any developers that want to contribute to this tutorial, feel free to do so!
 
