@@ -220,5 +220,9 @@ Finally, the very last section is the "OBJECT GRAPH" section. This section allow
 
 <details>
 <summary>Recent Button</summary>
-This is how you dropdown.
+<blockquote>Allows you to go to the most recent selected item.</blockquote>
 </details>
+
+---
+
+[Previous Page (Avoiding `layoutSubviews`)](./p12_noLayoutSubviews.md)

@@ -105,11 +105,17 @@ Okay, but how do we hide it? Well, we know that `hidden` is a property of UIView
 
 ## Compiling the tweak
 
+There are two commands to compile the tweak. The command to compile for rootless is:
+
 ```
-make package -j
+make package THEOS_PACKAGE_SCHEME=rootless
 ```
 
-This is the simplest way to compile your tweak, there are many flags to get different results, however this is the simplest way.
+And the command to compile for rootful (unofficial terminology for a non-rootless jailbreak) is:
+
+```
+make package
+```
 
 [Previous Page (Exploring The Tweak Files)](./p1_explore_files.md)
 
