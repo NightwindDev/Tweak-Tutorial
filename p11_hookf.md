@@ -40,7 +40,7 @@ __attribute__((constructor)) static void initialize() {
 }
 ```
 
-For further information about `%hookf`, please go [here](https://iphonedev.wiki/index.php/Logos).
+For further information about `%hookf`, please go [here](https://theos.dev/docs/logos-syntax).
 
 [Previous Page (Adapting for rootless)](./p10_rootless.md)
 
