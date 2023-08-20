@@ -110,7 +110,7 @@ FLEX makes it **significantly** easier to debug your tweak, look through differe
     <blockquote> Gets information about <a href="https://developer.apple.com/documentation/foundation/nsurlcache">NSURLCache</a>.
     </details>
     <details>
-    <summary>🔔 NSNotificationCcenter.defaultCenter</summary>
+    <summary>🔔 NSNotificationCenter.defaultCenter</summary>
     <blockquote> Fetches the instance of <a href="https://developer.apple.com/documentation/foundation/nsnotificationcenter">NSNotificationCenter</a>.
     </details>
     <details>
