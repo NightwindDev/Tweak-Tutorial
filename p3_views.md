@@ -1,6 +1,6 @@
 # How Do You Create a Tweak?
 
-##### **Notice:** bear in mind that you don't really hook classes, you hook methods. But to keep consistency across this tutorial we'll refer to that by saying hook a class
+##### **Notice:** bear in mind that you don't really hook classes, you hook methods. But to keep consistency across this tutorial we'll refer to it by saying hook a class
 
 ## How do we create our own shapes on top of the software?
 
@@ -99,7 +99,7 @@ Finally, we will need to add our rectangle as a subview of the view controller's
 [self.view addSubview:ourView];
 ```
 
-`self.view` is needed because we are adding our subview to the view of the view controller, not the view controller itself. The view controller is not present in the view hierarchy; it is not a visual element that one can see on the screen. However, its view *is* present in the hierarchy.
+`self.view` is needed because we are adding our subview to the view of the view controller, not the view controller itself. The view controller is not present in the view hierarchy; it is not a visual element that one can see on the screen. However, it's view *is* present in the hierarchy.
 
 To compile all this together, our final code should look like something like this:
 

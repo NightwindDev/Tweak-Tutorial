@@ -21,7 +21,7 @@
 @end
 ```
 
-This is a very short header, normally they would be much longer, however it is a good "example" header.
+This is a very short header, normally they would be much longer, however it is a good "example" header for you to grasp the basic idea.
 
 Most views and view controllers in the software have such headers, and those would help with finding the correct methods to use. Let's say, theoretically, we want to hook `AViewController`, and let's say we want to use a specific method. We could either use FLEX for that or use the header. We would do:
 
