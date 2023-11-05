@@ -42,7 +42,7 @@ To transfer this to code, we will do the following.
 %end
 ```
 
-Now we will find the correct method to use to put our view in. Generally, `viewDidLoad` is a "safe bet" because it is on all view controllers. You have to put your methods inside of the hook. So, adding on to the previous code snippet, we would put:
+Now we will find the correct method to use to put our view in. Generally, `viewDidLoad` is a "safe bet" because it is called only once in the view controller's lifecycle. It is also called late enough in the lifecycle for the changes with the view take effect. You have to put your methods inside of the hook. So, adding on to the previous code snippet, we would put:
 
 ```objc
 %hook SBHomeScreenViewController
@@ -99,7 +99,7 @@ Finally, we will need to add our rectangle as a subview of the view controller's
 [self.view addSubview:ourView];
 ```
 
-`self.view` is needed because we are adding our subview to the view of the view controller, not the view controller itself.
+`self.view` is needed because we are adding our subview to the view of the view controller, not the view controller itself. The view controller is not present in the view hierarchy; it is not a visual element that one can see on the screen. However, its view *is* present in the hierarchy.
 
 To compile all this together, our final code should look like something like this:
 
@@ -131,7 +131,7 @@ To compile all this together, our final code should look like something like thi
 
 ## Constraints
 
-Constraints are good for making complex layouts and they work universally across devices as well as in some scenarios. For example, when the user rotates their device, the constraints could update to reflect the new screen whereas frames cannot.
+Constraints are good for making complex layouts and they work universally across devices as well as in some tricky scenarios. For example, when the user rotates their device, the constraints could update to reflect the new screen whereas frames cannot.
 
 When using constraints, the view's `translatesAutoresizingMaskIntoConstraints` property needs to be set to false. If it is not set to false, then UIKit will automatically create autoresizing mask constraints for the view.
 

@@ -14,7 +14,7 @@ There is a universal way to make preference bundles for tweaks, although how you
 2) Type in `$THEOS/bin/nic.pl` so we can make a subproject.
 3) Choose `iphone/preference_bundle_modern`.
 4) Choose the project name for your preference bundle, a good standard by which to name it would be `YourTweak` + `Prefs`, so for example: `ExampleTweakPrefs`.
-5) Obviously choose your bundle ID, `com.yourcompany.exampletweakprefs`.
+5) Choose your bundle ID, `com.yourcompany.exampletweakprefs`.
 6) Same as in when we were setting up the tweak, enter your `Author/Maintainer Name`.
 7) Next, you will see: `[iphone/preference_bundle_modern] Class name prefix (three or more characters unique to this project) [XXX]`.
     - What is this? It is basically the unique prefix for your "classes," so for example, let's say you have a UIViewController and you want it's name to be unique so that when you press the tweak name in the settings app, your tweak shows up.

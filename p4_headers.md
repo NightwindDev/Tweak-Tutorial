@@ -38,17 +38,17 @@ Most views and view controllers in the software have such headers, and those wou
 
 This is just an explanation of how we would use the headers, it is not actual code.
 
-People have dumped headers for views and view controllers for versions and posted them online. You can use these to your advantage when finding what to hook. Some great places to find dumped headers are https://developer.limneos.net and https://headers.krit.me. These are easy to use and help a lot.
+People have dumped headers for views and view controllers for versions and posted them online. You can use these to your advantage when finding what to hook. Some great places to find dumped headers are https://developer.limneos.net and https://headers.cynder.me. These are easy to use and help a lot.
 
 [Limneos](https://developer.limneos.net) — To use this service, simply type the class you are trying to find the headers for in the search bar.
 
 [Cynder](https://headers.cynder.me) — To use this service, find the iOS version that you are trying to find the headers for and then go on the searchbar to find your headers.
 
-Of course, not all headers are dumped, sometimes you will need to dump them yourself. A [video](https://www.youtube.com/watch?v=M8HzCj0aKpw) by Zane Helton explains how to do this perfectly.
+Of course, not all headers are dumped, sometimes you will need to dump them yourself. A [video](https://web.archive.org/web/20201202093934/https://www.youtube.com/watch?v=M8HzCj0aKpw&gl=US&hl=en) (archived via [the Internet Archive](https://archive.org)) by Zane Helton explains how to do this perfectly.
 
 ## A brief explanation of `@property` and it's attributes
 
-`@property` obviously adds properties, which are values of classes, to the object that is being interfaced so that dot notation could be used.
+`@property` adds properties, which are values of classes, to the object that is being interfaced. They exist to store data for later reference and/or reassignment in the object, and they are a newer and more adopted standard compared to the old way of using instance variables (ivars).
 
 The table below shows the attributes which describe the property's behavior to `@property`, which can be seen in the parentheses in between `@property` and the actual property type and name, so:
 

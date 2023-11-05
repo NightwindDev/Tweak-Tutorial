@@ -6,8 +6,8 @@
 
 ## A bit of history
 
-* Did you know that after all you're writing "Substrate" tweaks all the time? "But how? I literally use Logos syntax". That's true, but Theos does not. If you have stared at the theos compilation process before for whatever reason while waiting for it to compile, you may have noticed that it starts with `==> Preprocessing Tweak.x…`, this is because Logos is exactly that. A preprocessor written in Perl to make Objective-C hooking feel easier and snappier. *But what is Logos actually doing?* Well, if you dig into the folder theos generates after the preprocessing is done (.theos/), you'll see that's it's just a wrapper for the MobileSubstrate API, the one Saurik (the creator of Cydia) made a looong time ago to make it possible to create tweaks in a safer way than the original used back then, in the days of yore, (called swizzling). It's very interesting actually, since you're swapping methods' implementations at runtime, basically hijacking the original one and replacing it with your own. More information about this will be linked at the end. <br>
-The Theos team made quite an impressive job so that you don't have to write usually "verbose" code and the burden is taken out of you. "But is writing tweaks with the MobileSubstrate API that hard?" No actually, not at all. However, there are some concepts you need to understand first, and as mentioned above, benefits will arise by writing tweaks this way.
+* Did you know that after all you're writing "Substrate" tweaks all the time? "But how? I literally use Logos syntax". That's true, but Theos does not. If you have stared at the theos compilation process before for whatever reason while waiting for it to compile, you may have noticed that it starts with `==> Preprocessing Tweak.x…`, this is because Logos is exactly that. A preprocessor written in Perl to make Objective-C hooking feel easier and snappier. *But what is Logos actually doing?* Well, if you dig into the folder theos generates after the preprocessing is done (.theos/), you'll see that's it's just a wrapper for the Cydia Substrate API, the one Saurik (the creator of Cydia) made a looong time ago to make it possible to create tweaks in a safer way than the original used back then, in the days of yore, (called swizzling). It's very interesting actually, since you're swapping methods' implementations at runtime, basically hijacking the original one and replacing it with your own. More information about this will be linked at the end. <br>
+The Theos team made quite an impressive job so that you don't have to write usually "verbose" code and the burden is taken out of you. "But is writing tweaks with the Cydia Substrate API that hard?" No actually, not at all. However, there are some concepts you need to understand first, and as mentioned above, benefits will arise by writing tweaks this way.
 
 # Benefits
 
@@ -29,7 +29,7 @@ Cheers to Kabir for making this (Theos maintainer and creator of [Orion](https:/
 
 ## Differences between Logos and Substrate
 
-* All of the keywords you see below, preeceded by the `%` symbol are exclusive to Logos, which are all wrappers for different parts of the MobileSubstrate API.
+* All of the keywords you see below, preeceded by the `%` symbol, are exclusive to Logos, which are all wrappers for different parts of the Cydia Substrate API.
 
 * `%hook` - Wrapper for `MSHookMessageEx`.
 * `%new` - Wrapper for `class_addMethod`.
@@ -40,7 +40,7 @@ Cheers to Kabir for making this (Theos maintainer and creator of [Orion](https:/
 * `%init` - It's equivalent in Substrate is a group of `MSHook` calls.
 * `%subclass` - Uses `objc_allocateClassPair` and `objc_registerClassPair` to create a subclass of a class at runtime.
 * `%c` - very useful wrapper for `objc_getClass()`, however there's also `NSClassFromString()`. They are basically the same, but the latter one is more "Objective-C friendly". If you use it.. just make sure to spell the class name correctly.
-* `%orig` - This does not have an exact equivalent in Substrate. To achieve the effect of `%orig` a little bit of Objective-C runtime magic is needed, with the help of the MobileSubstrate API. It'll be explained in the examples below.
+* `%orig` - This does not have an exact equivalent in Substrate. To achieve the effect of `%orig` a little bit of Objective-C runtime magic is needed, with the help of the Cydia Substrate API. It'll be explained in the examples below.
 
 * If you want to know more about the constructor and destructor attributes, read through [here](https://stackoverflow.com/questions/2053029/how-exactly-does-attribute-constructor-work) and [here](https://www.tutorialspoint.com/attribute-constructor-and-attribute-destructor-syntaxes-in-c-in-tutorials-point)
 

@@ -4,7 +4,7 @@
 
 ## What is `%hookf` used for?
 
-While `%hook` is used to hook Objective-C classes, `%hookf` is used to hook C functions. It's syntax is also different from `%hook`.
+While `%hook` is used to hook Objective-C classes, `%hookf` is used to hook C functions. Its syntax is also different from `%hook`.
 
 ## Syntax
 

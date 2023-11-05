@@ -2,13 +2,13 @@
 
 ## Demystifying the %subclass wrapper from Logos
 
-* Logos has an underrated wrapper known as `%subclass`, which if you know how to use, it can be quite useful.
+* Logos has an underrated wrapper known as `%subclass`.
 
 * In a nutshell, what it does is it creates and registers a custom class at runtime, to which you can add methods and properties (ivars are not yet supported).
 
 ## How is this useful?
 
-* It allows you to create view code and move it out of the main `Tweak.x` file to avoid clutter and as such having a 'fat' file or avoid the 'fat view controllers' issue, allowing you to write your view code somewhere else while keeping the main file clean only with hooks. Bear in mind, splitting Logos files will not be covered in this part since the code is small, but it's totally possible, take a look [here](https://iphonedev.wiki/index.php?title=Logos&oldid=5734#Splitting_Logos_Hooking_Code_Across_Multiple_Files) under the section 'Splitting Logos Hooking Code Across Multiple Files'.
+* It allows you to create view code and move it out of the main `Tweak.x` file to avoid clutter, allowing you to write your view code somewhere else while keeping the main file clean only with hooks. Bear in mind, splitting Logos files will not be covered in this part since the code is small, but it's totally possible, take a look [here](https://theos.dev/docs/logos-hook-splitting) under the section 'Splitting Logos Hooking Code Across Multiple Files'.
 
 * It's good practice not to pollute UIKit classes' methods, such as `- (id)init;` or `- (void)viewDidLoad;`, so this is a good way to achieve that.
 
@@ -54,7 +54,7 @@ It'll look like this:
 
 * We declare the interface for the main SpringBoard's view controller class in the HomeScreen (`SBHomeScreenViewController`) so we can hook it and still keep the compiler happy.
 
-* Finally, we add the two interfaces needed for the type of blur we'll be using. Sadly, Apple decided to keep this blur, called `_UIBackdropView` private, which means we need to make the interfaces visible again so the compiler can see them and stay happy. The `_` character indicates that the class is private. It's common practice in Objective-C to prefix your classes, ivars, methods, etc with an underscore if you want to indicate that they should be private.
+* Finally, we add the two interfaces needed for the type of blur we'll be using. Sadly, Apple decided to keep this blur, called `_UIBackdropView`, private, which means we need to make the interfaces visible again so the compiler can see them and stay happy. The `_` character indicates that the class is private. It's common practice in Objective-C to prefix your classes, ivars, methods, etc with an underscore if you want to indicate that they should be private.
 
 Then, in the main `Tweak.x` file, add this:
 
@@ -120,7 +120,7 @@ Then, in the main `Tweak.x` file, add this:
 
 5. Now, our `CustomBlurView` class will act as a *container* view for our blur view, so our view *itself* it's the one that needs to be constrained, hence why we use `self` when overriding the `translatesAutoresizingMaskIntoConstraints` property. If you pay attention at the initializer method of the blur view Apple made for us, you'll see one of the parameters is named `autosizesToFitSuperview:`, which takes a `BOOL` value, so one could specify anything in order to achieve the desired behavior. If we set it to `YES` that's it, the job is done. Since in this case the superview is our custom view class, and the superview of the view in the end it's the HomeScreen's main view controller's view class, it'll *automatically fit the superview*, like the parameter says, so it'll just cover the whole screen. No need at all to set a frame or constraints, so really nice from Apple regarding that.
 
-6. After that, you should be familiarized already if you've been following along with the tutorial. We just create the blur, set some nice properties such as the `alpha`, `blurQuality` & `blurRadiusSetOnce` and finally we add this blur to our newly created class. If you want to deep into this class further and see what it can do and play around with it's features, look [here](https://iphonedev.wiki/index.php/UIBackdropView).
+6. We create the blur, set some nice properties such as the `alpha`, `blurQuality` & `blurRadiusSetOnce` and finally we add this blur to our newly created class. If you want to dive deeper into this class and see what it can do and play around with it's features, look [here](https://iphonedev.wiki/index.php/UIBackdropView).
 
 7. Finally, after already isolating all of the view code we just created, now we can move on to the hooking part. In order to get a blur view in the HomeScreen behind the icons, we need to hook `- (void)viewDidLoad;` method in `SBHomeScreenViewController`, as already mentioned, the main SpringBoard's HomeScreen class. `viewDidLoad` is always a good choice because it's guaranteed to be called in a `UIViewController` class after the view has loaded, so it's pretty common to add custom code there to add additional setup.
 

@@ -16,13 +16,13 @@ This is what your file structure in the folder should look like. The `.plist` fi
 
 ## `Makefile`
 
-This file essentially has information about how to build or rebuild the protocol.  `TARGET`, for example, contains the target operating system that you can choose. Another example would be `ARCHS` which have a dozen or so values you can choose from, but you will most likely use `arm64`, (every iPhone before the Xs series and after iOS 6) and `arm64e`, (every iPhone after and including the Xs series).
+This file essentially has information regarding the build protocol.  `TARGET`, for example, contains the target operating system that you can choose. Another example would be `ARCHS` which have a dozen or so values you can choose from, but you will most likely use `arm64`, (every iPhone before the Xs series and after iOS 6) and `arm64e`, (every iPhone after and including the Xs series).
 
 `ARCHS` would be written like this: `ARCHS = arm64 arm64e`
 
 ## `Tweak.x`
 
-This file is the most "important" out of these four. This is where you write all your code. This code will be written in the language called [Objective-C](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html), however you could use [Orion](https://orion.theos.dev) to utilize [Swift](https://developer.apple.com/swift/) instead.
+This file is the most "important" out of these four. This is where you write all your code. This code will be written in the language called [Objective-C](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html), however you could use [Orion](https://orion.theos.dev) to utilize [Swift](https://developer.apple.com/swift/) instead. This is a separate template called `tweak_swift` instead of `tweak`.
 
 ## `control`
 

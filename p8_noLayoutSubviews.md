@@ -4,7 +4,7 @@
 
 `- (void)layoutSubviews;` is a method that exists in classes inherited from `UIView`.
 
-`layoutSubviews`, just like other methods gets called at some point in the lifecycle of a class. What sets `layoutSubviews` apart from others, though, is that it gets called many times, and that poses some risks when using it to hook certain things in a class.
+`layoutSubviews`, just like other methods gets called at some point in the lifecycle of a class. What sets `layoutSubviews` apart from others, though, is that it gets called many times, and that poses some risks when using it to override certain things in a class.
 
 ## Let's See How it Gets Called
 
@@ -40,4 +40,4 @@ If possible, avoid it at all costs and use different methods instead.
 
 [Previous Page (`MSHookIvar`)](./p7_mshookivar.md)
 
-[Next Page (Advanced FLEX)](./p9_advanced_flex.md)
+[Next Page (FLEX Explained)](./p9_advanced_flex.md)

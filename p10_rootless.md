@@ -1,7 +1,7 @@
 # Adapting for Rootless
 
 ### What is rootless?
-- "rootless" is the term used for jailbreaks which do not have access to the root filesystem for whatever reason. This means that anything outside of `/var/` and `/private/preboot/` is not writable. However, the root **user** is still accessibly on a rootless jailbreak.
+- "rootless" is the term used for jailbreaks which do not have access to the root filesystem. This means that anything outside of `/var/` and `/private/preboot/` is not writable. However, the root **user** is still accessibly on a rootless jailbreak.
 
 ### How does this affect my tweak?
 - Existing tweaks which do not support rootless will need some changes in order to work on a rootless jailbreak. For instance, preference bundles are stored in `/Library/PreferenceBundles/` on a traditional ("rootful") jailbreak. However, since a rootless jailbreak does not have the ability to write to outside of the aforementioned directories, there needs to be a change made to the path in order to work properly. On rootless jailbreaks, the jailbreak files are stored in `/var/jb/`. Thus, the path becomes `/var/jb/Library/PreferenceBundles/`. This is the main difference between "rootless" and "rootful" jailbreaks.
@@ -41,6 +41,6 @@ More information about adapting for rootless can be found [here](https://theos.d
 
 ---
 
-[Previous Page (Advanced FLEX)](./p9_advanced_flex.md)
+[Previous Page (FLEX Explained)](./p9_advanced_flex.md)
 
 [Next Page (`%hookf`)](./p11_hookf.md)

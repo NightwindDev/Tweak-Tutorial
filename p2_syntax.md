@@ -84,7 +84,7 @@ If you need to initiate (call) the code that was written there originally, you c
 
 You can put `%orig;` before OR after your code, or not put it at all. If you want the original code to run AFTER your code, then put the `%orig;` AFTER your code, if you want it BEFORE, then BEFORE.
 
-Okay, but how do we hide it? Well, we know that `hidden` is a property of UIView, which `_UIStatusBarForegroundView` inherits from, so we could do: `self.hidden = YES;` (Note: you do not have to use YES, you could use true instead, or even 1 [true] and 0 [false]). `self` is referring to the view that we are hooking. So if we were to combine all this together, we would have something like this:
+Okay, but how do we hide it? Well, we know that `hidden` is a property of UIView, which `_UIStatusBarForegroundView` inherits from, so we could do: `self.hidden = YES;` (Note: you do not have to use YES, you could use true instead, or even 1 [true] and 0 [false]). `self` is referring to the object that we are hooking. So if we were to combine all this together, we would have something like this:
 
 ```objc
 #import <UIKit/UIKit.h>
