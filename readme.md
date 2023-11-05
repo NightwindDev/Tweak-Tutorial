@@ -42,6 +42,7 @@ Just make a pull request with the changes that you want to add.
 
 ### Credits:
 - [@Luki120](https://github.com/Luki120) for helping out with some of the issues regarding Substrate + important & valuable contributions.
+- [@L1ghtmann](https://github.com/L1ghtmann) for helping out with some issues regarding the tutorial as well as helping make the tutorial more beginner friendly.
 
 ---
 
