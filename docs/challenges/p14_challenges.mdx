@@ -1,0 +1,85 @@
+---
+id: challenge_1
+title: Challenge 1
+sidebar_position: 1
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<p>Convert the following piece of Substrate code to Logos.</p>
+<Tabs>
+    <TabItem value="challenge" label="Challenge">
+        ```objc
+        #import <UIKit/UIKit.h>
+        #import <substrate.h>
+
+        @interface SBIconImageView : UIView
+        @end
+
+        @interface SBHomeScreenBackdropView : UIView
+        @end
+
+        void orig_SBIconImageView_didMoveToWindow(SBIconImageView *self, SEL _cmd);
+
+        void new_SBIconImageView_didMoveToWindow(SBIconImageView *self, SEL _cmd) {
+            self.alpha = 0.5;
+            orig_didMoveToWindow(self, _cmd);
+        }
+
+        void orig_SBHomeScreenBackdropView_didMoveToSuperview(SBHomeScreenBackdropView *self, SEL _cmd);
+
+        void new_SBHomeScreenBackdropView_didMoveToSuperview(SBHomeScreenBackdropView *self, SEL _cmd) {
+            self.hidden = true;
+            orig_SBHomeScreenBackdropView_didMoveToSuperview(self, _cmd);
+        }
+
+        __attribute__((constructor)) static void initialize() {
+            MSHookMessageEx(
+                NSClassFromString(@"SBIconImageView"),
+                @selector(didMoveToWindow),
+                (IMP) &new_SBIconImageView_didMoveToWindow,
+                (IMP *) &orig_SBIconImageView_didMoveToWindow
+            );
+            MSHookMessageEx(
+                NSClassFromString(@"SBHomeScreenBackdropView"),
+                @selector(didMoveToSuperview),
+                (IMP) &new_SBHomeScreenBackdropView_didMoveToSuperview,
+                (IMP *) &orig_SBHomeScreenBackdropView_didMoveToSuperview
+            );
+        }
+        ```
+    </TabItem>
+    <TabItem value="solution" label="Solution">
+        ```objc
+        #import <UIKit/UIKit.h>
+
+        @interface SBIconImageView : UIView
+        @end
+
+        @interface SBHomeScreenBackdropView : UIView
+        @end
+
+
+        %hook SBIconImageView
+
+        -(void)didMoveToWindow {
+            self.alpha = 0.5;
+            %orig;
+        }
+
+        %end
+
+
+        %hook SBHomeScreenBackdropView
+
+        -(void)didMoveToWindow {
+            self.hidden = true;
+            %orig;
+        }
+
+        %end
+        ```
+    </TabItem>
+
+</Tabs>
