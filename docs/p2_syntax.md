@@ -1,4 +1,8 @@
-# How Do You Create a Tweak?
+---
+id: syntax
+title: Syntax
+sidebar_position: 2
+---
 
 ## But how do we actually write code for the tweak?
 
@@ -24,7 +28,7 @@ or like so:
 
 This is needed for pretty much all tweaks.
 
-Then we will use the FLEX tweak to find the correct view to hook. How do we get it? Well let's see! ***Make sure you're doing this on the HomeScreen as we are hooking the SpringBoard.***
+Then we will use the FLEX tweak to find the correct view to hook. How do we get it? Well let's see! **_Make sure you're doing this on the HomeScreen as we are hooking the SpringBoard._**
 
 1. Trigger the FLEX menu (the instructions to this are likely in the tweak description.)
 2. Press the `select` button on the FLEX menu.
@@ -36,7 +40,7 @@ Then we will use the FLEX tweak to find the correct view to hook. How do we get 
 
 Great! Now how do we write this in code?
 
-First, we will find the view we are hooking. In our case, it is called `_UIStatusBarForegroundView`. This view _inherits_ from UIView. You can check what a view *inherits* its properties from in FLEX by clicking on the (i) button next to the view and then looking at the top bar, where it should say `_UIStatusBarForegroundView`, then `UIView`, then `UIResponder`, and then finally `NSObject`. This means that `_UIStatusBarForegroundView` is inheriting its properties from `UIView` which is inheriting them from `UIResponder`, and so forth. So say UIView has a "hidden" property... `_UIStatusBarForegroundView` would also have a "hidden" property because it inherits from UIView.
+First, we will find the view we are hooking. In our case, it is called `_UIStatusBarForegroundView`. This view _inherits_ from UIView. You can check what a view _inherits_ its properties from in FLEX by clicking on the (i) button next to the view and then looking at the top bar, where it should say `_UIStatusBarForegroundView`, then `UIView`, then `UIResponder`, and then finally `NSObject`. This means that `_UIStatusBarForegroundView` is inheriting its properties from `UIView` which is inheriting them from `UIResponder`, and so forth. So say UIView has a "hidden" property... `_UIStatusBarForegroundView` would also have a "hidden" property because it inherits from UIView.
 
 UIKit only recognizes simple classes such as UIView, UIViewController, etc. so we will have to "interface" the view that we are hooking. This can be done like so:
 
@@ -116,7 +120,3 @@ And the command to compile for rootful (unofficial terminology for a non-rootles
 ```
 make package
 ```
-
-[Previous Page (Exploring The Tweak Files)](./p1_explore_files.md)
-
-[Next Page (Delving Into Views)](./p3_views.md)

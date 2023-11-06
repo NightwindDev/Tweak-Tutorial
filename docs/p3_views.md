@@ -1,4 +1,8 @@
-# How Do You Create a Tweak?
+---
+id: exploring_views
+title: Exploring Views
+sidebar_position: 3
+---
 
 ##### **Notice:** bear in mind that you don't really hook classes, you hook methods. But to keep consistency across this tutorial we'll refer to that by saying hook a class
 
@@ -99,7 +103,7 @@ Finally, we will need to add our rectangle as a subview of the view controller's
 [self.view addSubview:ourView];
 ```
 
-`self.view` is needed because we are adding our subview to the view of the view controller, not the view controller itself. The view controller is not present in the view hierarchy; it is not a visual element that one can see on the screen. However, its view *is* present in the hierarchy.
+`self.view` is needed because we are adding our subview to the view of the view controller, not the view controller itself. The view controller is not present in the view hierarchy; it is not a visual element that one can see on the screen. However, its view _is_ present in the hierarchy.
 
 To compile all this together, our final code should look like something like this:
 
@@ -219,7 +223,3 @@ To compile all this together, our final code should look like so:
 ![Example of it Working](https://user-images.githubusercontent.com/81449663/140844150-c6246369-a493-47a5-a012-cf9acf4e5cdc.png)
 
 Looks like it's working!
-
-[Previous Page (Code for The Tweak)](./p2_syntax.md)
-
-[Next Page (Finding Headers)](./p4_headers.md)

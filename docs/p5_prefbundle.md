@@ -1,4 +1,8 @@
-# How Do You Create a Tweak?
+---
+id: preference_files
+title: Preferences
+sidebar_position: 5
+---
 
 ## Let's make a preference bundle!
 
@@ -10,15 +14,15 @@ There is a universal way to make preference bundles for tweaks, although how you
 
 ## How do we start?
 
-1) Open up your terminal and navigate to your tweak folder.
-2) Type in `$THEOS/bin/nic.pl` so we can make a subproject.
-3) Choose `iphone/preference_bundle_modern`.
-4) Choose the project name for your preference bundle, a good standard by which to name it would be `YourTweak` + `Prefs`, so for example: `ExampleTweakPrefs`.
-5) Choose your bundle ID, `com.yourcompany.exampletweakprefs`.
-6) Same as in when we were setting up the tweak, enter your `Author/Maintainer Name`.
-7) Next, you will see: `[iphone/preference_bundle_modern] Class name prefix (three or more characters unique to this project) [XXX]`.
-    - What is this? It is basically the unique prefix for your "classes," so for example, let's say you have a UIViewController and you want it's name to be unique so that when you press the tweak name in the settings app, your tweak shows up.
-    - Let's say you choose the class name prefix to be `EXM`, your Root List Controller would be called `EXMRootListController.m`. It is __important__ that this is unique to your tweak.
+1. Open up your terminal and navigate to your tweak folder.
+2. Type in `$THEOS/bin/nic.pl` so we can make a subproject.
+3. Choose `iphone/preference_bundle_modern`.
+4. Choose the project name for your preference bundle, a good standard by which to name it would be `YourTweak` + `Prefs`, so for example: `ExampleTweakPrefs`.
+5. Choose your bundle ID, `com.yourcompany.exampletweakprefs`.
+6. Same as in when we were setting up the tweak, enter your `Author/Maintainer Name`.
+7. Next, you will see: `[iphone/preference_bundle_modern] Class name prefix (three or more characters unique to this project) [XXX]`.
+   - What is this? It is basically the unique prefix for your "classes," so for example, let's say you have a UIViewController and you want it's name to be unique so that when you press the tweak name in the settings app, your tweak shows up.
+   - Let's say you choose the class name prefix to be `EXM`, your Root List Controller would be called `EXMRootListController.m`. It is **important** that this is unique to your tweak.
 
 ## What are all these files?
 
@@ -40,20 +44,16 @@ There is a universal way to make preference bundles for tweaks, although how you
 This is the file tree of the preference bundle, let's look at each file closely.
 
 - `EXMRootListController.h`
-    - This is the headers file, we technically don't _need_ it, although it's useful to clean up our code. It is where all the interfaces, imports, and variables are placed.
+  - This is the headers file, we technically don't _need_ it, although it's useful to clean up our code. It is where all the interfaces, imports, and variables are placed.
 - `EXMRootListController.m`
-    - This is our view controller file, it is the thing that helps display the `Root.plist` when the tweak page is opened in the settings app.
+  - This is our view controller file, it is the thing that helps display the `Root.plist` when the tweak page is opened in the settings app.
 - `Makefile`
-    - This makefile performs the same function as the makefile in the tweak project.
+  - This makefile performs the same function as the makefile in the tweak project.
 - `Resources` folder
-    - This folder is where all the assets and `.plist`s are placed, it will be used a lot.
+  - This folder is where all the assets and `.plist`s are placed, it will be used a lot.
 - `Info.plist`
-    - This is the file that holds all the "technical" stuff, you will likely not touch it.
+  - This is the file that holds all the "technical" stuff, you will likely not touch it.
 - `Root.plist`
-    - This is an important file, it holds the cells that are displayed when you open the tweak page.
+  - This is an important file, it holds the cells that are displayed when you open the tweak page.
 - `ExampleTweakPrefs.plist`
-    - This is also a file that holds "technical" stuff, you will likely not touch it either.
-
-[Previous Page (Finding Headers)](./p4_headers.md)
-
-[Next Page (Preference Bundles cont.)](./p6_prefbundlept2.md)
+  - This is also a file that holds "technical" stuff, you will likely not touch it either.

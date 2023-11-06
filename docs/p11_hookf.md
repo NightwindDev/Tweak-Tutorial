@@ -1,4 +1,8 @@
-# How Do You Create a Tweak?
+---
+id: hookf
+title: Hookf
+sidebar_position: 11
+---
 
 `%hookf` can be confusing at first, but it is pretty easy to understand once you get into it.
 
@@ -12,9 +16,9 @@ While `%hook` is used to hook Objective-C classes, `%hookf` is used to hook C fu
 %hookf(return_type, symbol_name, arguments...) {...}
 ```
 
-* `return_type` - The return type of the function.
-* `symbol_name` - This is the name of the function being hooked.
-* `arguments` - These are the arguments that are passed into the function.
+- `return_type` - The return type of the function.
+- `symbol_name` - This is the name of the function being hooked.
+- `arguments` - These are the arguments that are passed into the function.
 
 ## Example
 
@@ -41,7 +45,3 @@ __attribute__((constructor)) static void initialize() {
 ```
 
 For further information about `%hookf`, please go [here](https://theos.dev/docs/logos-syntax).
-
-[Previous Page (Adapting for rootless)](./p10_rootless.md)
-
-[Next Page (`%subclass` Wrapper)](./p12_subclassWrapper.md)

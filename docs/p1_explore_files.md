@@ -1,4 +1,8 @@
-# How Do You Create a Tweak?
+---
+id: exploring_files
+title: Explore Files
+sidebar_position: 1
+---
 
 ## Exploring The Tweak Files
 
@@ -16,7 +20,7 @@ This is what your file structure in the folder should look like. The `.plist` fi
 
 ## `Makefile`
 
-This file essentially has information regarding the build protocol.  `TARGET`, for example, contains the target operating system that you can choose. Another example would be `ARCHS` which have a dozen or so values you can choose from, but you will most likely use `arm64`, (every iPhone before the Xs series and after iOS 6) and `arm64e`, (every iPhone after and including the Xs series).
+This file essentially has information regarding the build protocol. `TARGET`, for example, contains the target operating system that you can choose. Another example would be `ARCHS` which have a dozen or so values you can choose from, but you will most likely use `arm64`, (every iPhone before the Xs series and after iOS 6) and `arm64e`, (every iPhone after and including the Xs series).
 
 `ARCHS` would be written like this: `ARCHS = arm64 arm64e`
 
@@ -31,7 +35,3 @@ This file contains the information about your tweak. Things like the name of the
 ## `testtweak.plist`
 
 This file contains what the tweak will be hooking/injecting into. This won't be touched much, compared to the other files, but it does exist and is also important.
-
-[Previous Page (Setting Up The Tweak)](./p0_starting_off.md)
-
-[Next Page (Code For The Tweak)](./p2_syntax.md)
