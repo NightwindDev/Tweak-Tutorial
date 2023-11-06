@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "dev": "docusaurus start",
     "build": "docusaurus build",
-    "preview": "docusaurus build; docusaurus serve --port 3001 --no-open",
+    "serve": "docusaurus serve",
     "typecheck": "tsc"
   },
   "dependencies": {
