@@ -23,4 +23,4 @@
 
       - After this, Theos will create a folder with the tweak files inside of it.
 
-[Next Page (Exploring The Tweak Files)](./p1_explore_files.md)
+[Next Page (Exploring The Tweak Files)](./explore_files.md)

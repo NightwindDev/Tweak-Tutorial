@@ -62,6 +62,6 @@ In addition, there is also `-safeValueForKey:`, which is a private method that i
 %end
 ```
 
-[Previous Page (Preference Bundles cont.)](./p6_prefbundlept2.md)
+[Previous Page (Preference Bundles cont.)](./preference_bundles_cont.md)
 
-[Next Page (Avoiding `layoutSubviews`)](./p8_noLayoutSubviews.md)
+[Next Page (Avoiding `layoutSubviews`)](./no_layoutsubviews.md)

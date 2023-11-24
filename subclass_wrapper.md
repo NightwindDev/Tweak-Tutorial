@@ -136,6 +136,6 @@ Then, in the main `Tweak.x` file, add this:
 
 * This blur is available as one of the types to choose in the tweak [Amēlija](https://repo.twickd.com/get/me.luki.amelija) if you're interested.
 
-[Previous Page (`%hookf`)](./p11_hookf.md)
+[Previous Page (`%hookf`)](./hookf.md)
 
-[Next Page (Substrate Tweaks)](./p13_substratetweaks.md)
+[Next Page (Substrate Tweaks)](./substrate_tweaks.md)

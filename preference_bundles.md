@@ -54,6 +54,6 @@ This is the file tree of the preference bundle, let's look at each file closely.
 - `ExampleTweakPrefs.plist`
     - This is also a file that holds "technical" stuff, you will likely not touch it either.
 
-[Previous Page (Finding Headers)](./p4_headers.md)
+[Previous Page (Finding Headers)](./headers.md)
 
-[Next Page (Preference Bundles cont.)](./p6_prefbundlept2.md)
+[Next Page (Preference Bundles cont.)](./preference_bundles_cont.md)

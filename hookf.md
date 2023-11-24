@@ -42,6 +42,6 @@ __attribute__((constructor)) static void initialize() {
 
 For further information about `%hookf`, please go [here](https://theos.dev/docs/logos-syntax).
 
-[Previous Page (Adapting for rootless)](./p10_rootless.md)
+[Previous Page (Adapting for rootless)](./rootless.md)
 
-[Next Page (`%subclass` Wrapper)](./p12_subclassWrapper.md)
+[Next Page (`%subclass` Wrapper)](./subclass_wrapper.md)

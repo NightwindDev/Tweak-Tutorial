@@ -40,6 +40,6 @@ This also allows the developer to make cells manually, you would need to add the
 
 Linking the preference bundle to the tweak can also be found in my preference bundle examples page: https://github.com/NightwindDev/Preference-Bundle-Example#linking-cells-to-tweak.
 
-[Previous Page (Preference Bundles)](./p5_prefbundle.md)
+[Previous Page (Preference Bundles)](./preference_bundles.md)
 
-[Next Page (`MSHookIvar`)](./p7_mshookivar.md)
+[Next Page (`MSHookIvar`)](./mshookivar.md)

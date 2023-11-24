@@ -225,6 +225,6 @@ Finally, the very last section is the "OBJECT GRAPH" section. This section allow
 
 ---
 
-[Previous Page (Avoiding `layoutSubviews`)](./p8_noLayoutSubviews.md)
+[Previous Page (Avoiding `layoutSubviews`)](./no_layoutsubviews.md)
 
-[Next Page (Adapting for rootless)](./p10_rootless.md)
+[Next Page (Adapting for rootless)](./rootless.md)

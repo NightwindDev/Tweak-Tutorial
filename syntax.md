@@ -117,6 +117,6 @@ And the command to compile for rootful (unofficial terminology for a non-rootles
 make package
 ```
 
-[Previous Page (Exploring The Tweak Files)](./p1_explore_files.md)
+[Previous Page (Exploring The Tweak Files)](./explore_files.md)
 
-[Next Page (Delving Into Views)](./p3_views.md)
+[Next Page (Delving Into Views)](./views.md)

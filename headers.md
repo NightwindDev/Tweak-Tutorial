@@ -65,6 +65,6 @@ The table below shows the attributes which describe the property's behavior to `
 | `copy`        | Used for pointers, calls `[PROPERTY copy]` so you get a copy of the property (Only works in `NSCopying`-compliant classes). |
 | `retain`      | __**DEPRECATED**__: Same as `strong`, but you should use `strong` because it is newer.                                      |
 
-[Previous Page (Delving Into Views)](./p3_views.md)
+[Previous Page (Delving Into Views)](./views.md)
 
-[Next Page (Preference Bundles)](./p5_prefbundle.md)
+[Next Page (Preference Bundles)](./preference_bundles.md)

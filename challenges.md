@@ -49,4 +49,4 @@ __attribute__((constructor)) static void initialize() {
 
 #### Solutions to the challenges can be found <a href="https://github.com/NightwindDev/Tweak-Tutorial/tree/main/Solutions">here</a>.
 
-[Previous Page (Building Tweaks Without Logos)](./p13_substratetweaks.md)
+[Previous Page (Building Tweaks Without Logos)](./substrate_tweaks.md)

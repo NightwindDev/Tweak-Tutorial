@@ -220,6 +220,6 @@ To compile all this together, our final code should look like so:
 
 Looks like it's working!
 
-[Previous Page (Code for The Tweak)](./p2_syntax.md)
+[Previous Page (Code for The Tweak)](./syntax.md)
 
-[Next Page (Finding Headers)](./p4_headers.md)
+[Next Page (Finding Headers)](./headers.md)

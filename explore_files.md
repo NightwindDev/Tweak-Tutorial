@@ -32,6 +32,6 @@ This file contains the information about your tweak. Things like the name of the
 
 This file contains what the tweak will be hooking/injecting into. This won't be touched much, compared to the other files, but it does exist and is also important.
 
-[Previous Page (Setting Up The Tweak)](./p0_starting_off.md)
+[Previous Page (Setting Up The Tweak)](./starting_off.md)
 
-[Next Page (Code For The Tweak)](./p2_syntax.md)
+[Next Page (Code For The Tweak)](./syntax.md)
