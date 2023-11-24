@@ -31,6 +31,16 @@ The value of this string will be like so:
 - "rootful": `/Library/Application Support/`
 - "rootless": `/var/jb/Library/Application Support/`
 
+#### Compiling for rootless
+As [previously mentioned](./syntax.md/#compiling-the-tweak), the command needed to compile for rootless requires an extra argument: `THEOS_PACKAGE_SCHEME=rootless`. Therefore, if you normally compile for rootless with this:
+```bash
+make do
+```
+Then you would need to add the extra flag at the end, like so:
+```bash
+make do THEOS_PACKAGE_SCHEME=rootless
+```
+
 ---
 
 Do note that some libraries also need to be updated for rootless, so that is something that needs to be taken into account.
