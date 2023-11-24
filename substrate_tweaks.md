@@ -1,6 +1,6 @@
 # How Do You Create a Tweak?
 
-## Why?
+## Why should I create non-Logos tweaks?
 
 * Logos is great to use, however sometimes there are scenarios when using no Logos (or just Substrate-hooking) is better to use.
 
