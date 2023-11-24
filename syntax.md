@@ -117,6 +117,24 @@ And the command to compile for rootful (unofficial terminology for a non-rootles
 make package
 ```
 
+#### Quick note
+These commands will output a `.deb` file of your tweak in `./Packages` directory, without automatically installing the `.deb` onto the device. If you wish to install the `.deb` on device, `make do` is the better choice. It is essentially a shorter version of `make package install`, which makes the `.deb` and then installs it to the device using SSH.
+
+Here is how to set up the automatic installation of the `.deb` via SSH over Wi-Fi onto the device:
+
+- Install `openssh` on device
+- Add the root password on device if it was not already added
+- Find your local ip address in `Settings > Wi-Fi > <current network name> (i) > IP Address`
+- In your compile command, add an argument at the end `THEOS_DEVICE_IP=<your ip>`
+
+In order to not have to input your password every time, do this in your desktop terminal:
+```bash
+ssh-keygen
+ssh-copy-id root@<your ip>
+```
+
+If you would like to use SSH over USB instead, there is a [page on The Apple Wiki](https://theapplewiki.com/wiki/Dev:SSH_Over_USB) with information regarding that.
+
 [Previous Page (Exploring The Tweak Files)](./explore_files.md)
 
 [Next Page (Delving Into Views)](./views.md)
