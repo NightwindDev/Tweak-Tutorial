@@ -54,6 +54,13 @@ This is the file tree of the preference bundle, let's look at each file closely.
 - `ExampleTweakPrefs.plist`
     - This is also a file that holds "technical" stuff, you will likely not touch it either.
 
+## Important Note
+In order to display the preference bundle of a tweak, a package called `preferenceloader` must be installed. This is why it is necessary to add a dependency on `preferenceloader` in the tweak's `control` file. Most users will have `preferenceloader` installed already, however it is important to take into account the users that are installing your tweak as their first tweak. They may not have `preferenceloader` installed, and therefore your tweak preferences may not be handled correctly. This is how a dependency on `preferenceloader` can be added to the `control` file:
+```
+Depends: ... preferenceloader, ...
+```
+An example of this can be found [here](https://github.com/NightwindDev/BoldersReborn/blob/5a537096a4f5939ce39de16e259701b574b3315e/control#L10C1-L10C57).
+
 [Previous Page (Finding Headers)](./headers.md)
 
 [Next Page (Preference Bundles cont.)](./preference_bundles_cont.md)
