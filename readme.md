@@ -7,7 +7,7 @@ This tutorial tries to be as comprehensive as possible to explain how tweaks are
 
 ---
 
-### Requirements:
+### Requirements
 
 - Basic [Object-Orientated Programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming) knowledge.
 - A text editor of your choice.
@@ -16,7 +16,7 @@ This tutorial tries to be as comprehensive as possible to explain how tweaks are
 
 ---
 
-### Table of Contents:
+### Table of Contents
 
 - [[ 0 ] Starting Off](./p0_starting_off.md)
 - [[ 1 ] Exploring Files](./p1_explore_files.md)
@@ -40,13 +40,13 @@ Just make a pull request with the changes that you want to add.
 
 ---
 
-### Credits:
+### Credits
 - [@Luki120](https://github.com/Luki120) for helping out with some of the issues regarding Substrate + important & valuable contributions.
 - [@L1ghtmann](https://github.com/L1ghtmann) for helping out with some issues regarding the tutorial as well as helping make the tutorial more beginner friendly.
 
 ---
 
-### Support:
+### Support
 
 - [iOSJBN Discord Server](https://discord.gg/K3wGBBhPqp)
 - [r/jailbreakdevelopers](https://reddit.com/r/jailbreakdevelopers)
