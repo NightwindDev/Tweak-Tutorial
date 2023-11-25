@@ -215,7 +215,10 @@ Finally, the very last section is the "OBJECT GRAPH" section. This section allow
 
 <details>
 <summary>Select Button</summary>
-<blockquote>Allows you to select a view on the screen and look at its values. Usually, you will need to select something that will not be selected upon the first tap. In order to select the thing that you want to select, you will need to move the view that is covering your target view and keep repeating that until you get to the correct view.</blockquote>
+<blockquote>Allows you to select a view on the screen and look at its values. Usually, you will need to select something that will not be selected upon the first tap. In order to select the thing that you want to select, you will need to move the view that is covering your target view and keep repeating that until you get to the correct view.
+
+Another function of this button is the following: if you hold down on the button, you will be able to select what window FLEX is displayed on, allowing for the selection of typically unselectable items. For instance, items relating to keyboard (such as `UIKeyboardDockView`) are typically not able to be selected via FLEX because the keyboard is on a higher window level. Adjusting FLEX's window level to be above the keyboard's window level allows you to select the keyboard.
+</blockquote>
 </details>
 
 <details>
