@@ -69,7 +69,7 @@ Another method that can be used to avoid relying on the "Legacy arm64e Support" 
 
 - Allemand
   - The compiled binaries for Allemand, as well as the instructions for it, can be found in the [r/jailbreak](https://discord.com/jb) Discord server's `#dopamine` channel. The direct link to the macOS instructions can be found [here](https://discord.com/channels/349243932447604736/688126462066163756/1109535067493122198) and the iOS instructions, [here](https://discord.com/channels/349243932447604736/688126462066163756/1109533605392285836).
-  - Note: when using Allemand, you will have to manually depack and repack the .deb of your tweak and run Allemand on each binary contained within the tweak. More in-depth instructions for macOS can be found [here](https://gist.github.com/NightwindDev/1c05464475b597231e0c6855d959d144) alongside information about "derootifying" tweaks.
+  - Note: when using Allemand, you will have to manually unpack and repack the .deb of your tweak and run Allemand on each binary contained within the tweak. More in-depth instructions for macOS can be found [here](https://gist.github.com/NightwindDev/1c05464475b597231e0c6855d959d144) alongside information about "derootifying" tweaks.
 - Allemande
   - [p0358](https://github.com/p0358)'s port of Allemand has built-in integration with Theos.
   - You will have to compile Allemande via the instructions found in the GitHub repo's [readme file](https://github.com/p0358/allemande/blob/master/README.md).
