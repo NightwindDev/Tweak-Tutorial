@@ -52,8 +52,8 @@ jobs:
         run: |
           brew install make xz ldid
           export THEOS=theos
-		  gmake clean package FINALPACKAGE=1
-		  gmake clean package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
+          gmake clean package FINALPACKAGE=1
+          gmake clean package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
