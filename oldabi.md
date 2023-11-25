@@ -64,7 +64,7 @@ This is a basic template that should work for most simple tweaks. If the tweak h
 
 After pushing the changes, you may or may not have to manually enable GitHub Actions in your repository.
 
-## Using Allemand(e)
+### Using Allemand(e)
 Another method that can be used to avoid relying on the "Legacy arm64e Support" package is using a static patcher on the binary. There are currently two available: [Allemand](https://github.com/evelyneee/Allemand) and [Allemande](https://github.com/p0358/allemande). Allemand supports iOS and macOS, while Allemande is a "port of allemand to C++," which is cross-platform.
 
 - Allemand
@@ -75,7 +75,7 @@ Another method that can be used to avoid relying on the "Legacy arm64e Support" 
   - You will have to compile Allemande via the instructions found in the GitHub repo's [readme file](https://github.com/p0358/allemande/blob/master/README.md).
 
 Quick note about static patchers: they are not perfect and may not work 100% of the time. In particular, there are issues with function blocks, so things like animation blocks in `UIView` will cause the device to crash.
-## Relying on `Legacy arm64e Support`
+### Relying on `Legacy arm64e Support`
 If all else fails, then you can add a dependency on `Legacy arm64e Support` in your tweak. This is not recommended and should be used as a last resort, because as mentioned previously, the `Legacy arm64e Support` package causes system instability. The proper way to depend on this is:
 ```
 Depends: firmware (<< 15.0) | cy+cpu.arm64v8 | oldabi
