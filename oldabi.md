@@ -1,7 +1,7 @@
 # How Do You Create a Tweak?
 
 ## What is the old ABI?
-The ABI that was used by versions of Xcode 11.7 and older, commonly known as "OldABI," is what was used to compile tweaks prior to iOS 14 releasing. Upon the release of iOS 14 and Xcode 12.0, Apple decided to switch to the new "unstable" arm64e ABI when a binary is compiled for arm64e.
+The ABI that was used by versions of Xcode 11.7 and older, commonly known as "OldABI," is what was used to compile tweaks prior to iOS 14 releasing. Upon the release of iOS 14 and Xcode 12.0, Apple decided to switch to the new arm64e ABI when a binary is compiled for arm64e.
 
 Tweak developers were advised to compile with the old ABI, however. The reason for this was the fact that the new ABI broke support for arm64e (iPhone Xs and newer) on iOS 13, while the old ABI still worked fine. Apple broke support for the old ABI in iOS 14.5 onward.
 
@@ -60,7 +60,7 @@ jobs:
         with:
           path: packages/*.deb
 ```
-This is a basic template that should work for most simple tweaks. The tweak has dependencies, you will need to install them as well.
+This is a basic template that should work for most simple tweaks. If the tweak has dependencies, you will need to install them as well.
 
 After pushing the changes, you may or may not have to manually enable GitHub Actions in your repository.
 
