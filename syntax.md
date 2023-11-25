@@ -135,6 +135,29 @@ ssh-copy-id root@<your ip>
 
 If you would like to use SSH over USB instead, there is a [page on The Apple Wiki](https://theapplewiki.com/wiki/Dev:SSH_Over_USB) with information regarding that.
 
+## Passing arguments to `%orig;`
+Let's say we have a method with arguments that we want to override. For instance, let's use the following method:
+```objc
+%hook UIViewController
+
+- (void)viewDidAppear:(BOOL)animated {
+    // ...
+}
+
+%end
+```
+This method has one argument of type `BOOL` called `animated`. When we call `%orig;`, we are really also passing in all of the original arguments that the method had, i.e. `%orig(animated);`. However, let's say we want to override the original argument with our own, such as `NO`, since we may not want the view to animate its appearance. That can be done like so:
+```objc
+%hook UIViewController
+
+- (void)viewDidAppear:(BOOL)animated {
+    %orig(NO);
+}
+
+%end
+```
+Now, Logos will intelligently understand that we want to call the original implementation of `viewDidAppear:`, but with `NO` as its argument.
+
 [Previous Page (Exploring The Tweak Files)](./explore_files.md)
 
 [Next Page (Delving Into Views)](./views.md)
