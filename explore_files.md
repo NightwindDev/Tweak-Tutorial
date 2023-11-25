@@ -2,7 +2,7 @@
 
 ## Exploring The Tweak Files
 
-Please open your text editor of choice to your tweak folder.
+Please open your text/code editor of choice to your tweak folder.
 
 ```
 .
@@ -22,15 +22,17 @@ This file essentially has information regarding the build protocol.  `TARGET`, f
 
 ## `Tweak.x`
 
-This file is the most "important" out of these four. This is where you write all your code. This code will be written in the language called [Objective-C](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html), however you could use [Orion](https://orion.theos.dev) to utilize [Swift](https://developer.apple.com/swift/) instead. This is a separate template called `tweak_swift` instead of `tweak`.
+This file is the most "important" out of these four. This is where you write all your code. This code will be written in a language called [Objective-C](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html), however you could use [Orion](https://orion.theos.dev) to utilize [Swift](https://developer.apple.com/swift/) instead. This is a separate template called `tweak_swift` instead of `tweak`.
 
 ## `control`
 
-This file contains the information about your tweak. Things like the name of the developer, what iOS version it supprorts, etc. Some DPKG managers display bits and pieces of it when the user looks at the tweak depiction.
+This file contains the information about your tweak. Things like the name of the developer, what iOS version it supports, etc. Some DPKG managers display bits and pieces of it when the user looks at the tweak depiction.
 
 ## `testtweak.plist`
 
 This file contains what the tweak will be hooking/injecting into. This won't be touched much, compared to the other files, but it does exist and is also important.
+
+More information about this file can be found at [The Apple Wiki](https://theapplewiki.com/wiki/Dev:Cydia_Substrate#Filters). Knowing the various uses of filters can be very beneficial if you want to hook several classes throughout iOS without injecting into `com.apple.UIKit`, for instance.
 
 [Previous Page (Setting Up The Tweak)](./starting_off.md)
 

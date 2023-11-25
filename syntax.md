@@ -22,7 +22,7 @@ or like so:
 @import UIKit;
 ```
 
-This is needed for pretty much all tweaks.
+This is needed for pretty much all tweaks that modify something relating to the UI on iOS.
 
 Then we will use the FLEX tweak to find the correct view to hook. How do we get it? Well let's see! ***Make sure you're doing this on the HomeScreen as we are hooking the SpringBoard.***
 
