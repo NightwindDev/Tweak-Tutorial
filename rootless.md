@@ -53,4 +53,4 @@ More information about adapting for rootless can be found [here](https://theos.d
 
 [Previous Page (FLEX Explained)](./flex_explained.md)
 
-[Next Page (`%hookf`)](./hookf.md)
+[Next Page (Old ABI)](./oldabi.md)
