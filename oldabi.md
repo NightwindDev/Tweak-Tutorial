@@ -13,7 +13,7 @@ On iOS 14.5-14.8.1, the patches needed to support the old ABI are minimal and ar
 The "Legacy arm64e Support" package has been known to cause general system instability, also increasing the chance of spinlock panics, [explained here](https://github.com/opa334/Dopamine/issues/274#issuecomment-1821038203).
 
 ## How do I use the new ABI in my tweaks?
-There are several ways to use the new ABI in your tweaks. We'll go through them from most to least desirable.
+There are several ways to use the new ABI in your tweaks. We'll go through them from most to least desirable. Do note that if you would like to support iOS 13 as well as iOS 15+, you will need to compile with the old ABI for "rootful" builds of your tweak and with the new ABI for "rootless" builds.
 ### Compiling via macOS
 The best way to make sure the tweak works completely with the new ABI is compiling on a macOS machine. The new ABI has not been open sourced yet as of the time of writing (24 November 2023), therefore it can only be used to compile tweaks on macOS.
 ### Compiling via [GitHub Actions](https://github.com/features/actions)
@@ -76,7 +76,7 @@ Another method that can be used to avoid relying on the "Legacy arm64e Support" 
 
 Quick note about static patchers: they are not perfect and may not work 100% of the time. In particular, there are issues with function blocks, so things like animation blocks in `UIView` will cause the device to crash.
 ## Relying on `Legacy arm64e Support`
-If all else fails, then you can add a dependency on `Legacy arm64e Support` in your tweak. This is not recommended, because as mentioned previously, the `Legacy arm64e Support` package causes system instability. The proper way to depend on this is:
+If all else fails, then you can add a dependency on `Legacy arm64e Support` in your tweak. This is not recommended and should be used as a last resort, because as mentioned previously, the `Legacy arm64e Support` package causes system instability. The proper way to depend on this is:
 ```
 Depends: firmware (<< 15.0) | cy+cpu.arm64v8 | oldabi
 ```
