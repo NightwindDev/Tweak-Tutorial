@@ -46,6 +46,8 @@ People have dumped headers for views and view controllers for versions and poste
 
 Of course, not all headers are dumped, sometimes you will need to dump them yourself. A [video](https://web.archive.org/web/20201202093934/https://www.youtube.com/watch?v=M8HzCj0aKpw&gl=US&hl=en) (archived via [the Internet Archive](https://archive.org)) by Zane Helton explains how to do this perfectly.
 
+Limneos and Cynder's sites both have headers from Apple, but if you would like to modify third party apps, looking through open source tweaks is a great way to find classes that are relevant to the idea that you have in mind.
+
 ## A brief explanation of `@property` and it's attributes
 
 `@property` adds properties, which are values of classes, to the object that is being interfaced. They exist to store data for later reference and/or reassignment in the object, and they are a newer and more adopted standard compared to the old way of using instance variables (ivars).
