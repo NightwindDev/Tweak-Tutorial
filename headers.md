@@ -60,7 +60,7 @@ The table below shows the attributes which describe the property's behavior to `
 | ------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | `nonatomic`   | Multiple threads can access properties at the same time.                                                                    |
 | `atomic`      | A single thread can access a property at a given time.                                                                      |
-| `assign`      | Used for primitive data types such as `int`, `bool`, `char`, etc.                                                           |
+| `assign`      | Used for primitive data types such as `int`, `BOOL`, `char`, etc.                                                           |
 | `readonly`    | Only a getter will be generated, so you can get its value but not set it.                                                   |
 | `readwrite`   | A getter AND a setter method will be generated.                                                                             |
 | `strong/weak` | Used for pointers.                                                                                                          |
