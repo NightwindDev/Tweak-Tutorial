@@ -6,7 +6,14 @@ The ABI that was used by versions of Xcode 11.7 and older, commonly known as "Ol
 Tweak developers were advised to compile with the old ABI, however. The reason for this was the fact that the new ABI broke support for arm64e (iPhone Xs and newer) on iOS 13, while the old ABI still worked fine. Apple broke support for the old ABI in iOS 14.5 onward.
 
 ## The issue with the old ABI on modern iOS
-The [Taurine](https://taurine.app) and [XinaA15](https://github.com/NotDarkn/XinaA15) jailbreaks have an embedded version of patches that mitigate the need to recompile tweaks with the new ABI. The [Dopamine](https://ellekit.space/Dopamine) jailbreak does not have an embedded patch. However, it has an additional package called "Legacy arm64e Support" that is able to be installed via the [ElleKit Repo](https://ellekit.space).
+- [Taurine](https://taurine.app) jailbreak
+  - Taurine has an embedded series of patches to mitigate the need to recompile tweaks with the new ABI.
+- [XinaA15](https://github.com/NotDarkn/XinaA15) "rootful" (versions 1.1.3.6-1.1.8) jailbreak
+  - XinaA15 "rootfuL" has an embedded series of patches to mitigate the need to recompile tweaks with the new ABI.
+- [XinaA15](https://github.com/NotDarkn/XinaA15) "rootless" (versions 2.0.8 and above) jailbreak
+  - XinaA15 "rootless" does **not** currently have patches for the old ABI.
+- [Dopamine](https://ellekit.space/Dopamine) jailbreak
+  - Dopamine does not have an embedded patch. However, it has an additional package called "Legacy arm64e Support" that is able to be installed via the [ElleKit Repo](https://ellekit.space).
 
 On iOS 14.5-14.8.1, the patches needed to support the old ABI are minimal and are implemented on the jailbeak's end. Starting with iOS 15, though, arm64e jailbreaks need a more robust solution to support the old ABI, which causes system instability.
 
