@@ -11,7 +11,7 @@ Tweak developers were advised to compile with the old ABI, however. The reason f
 - [XinaA15](https://github.com/jacksight/xina520_official_jailbreak) "rootful" (versions 1.1.3.6-1.1.8) jailbreak
   - XinaA15 "rootful" has an embedded series of patches to mitigate the need to recompile tweaks with the new ABI.
 - [XinaA15](https://github.com/jacksight/xina520_official_jailbreak) "rootless" (versions 2.0.8 and above) jailbreak
-  - XinaA15 "rootless" does **not** currently have patches for the old ABI.
+  - XinaA15 "rootless" does not have an embedded patch. However, it has an additional package called `oldabi-xina` that can be installed via the [XinaA15 Repo](https://apt.xina.vip);
 - [Dopamine](https://ellekit.space/Dopamine) jailbreak
   - Dopamine does not have an embedded patch. However, it has an additional package called "Legacy arm64e Support" that is able to be installed via the [ElleKit Repo](https://ellekit.space).
 
