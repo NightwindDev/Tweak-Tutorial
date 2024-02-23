@@ -33,7 +33,8 @@ This tutorial tries to be as comprehensive as possible to explain how tweaks are
 - [[ 12 ] `%hookf`](./hookf.md)
 - [[ 13 ] `%subclass` Wrapper](./subclass_wrapper.md)
 - [[ 14 ] Substrate Tweaks](./substrate_tweaks.md)
-- [[ 15 ] Challenges](./challenges.md)
+- [[ 15 ] Respringless Tweaks](./respringless_tweaks.md)
+- [[ 16 ] Challenges](./challenges.md)
 
 For any developers that want to contribute to this tutorial, feel free to do so!
 
