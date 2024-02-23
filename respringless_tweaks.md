@@ -5,7 +5,7 @@ I won't explain what `NSNotificationCenter` does or how it works in too much det
 
 ## Tweak
 
-* Open your terminal and create a tweak project, your `Tweak.x` should look like this:
+Open your terminal and create a tweak project, your `Tweak.x` should look like this:
 
 ```objc
 #import "Tweah.h"
@@ -99,9 +99,9 @@ static NSNotificationName const RespringlessTweakDidUpdateBlurIntensityNotificat
 * First we create the `loadPrefs(void)` function that will contain our prefs, adding the `float` key for the blur intensity.
 
 * We hook `- (void)viewDidLoad` from `CSCoverSheetViewController` where we call the original implementation and our custom method `- (void)setupBlur` where we create a `_UIBackdropView` blur with custom settings, nothing crazy going on there.
-Finally the most important part: we create a notification observer by calling `addObserver:selector:name:object:` on `NSDistributedNotificationCenter`. We're using the distributed variant because we need to communicate between two different processes (Preferences & SpringBoard). This observer, `CSCoverSheetViewController` will be listening to notifications with the name of `RespringlessTweakDidSetupBlurNotification`, when one gets send, it'll call `updateBlurIntensity`, which will update the `alpha` value accordingly & reflect it on the UI.
+Finally the most important part: we create a notification observer by calling `addObserver:selector:name:object:` on `NSDistributedNotificationCenter`. We're using the distributed variant because we need to communicate between two different processes (Preferences & SpringBoard). This observer, `CSCoverSheetViewController` will be listening to notifications with the name of `RespringlessTweakDidUpdateBlurIntensityNotification`, when one gets send, it'll call `updateBlurIntensity`, which will update the `alpha` value accordingly & reflect it on the UI.
 
-* Now we have to actually make the preferences, so create a preference bundle project, your root view controller should look like this, I named mine `RTRootVC.m`:
+Now we have to actually make the preferences, so create a preference bundle project, your root view controller should look like this, I named mine `RTRootVC.m`:
 
 ```objc
 
