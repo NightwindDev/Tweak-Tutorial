@@ -15,8 +15,8 @@ static float blurIntensity;
 
 static void loadPrefs(void) {
 
-	NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName: kSuiteName];
-	blurIntensity = [prefs objectForKey:@"blurIntensity"] ? [prefs floatForKey:@"blurIntensity"] : 0.85;
+    NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName: kSuiteName];
+    blurIntensity = [prefs objectForKey:@"blurIntensity"] ? [prefs floatForKey:@"blurIntensity"] : 0.85;
 
 }
 
@@ -28,11 +28,11 @@ static _UIBackdropView *blurView;
 
 - (void)setupBlur {
 
-	_UIBackdropViewSettings *settings = [_UIBackdropViewSettings settingsForStyle:2];
+    _UIBackdropViewSettings *settings = [_UIBackdropViewSettings settingsForStyle:2];
 
-	blurView = [[_UIBackdropView alloc] initWithFrame:CGRectZero autosizesToFitSuperview:YES settings:settings];
-	blurView.alpha = blurIntensity;
-	[self.view insertSubview:blurView atIndex:0];	
+    blurView = [[_UIBackdropView alloc] initWithFrame:CGRectZero autosizesToFitSuperview:YES settings:settings];
+    blurView.alpha = blurIntensity;
+    [self.view insertSubview:blurView atIndex:0];   
 
 }
 
@@ -40,24 +40,24 @@ static _UIBackdropView *blurView;
 
 - (void)updateBlurIntensity {
 
-	loadPrefs();
-	blurView.alpha = blurIntensity;
+    loadPrefs();
+    blurView.alpha = blurIntensity;
 
 }
 
 - (void)viewDidLoad {
 
-	%orig;
-	[self setupBlur];
+    %orig;
+    [self setupBlur];
 
-	[NSDistributedNotificationCenter.defaultCenter addObserver:self selector:@selector(updateBlurIntensity) name:RespringlessTweakDidSetupBlurNotification object: nil];
+    [NSDistributedNotificationCenter.defaultCenter addObserver:self selector:@selector(updateBlurIntensity) name:RespringlessTweakDidUpdateBlurIntensityNotification object: nil];
 
 }
 
 %end
 
 %ctor {
-	loadPrefs();
+    loadPrefs();
 }
 ```
 
@@ -88,7 +88,7 @@ Finally, `Common.h`
 ```objc
 static NSString *const kSuiteName = @"me.luki.respringlesstweakprefs";
 
-static NSNotificationName const RespringlessTweakDidSetupBlurNotification = @"RespringlessTweakDidSetupBlurNotification";
+static NSNotificationName const RespringlessTweakDidUpdateBlurIntensityNotification = @"RespringlessTweakDidUpdateBlurIntensityNotification";
 
 @interface NSDistributedNotificationCenter: NSNotificationCenter
 @end
@@ -111,19 +111,19 @@ Finally the most important part: we create a notification observer by calling `a
 
 - (NSArray *)specifiers {
 
-	if(!_specifiers) _specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
-	return _specifiers;
+    if(!_specifiers) _specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
+    return _specifiers;
 
 }
 
 - (void)setPreferenceValue:(id)value specifier:(PSSpecifier *)specifier {
 
-	NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName: kSuiteName];
-	[prefs setObject:value forKey:specifier.properties[@"key"]];
+    NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName: kSuiteName];
+    [prefs setObject:value forKey:specifier.properties[@"key"]];
 
-	[NSDistributedNotificationCenter.defaultCenter postNotificationName:RespringlessTweakDidSetupBlurNotification object:nil];
+    [NSDistributedNotificationCenter.defaultCenter postNotificationName:RespringlessTweakDidUpdateBlurIntensityNotification object:nil];
 
-	[super setPreferenceValue:value specifier:specifier];
+    [super setPreferenceValue:value specifier:specifier];
 
 }
 
