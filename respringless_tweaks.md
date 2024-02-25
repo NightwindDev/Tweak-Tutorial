@@ -145,6 +145,8 @@ Then your `RTRootVC.h`:
 
 * That's literally how a respringless tweak works, in this case everytime you update the slider in the prefs panel, the method we implemented gets called which posts the notification, the observer listening for it receives it and calls the designated method. Now you have succesfully created your first respringless tweak.
 
+* If you want to try the project yourself it's available [here](./Projects/Respringless/)
+
 * Here's how the blur looks ↓
 
 <img src="/Assets/RespringlessTweakBlur.png" width="300">
