@@ -1,0 +1,9 @@
+Package: me.luki.respringlesstweak
+Name: Respringless
+Version: 0.9.0
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: Luki
+Author: Luki
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
