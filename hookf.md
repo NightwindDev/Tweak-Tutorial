@@ -30,15 +30,18 @@ Let's say we want to hook [`CGFontRef CGFontCreateWithFontName(CFStringRef name)
 Below is the Substrate version of the above code, if needed.
 
 ```objc
-CGFontRef (*orig_CGFontCreateWithFontName)(CFStringRef);
-CGFontRef new_CGFontCreateWithFontName(CFStringRef name) {
-  return orig_CGFontCreateWithFontName(name);
+static CGFontRef (*CGFontCreateWithFontName_orig)(CFStringRef) = NULL;
+static CGFontRef CGFontCreateWithFontName_hook(CFStringRef name) {
+  return CGFontCreateWithFontName_orig(name);
 }
 
 __attribute__((constructor)) static void initialize() {
-  MSHookFunction(((void *)MSFindSymbol(NULL, "CGFontCreateWithFontName")), (void *)new_CGFontCreateWithFontName, (void **)&orig_CGFontCreateWithFontName);
+  MSHookFunction(dlsym(RTLD_DEFAULT, "CGFontCreateWithFontName"), (void *)CGFontCreateWithFontName_hook, (void **)&CGFontCreateWithFontName_orig);
 }
 ```
+
+## Danger
+Due to the previously mentioned [Spinlock panics](https://github.com/opa334/Dopamine/issues/274#issuecomment-1821038203) on iOS 15 arm64e devices, `%hookf`/`MSHookFunction` should be used with caution. When possible, look into alternative methods of achieving your esired goal in order for a better user experience for users on iOS 15 arm64e devices. 
 
 For further information about `%hookf`, please go [here](https://theos.dev/docs/logos-syntax).
 
