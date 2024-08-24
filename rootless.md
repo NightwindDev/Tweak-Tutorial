@@ -12,7 +12,7 @@
 
 Firsrly, it is best to always use the most up-to-date version of Theos. Make sure to update it if you installed Theos a while ago.
 
-Theos includes convenient macros for you to use in order to adapt for rootless. They are stored in a header file called [rootless.h](https://github.com/theos/headers/blob/4c7409e29260a7c47a27d52531a0ebc4bc034e72/rootless.h) which is bundled in recent versions. Say we have a file path that needs to be adapted stored within an `NSString` like so:
+Theos includes convenient macros for you to use in order to adapt for rootless. They are stored in a header file called [rootless.h](https://github.com/theos/headers/blob/master/rootless.h) which is bundled in recent versions. Say we have a file path that needs to be adapted stored within an `NSString` like so:
 ```objc
 NSString *filePath = @"/Library/Application Support/";
 ```
