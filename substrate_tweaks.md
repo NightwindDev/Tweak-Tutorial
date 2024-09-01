@@ -202,6 +202,6 @@ More information about it can be found [here](https://iphonedev.wiki/index.php/C
 
 [Previous Page (`%subclass` wrapper)](./subclass_wrapper.md)
 
-[Next Page (Challenges)](./challenges.md)
+[Next Page (Respringless Tweaks)](./respringless_tweaks.md)
 
 * File co-authored with [Luki120](https://github.com/Luki120)
