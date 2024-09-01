@@ -8,14 +8,14 @@ You can explore the `NSNotificationCenter` API's documentation here: https://dev
 Open your terminal and create a tweak project, your `Tweak.x` should look like this:
 
 ```objc
-#import "Tweah.h"
+#import "Tweak.h"
 
 
-static float blurIntensity;
+static CGFloat blurIntensity = 0.85f;
 
 static void loadPrefs(void) {
 
-    NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName: kSuiteName];
+    NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:@"com.example.respringlesstweakprefs"];
     blurIntensity = [prefs objectForKey:@"blurIntensity"] ? [prefs floatForKey:@"blurIntensity"] : 0.85;
 
 }
@@ -86,7 +86,6 @@ Then your `Tweak.h` should have:
 Finally, `Common.h`
 
 ```objc
-static NSString *const kSuiteName = @"me.luki.respringlesstweakprefs";
 
 static NSNotificationName const RespringlessTweakDidUpdateBlurIntensityNotification = @"RespringlessTweakDidUpdateBlurIntensityNotification";
 
@@ -96,12 +95,12 @@ static NSNotificationName const RespringlessTweakDidUpdateBlurIntensityNotificat
 
 ## Explanation
 
-* First we create the `loadPrefs(void)` function that will contain our prefs, adding the `float` key for the blur intensity.
+* First we create the `void loadPrefs(void)` function that will contain our prefs, adding the `CGFloat` key for the blur intensity.
 
 * We hook `- (void)viewDidLoad` from `CSCoverSheetViewController` where we call the original implementation and our custom method `- (void)setupBlur` where we create a `_UIBackdropView` blur with custom settings, nothing crazy going on there.
-Finally the most important part: we create a notification observer by calling `addObserver:selector:name:object:` on `NSDistributedNotificationCenter`. We're using the distributed variant because we need to communicate between two different processes (Preferences & SpringBoard). This observer, `CSCoverSheetViewController` will be listening to notifications with the name of `RespringlessTweakDidUpdateBlurIntensityNotification`, when one gets send, it'll call `updateBlurIntensity`, which will update the `alpha` value accordingly & reflect it on the UI.
+Finally the most important part: we create a notification observer by calling `addObserver:selector:name:object:` on `NSDistributedNotificationCenter`. We're using the distributed variant because we need to communicate between two different processes (Preferences & SpringBoard). This observer, `CSCoverSheetViewController` will be listening to notifications with the name of `com.example.respringlesstweakprefs/DidUpdateBlurIntensityNotification`, when one gets send, it'll call `updateBlurIntensity`, which will update the `alpha` value accordingly & reflect it on the UI.
 
-Now we have to actually make the preferences, so create a preference bundle project, your root view controller should look like this, I named mine `RTRootVC.m`:
+Now we have to actually make the preferences, so create a preference bundle project, your root view controller should look like this:
 
 ```objc
 
@@ -118,10 +117,10 @@ Now we have to actually make the preferences, so create a preference bundle proj
 
 - (void)setPreferenceValue:(id)value specifier:(PSSpecifier *)specifier {
 
-    NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName: kSuiteName];
+    NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:@"com.example.respringlesstweakprefs"];
     [prefs setObject:value forKey:specifier.properties[@"key"]];
 
-    [NSDistributedNotificationCenter.defaultCenter postNotificationName:RespringlessTweakDidUpdateBlurIntensityNotification object:nil];
+    [NSDistributedNotificationCenter.defaultCenter postNotificationName:@"com.example.respringlesstweakprefs/DidUpdateBlurIntensityNotification" object:nil];
 
     [super setPreferenceValue:value specifier:specifier];
 
@@ -135,15 +134,16 @@ Then your `RTRootVC.h`:
 ```objc
 @import Preferences.PSListController;
 @import Preferences.PSSpecifier;
-#import "../Common.h"
+@interface NSDistributedNotificationCenter : NSNotificationCenter
+@end
 
 @interface RTRootVC : PSListController
 @end
 ```
 
-* As you can see it's very little code but extremely important to make everything work. We implement `- (void)setPreferenceValue:(id)value specifier:(PSSpecifier *)specifier` where we create an instance of `NSUserDefaults` with our suit name & set the float value for the given key, to finally post a notification when the slider value is modified, which in turn will be received by `CSCoverSheetViewController` which will update the UI accordingly.
+* The logic is simple. We implement `- (void)setPreferenceValue:(id)value specifier:(PSSpecifier *)specifier` where we create an instance of `NSUserDefaults` with our suite name and set the float value for the given key, to finally post a notification when the slider value is modified, which in turn will be received by `CSCoverSheetViewController` which will update the UI accordingly.
 
-* That's literally how a respringless tweak works, in this case everytime you update the slider in the prefs panel, the method we implemented gets called which posts the notification, the observer listening for it receives it and calls the designated method. Now you have succesfully created your first respringless tweak.
+* That's how a respringless tweak works, in this case every time you update the slider in the prefs panel, the method we implemented gets called which posts the notification, the observer listening for it receives it and calls the designated method. Now you have succesfully created your first respringless tweak!
 
 * If you want to try the project yourself it's available [here](./Projects/Respringless/)
 
