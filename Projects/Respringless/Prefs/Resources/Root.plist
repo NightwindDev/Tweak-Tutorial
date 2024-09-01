@@ -16,7 +16,7 @@
 			<key>default</key>
 			<real>0.85</real>
 			<key>defaults</key>
-			<string>me.luki.respringlesstweakprefs</string>
+			<string>com.example.respringlesstweakprefs</string>
 			<key>key</key>
 			<string>blurIntensity</string>
 			<key>min</key>

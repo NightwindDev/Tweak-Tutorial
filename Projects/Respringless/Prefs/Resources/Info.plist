@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>Prefs</string>
 	<key>CFBundleIdentifier</key>
-	<string>me.luki.respringlesstweakprefs</string>
+	<string>com.example.respringlesstweakprefs</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
