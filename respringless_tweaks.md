@@ -146,3 +146,7 @@ Then your `RTRootVC.h`:
 * Here's how the blur looks ↓
 
 <img src="/Assets/RespringlessTweakBlur.png" width="300">
+
+[Previous Page (Substrate Tweaks)](./substrate_tweaks.md)
+
+[Next Page (Challenges)](./challenges.md)
