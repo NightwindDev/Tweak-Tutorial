@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>Prefs</string>
+	<string>RespringlessPrefs</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.example.respringlesstweakprefs</string>
 	<key>CFBundleInfoDictionaryVersion</key>

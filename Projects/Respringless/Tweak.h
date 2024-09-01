@@ -14,3 +14,7 @@
 @interface CSCoverSheetViewController: UIViewController
 - (void)setupBlur;
 @end
+
+
+@interface NSDistributedNotificationCenter: NSNotificationCenter
+@end
