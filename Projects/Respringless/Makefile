@@ -6,7 +6,7 @@ TWEAK_NAME = Respringless
 Respringless_FILES = Tweak.x
 Respringless_CFLAGS = -fobjc-arc
 
-SUBPROJECTS += Prefs
+SUBPROJECTS += RespringlessPrefs
 
 include $(THEOS)/makefiles/common.mk
 include $(THEOS_MAKE_PATH)/tweak.mk

@@ -14,9 +14,10 @@
 	NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName: @"com.example.respringlesstweakprefs"];
 	[prefs setObject:value forKey:specifier.properties[@"key"]];
 
-	[NSDistributedNotificationCenter.defaultCenter postNotificationName:@"com.example.respringlesstweakprefs/DidUpdateBlurIntensityNotification" object:nil];
-
 	[super setPreferenceValue:value specifier:specifier];
+
+	if(![specifier.properties[@"key"] isEqualToString: @"blurIntensity"]) return;
+	[NSDistributedNotificationCenter.defaultCenter postNotificationName:@"com.example.respringlesstweakprefs/DidUpdateBlurIntensityNotification" object:nil];
 
 }
 
