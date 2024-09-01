@@ -1,7 +1,7 @@
 #import "Tweak.h"
 
 
-static float blurIntensity;
+static CGFloat blurIntensity = 0.85f;
 
 static void loadPrefs(void) {
 
