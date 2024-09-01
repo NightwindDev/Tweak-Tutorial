@@ -10,9 +10,9 @@ static void loadPrefs(void) {
 
 }
 
-static _UIBackdropView *blurView;
-
 %hook CSCoverSheetViewController
+
+%property (nonatomic, strong) _UIBackdropView *blurView;
 
 %new
 
@@ -20,9 +20,11 @@ static _UIBackdropView *blurView;
 
 	_UIBackdropViewSettings *settings = [_UIBackdropViewSettings settingsForStyle:2];
 
-	blurView = [[_UIBackdropView alloc] initWithFrame:CGRectZero autosizesToFitSuperview:YES settings:settings];
-	blurView.alpha = blurIntensity;
-	[self.view insertSubview:blurView atIndex:0];	
+	if(!self.blurView) {
+		self.blurView = [[_UIBackdropView alloc] initWithFrame:CGRectZero autosizesToFitSuperview:YES settings:settings];
+		self.blurView.alpha = blurIntensity;
+		[self.view insertSubview:self.blurView atIndex:0];
+	}
 
 }
 
@@ -31,7 +33,7 @@ static _UIBackdropView *blurView;
 - (void)updateBlurIntensity {
 
 	loadPrefs();
-	blurView.alpha = blurIntensity;
+	self.blurView.alpha = blurIntensity;
 
 }
 

@@ -12,6 +12,7 @@
 
 
 @interface CSCoverSheetViewController: UIViewController
+@property (nonatomic, strong) _UIBackdropView *blurView;
 - (void)setupBlur;
 @end
 
