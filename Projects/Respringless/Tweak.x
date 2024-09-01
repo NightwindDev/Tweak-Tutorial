@@ -5,7 +5,7 @@ static float blurIntensity;
 
 static void loadPrefs(void) {
 
-	NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName: kSuiteName];
+	NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:@"com.example.respringlesstweakprefs"];
 	blurIntensity = [prefs objectForKey:@"blurIntensity"] ? [prefs floatForKey:@"blurIntensity"] : 0.85;
 
 }
@@ -40,7 +40,7 @@ static _UIBackdropView *blurView;
 	%orig;
 	[self setupBlur];
 
-	[NSDistributedNotificationCenter.defaultCenter addObserver:self selector:@selector(updateBlurIntensity) name:RespringlessTweakDidUpdateBlurIntensityNotification object: nil];
+	[NSDistributedNotificationCenter.defaultCenter addObserver:self selector:@selector(updateBlurIntensity) name:@"com.example.respringlesstweakprefs/DidUpdateBlurIntensityNotification" object: nil];
 
 }
 

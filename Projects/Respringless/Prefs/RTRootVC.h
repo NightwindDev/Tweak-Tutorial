@@ -1,6 +1,7 @@
 @import Preferences.PSListController;
 @import Preferences.PSSpecifier;
-#import "../Common.h"
+ @interface NSDistributedNotificationCenter : NSNotificationCenter
+ @end
 
 @interface RTRootVC : PSListController
 @end
