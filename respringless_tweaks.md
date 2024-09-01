@@ -1,7 +1,7 @@
 # How do you create a respringless tweak?
 
 *What we'll make is a simple tweak that adds a blur to the lock screen, with the option to change the its alpha/intensity on the fly. How can this happen without a respring? The Settings app will need to communicate with SpringBoard to notify that the blur value has been changed, so that it can refresh the UI. The `NSNotificationCenter` Foundation API makes that really straightforward.
-I won't explain what `NSNotificationCenter` does or how it works in too much detail because if you've got this far then you should already know the basics of it, if not then I'd suggest reading its documentation.
+You can explore the `NSNotificationCenter` API's documentation here: https://developer.apple.com/documentation/foundation/nsnotificationcenter.
 
 ## Tweak
 
