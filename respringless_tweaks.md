@@ -1,7 +1,7 @@
 # How do you create a respringless tweak?
 
-*What we'll make is a simple tweak that adds a blur to the lock screen, with the option to change the its alpha/intensity on the fly. How can this happen without a respring? The Settings app will need to communicate with SpringBoard to notify that the blur value has been changed, so that it can refresh the UI. The `NSNotificationCenter` Foundation API makes that really straightforward.
-You can explore the `NSNotificationCenter` API's documentation here: https://developer.apple.com/documentation/foundation/nsnotificationcenter.
+* What we'll make is a simple tweak that adds a blur to the lock screen, with the option to change the its alpha/intensity on the fly. How can this happen without a respring? The Settings app will need to communicate with SpringBoard to notify that the blur value has been changed, so that it can refresh the UI. The `NSNotificationCenter` Foundation API makes that really straightforward.
+You can explore the `NSNotificationCenter` API's documentation [here](https://developer.apple.com/documentation/foundation/nsnotificationcenter)
 
 ## Tweak
 
@@ -20,9 +20,9 @@ static void loadPrefs(void) {
 
 }
 
-static _UIBackdropView *blurView;
-
 %hook CSCoverSheetViewController
+
+%property (nonatomic, strong) _UIBackdropView *blurView;
 
 %new
 
@@ -30,10 +30,11 @@ static _UIBackdropView *blurView;
 
     _UIBackdropViewSettings *settings = [_UIBackdropViewSettings settingsForStyle:2];
 
-    blurView = [[_UIBackdropView alloc] initWithFrame:CGRectZero autosizesToFitSuperview:YES settings:settings];
-    blurView.alpha = blurIntensity;
-    [self.view insertSubview:blurView atIndex:0];   
-
+    if(!self.blurView) {
+        self.blurView = [[_UIBackdropView alloc] initWithFrame:CGRectZero autosizesToFitSuperview:YES settings:settings];
+        self.blurView.alpha = blurIntensity;
+        [self.view insertSubview:self.blurView atIndex:0];
+    }
 }
 
 %new
@@ -41,7 +42,7 @@ static _UIBackdropView *blurView;
 - (void)updateBlurIntensity {
 
     loadPrefs();
-    blurView.alpha = blurIntensity;
+    self.blurView.alpha = blurIntensity;
 
 }
 
@@ -50,7 +51,7 @@ static _UIBackdropView *blurView;
     %orig;
     [self setupBlur];
 
-    [NSDistributedNotificationCenter.defaultCenter addObserver:self selector:@selector(updateBlurIntensity) name:RespringlessTweakDidUpdateBlurIntensityNotification object: nil];
+    [NSDistributedNotificationCenter.defaultCenter addObserver:self selector:@selector(updateBlurIntensity) name:@"com.example.respringlesstweakprefs/DidUpdateBlurIntensityNotification" object: nil];
 
 }
 
@@ -65,7 +66,6 @@ Then your `Tweak.h` should have:
 
 ```objc
 @import UIKit;
-#import "Common.h"
 
 
 @interface _UIBackdropViewSettings : NSObject
@@ -79,15 +79,9 @@ Then your `Tweak.h` should have:
 
 
 @interface CSCoverSheetViewController: UIViewController
+@property (nonatomic, strong) _UIBackdropView *blurView;
 - (void)setupBlur;
 @end
-```
-
-Finally, `Common.h`
-
-```objc
-
-static NSNotificationName const RespringlessTweakDidUpdateBlurIntensityNotification = @"RespringlessTweakDidUpdateBlurIntensityNotification";
 
 @interface NSDistributedNotificationCenter: NSNotificationCenter
 @end
@@ -120,9 +114,10 @@ Now we have to actually make the preferences, so create a preference bundle proj
     NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:@"com.example.respringlesstweakprefs"];
     [prefs setObject:value forKey:specifier.properties[@"key"]];
 
-    [NSDistributedNotificationCenter.defaultCenter postNotificationName:@"com.example.respringlesstweakprefs/DidUpdateBlurIntensityNotification" object:nil];
-
     [super setPreferenceValue:value specifier:specifier];
+
+    if(![specifier.properties[@"key"] isEqualToString: @"blurIntensity"]) return;
+    [NSDistributedNotificationCenter.defaultCenter postNotificationName:@"com.example.respringlesstweakprefs/DidUpdateBlurIntensityNotification" object:nil];
 
 }
 
@@ -134,10 +129,11 @@ Then your `RTRootVC.h`:
 ```objc
 @import Preferences.PSListController;
 @import Preferences.PSSpecifier;
-@interface NSDistributedNotificationCenter : NSNotificationCenter
-@end
 
 @interface RTRootVC : PSListController
+@end
+
+@interface NSDistributedNotificationCenter : NSNotificationCenter
 @end
 ```
 
