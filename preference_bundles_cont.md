@@ -34,7 +34,7 @@ Let's go through it one by one.
         - This returns the specifiers because that is needed as the method is not of the type `void` (which does not need to return anything).
 
 This also allows the developer to make cells manually, you would need to add the specifier manually through `PSSpecifier` and then add it to the `_specifiers` array.
-   - Further information about this can be found near the bottom of https://iphonedev.wiki/index.php/Preferences_specifier_plist.
+   - Further information about this can be found near the bottom of https://theapplewiki.com/wiki/Dev:Preferences_specifier_plist.
 
 Linking the preference bundle to the tweak can also be found in my preference bundle examples page: https://github.com/NightwindDev/Preference-Bundle-Example#linking-cells-to-tweak.
 
