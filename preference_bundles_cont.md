@@ -5,7 +5,7 @@ For the `Root.plist` file, you can find out what cells are available to use by d
 ## `EXMRootListController.m`
 
 ```objc
-#include "EXMRootListController.h" // better to change to #import
+#import "EXMRootListController.h"
 
 @implementation EXMRootListController
 
@@ -18,14 +18,12 @@ For the `Root.plist` file, you can find out what cells are available to use by d
 }
 
 @end
-
 ```
 
 This is the code of the view controller that displays when the user opens up the tweak settings page.
 
 Let's go through it one by one.
-   - It is including the `EXMRootListController.h` header which contains the headers for this view controller.
-     - The difference between `#include` and `#import` is that `#include` literally copies the contents of the header into the file, while `#import` makes sure to only include the contents of the header once.
+   - It is importing the `EXMRootListController.h` header which contains the headers for this view controller.
    - `@implementation`
         - This implements the view controller, basically allowing the developer to add methods and write the code for the view controller.
    - `- (NSArray *)specifiers {`
