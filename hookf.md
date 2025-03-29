@@ -40,6 +40,19 @@ __attribute__((constructor)) static void initialize() {
 }
 ```
 
+If we are not able to directly link with the binary, we can dynamically look up the symbol. Logos has syntax for doing this:
+```objc
+%hookf(CGFontRef, CGFontCreateWithFontName, CFStringRef name) {
+  // code
+  return %orig;
+}
+
+%ctor {
+  %init(CGFontCreateWithFontName=dlsym(RTLD_DEFAULT, "CGFontCreateWithFontName"));
+}
+```
+For non-exported symbols, we can use `MSFindSymbol` instead of `dlsym`. Do note that we will need an extra `_` at the beginning of the symbol if we're using `MSFindSymbol`.
+
 For further information about `%hookf`, please go [here](https://theos.dev/docs/logos-syntax).
 
 [Previous Page (Old ABI)](./oldabi.md)
