@@ -38,11 +38,7 @@ Most views and view controllers in the software have such headers, and those wou
 
 This is just an explanation of how we would use the headers, it is not actual code.
 
-People have dumped headers for views and view controllers for versions and posted them online. You can use these to your advantage when finding what to hook. Some great places to find dumped headers are https://developer.limneos.net and https://headers.cynder.me. These are easy to use and help a lot.
-
-[Limneos](https://developer.limneos.net) — To use this service, simply type the class you are trying to find the headers for in the search bar.
-
-[Cynder](https://headers.cynder.me) — To use this service, find the iOS version that you are trying to find the headers for and then go on the searchbar to find your headers.
+People have dumped headers for views and view controllers for versions and posted them online. You can use these to your advantage when finding what to hook. A great place to find dumped headers is https://developer.limneos.net. To use this service, simply type the class you are trying to find the headers for in the search bar.
 
 Of course, not all headers are dumped, sometimes you will need to dump them yourself. A [video](https://web.archive.org/web/20201202093934/https://www.youtube.com/watch?v=M8HzCj0aKpw&gl=US&hl=en) (archived via [the Internet Archive](https://archive.org)) by Zane Helton explains how to do this perfectly.
 
