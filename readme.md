@@ -11,7 +11,7 @@ This tutorial tries to be as comprehensive as possible to explain how tweaks are
 
 - Basic [Object-Orientated Programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming) knowledge.
 - A text editor of your choice.
-- Either a [Theos](https://theos.dev) or [Dragon](https://dragon.cynder.me/en/latest/) installation.
+- A [Theos](https://theos.dev) installation.
 - Either a jailbroken device or the Xcode Simulator on macOS paired with [Simject](https://github.com/akemin-dayo/simject).
 
 ---
