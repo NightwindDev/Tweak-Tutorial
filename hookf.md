@@ -40,9 +40,6 @@ __attribute__((constructor)) static void initialize() {
 }
 ```
 
-## Danger
-Due to the previously mentioned [Spinlock panics](https://github.com/opa334/Dopamine/issues/274#issuecomment-1821038203) on iOS 15 arm64e devices, `%hookf`/`MSHookFunction` should be used with caution. When possible, look into alternative methods of achieving your esired goal in order for a better user experience for users on iOS 15 arm64e devices. 
-
 For further information about `%hookf`, please go [here](https://theos.dev/docs/logos-syntax).
 
 [Previous Page (Old ABI)](./oldabi.md)
