@@ -17,8 +17,6 @@ Tweak developers were advised to compile with the old ABI, however. The reason f
 
 On iOS 14.5-14.8.1, the patches needed to support the old ABI are minimal and are implemented on the jailbeak's end. Starting with iOS 15, though, arm64e jailbreaks need a more robust solution to support the old ABI, which causes system instability.
 
-The "Legacy arm64e Support" package has been known to cause general system instability, also increasing the chance of spinlock panics, [explained here](https://github.com/opa334/Dopamine/issues/274#issuecomment-1821038203).
-
 ## How do I use the new ABI in my tweaks?
 There are several ways to use the new ABI in your tweaks. We'll go through them from most to least desirable. Do note that if you would like to support iOS 13 as well as iOS 15+, you will need to compile with the old ABI for "rootful" builds of your tweak and with the new ABI for "rootless" builds.
 ### Compiling via macOS
@@ -88,6 +86,8 @@ If all else fails, then you can add a dependency on `Legacy arm64e Support` in y
 Depends: firmware (<< 15.0) | cy+cpu.arm64v8 | oldabi
 ```
 Note: if you want to support the XinaA15 jailbreak, you will have to remove these dependenices from the "rootful" version of your package and keep them only for rootless.
+
+Note: the `Legacy arm64e Support` package does not work for Swift tweaks.
 
 [Previous Page (Adapting for rootless)](./rootless.md)
 
