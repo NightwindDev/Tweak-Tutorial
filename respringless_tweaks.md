@@ -149,4 +149,4 @@ Then your `RTRootVC.h`:
 
 [Previous Page (Substrate Tweaks)](./substrate_tweaks.md)
 
-[Next Page (Challenges)](./challenges.md)
+[Next Page (Crashlogs)](./crashlogs.md)

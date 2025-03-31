@@ -49,4 +49,4 @@ __attribute__((constructor)) static void initialize() {
 
 #### Solutions to the challenges can be found <a href="https://github.com/NightwindDev/Tweak-Tutorial/tree/main/Solutions">here</a>.
 
-[Previous Page (Respringless Tweaks)](./respringless_tweaks.md)
+[Previous Page (Crashlogs)](./crashlogs.md)
